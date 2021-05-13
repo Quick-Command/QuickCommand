@@ -4,7 +4,10 @@ import './App.css';
 
 function App() {
   return (
-    <h1>This is QuickCommand</h1>
+    <div>
+      <h1>This is QuickCommand</h1>
+      <p>welcome to quick command</p>
+    </div>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
