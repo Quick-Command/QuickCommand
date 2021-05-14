@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import DeclareIncidentForm from '../DeclareIncidentForm/DeclareIncidentForm'
 
-export default class IncidentsMenu extends Component {
+const IncidentsMenu = () => {
 
-  render() {
-    return (
-      <h2>This is the Incidents Menu</h2>
-    )
-  }
+  return (
+    <div className='incidents-menu'>
+      <DeclareIncidentForm />
+    </div>
+  )
 
 }
+
+export default IncidentsMenu
