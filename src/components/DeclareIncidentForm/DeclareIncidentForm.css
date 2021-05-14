@@ -1,7 +1,7 @@
 form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
 }
 
 input,
@@ -14,4 +14,8 @@ select {
   color: red;
   border: 1px solid red;
   background-color: transparent;
+}
+
+.incident-declare-button:hover {
+  background-color: lightcoral;
 }
