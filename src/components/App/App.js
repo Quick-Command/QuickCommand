@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Switch, Route } from 'react-router-dom'
+import DatabaseMenu from '../DatabaseMenu/DatabaseMenu'
+import IncidentsMenu from '../IncidentsMenu/IncidentsMenu'
 // import { Counter } from '../../features/counter/Counter';
 import './App.css';
 
@@ -13,6 +15,10 @@ export default class App extends Component {
           <NavLink to='/database' className='nav-link'>DATABASE</NavLink>
           <NavLink to='/' className='nav-link'>INCIDENTS</NavLink>
         </nav>
+        <Switch>
+          <Route exact path='/' component={IncidentsMenu} />
+          <Route path='/database' component={DatabaseMenu} />
+        </Switch>
       </main>
     )
   }
