@@ -28,10 +28,12 @@ const DeclareIncidentForm = () => {
       <label for="incident-type">Incident type:</label>
       <select onChange={(event) => dispatch(updateIncidentTypeSelection(event.target.value))}>
         <option value=''>--select--</option>
-        <option>Fire</option>
+        <option>Wildfire</option>
         <option>Hazmat</option>
         <option>Hurricane</option>
-        <option>Nuclear holocaust</option>
+        <option>Flooding</option>
+        <option>Earthquake</option>
+        <option>Tornado</option>
       </select>
 
       <label for="incident-date">Incident Date:</label>
