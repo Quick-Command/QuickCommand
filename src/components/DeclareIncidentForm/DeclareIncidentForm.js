@@ -1,16 +1,20 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {
   updateIncidentNameField,
   updateIncidentTypeSelection,
   updateIncidentDateSelection,
   updateIncidentSummary
 } from './DeclareIncidentFormSlice'
+import {
+  declareIncident
+} from '../IncidentList/IncidentListSlice'
 import './DeclareIncidentForm.css'
 
-const IncidentsMenu = () => {
+const DeclareIncidentForm = () => {
 
   const dispatch = useDispatch();
+  const formValues = useSelector(state => state.declareIncidentForm)
 
   return (
     <form>
@@ -35,10 +39,16 @@ const IncidentsMenu = () => {
       <label for="incident-summary">Incident summary:</label>
       <textarea onChange={(event) => dispatch(updateIncidentSummary(event.target.value))}></textarea>
 
-      <button className='incident-declare-button'>DECLARE</button>
+      <button 
+        onClick={(event)=> {
+          event.preventDefault()
+          dispatch(declareIncident(formValues))
+          }
+        } 
+        className='incident-declare-button'>DECLARE</button>
     </form>
   )
 
 }
 
-export default IncidentsMenu
+export default DeclareIncidentForm
