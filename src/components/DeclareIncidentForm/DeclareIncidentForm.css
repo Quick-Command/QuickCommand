@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+input,
+textarea,
+select {
+  margin-bottom: 10px;
+}
+
+.incident-declare-button {
+  color: red;
+  border: 1px solid red;
+  background-color: transparent;
+}
+
+.incident-declare-button:hover {
+  background-color: lightcoral;
+}
