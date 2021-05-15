@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   updateIncidentNameField,
   updateIncidentTypeSelection,
   updateIncidentDateSelection,
-  updateIncidentSummary
+  updateIncidentSummary,
+  clearInputs
 } from './DeclareIncidentFormSlice'
 import {
   declareIncident
@@ -12,7 +13,7 @@ import {
 import './DeclareIncidentForm.css'
 
 const DeclareIncidentForm = () => {
-
+  
   const dispatch = useDispatch();
   const formValues = useSelector(state => state.declareIncidentForm)
 
@@ -42,6 +43,8 @@ const DeclareIncidentForm = () => {
       <button 
         onClick={(event)=> {
           event.preventDefault()
+          console.log(event)
+          dispatch(clearInputs())
           dispatch(declareIncident(formValues))
           }
         } 

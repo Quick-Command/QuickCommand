@@ -22,6 +22,12 @@ export const slice = createSlice({
     },
     updateIncidentSummary: (state, action) => {
       state.incidentSummary = action.payload
+    },
+    clearInputs: (state) => {
+      state.incidentName = ''
+      state.incidentType = ''
+      state.incidentDate = ''
+      state.incidentSummary = ''
     }
   }
 })
@@ -30,7 +36,8 @@ export const {
   updateIncidentNameField, 
   updateIncidentTypeSelection, 
   updateIncidentDateSelection,
-  updateIncidentSummary 
+  updateIncidentSummary,
+  clearInputs 
 } = slice.actions;
 
 export default slice.reducer
