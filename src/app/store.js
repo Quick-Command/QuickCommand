@@ -5,6 +5,7 @@ import IncidentListReducer from '../components/IncidentList/IncidentListSlice'
 export const store = configureStore({
   reducer: {
     declareIncidentForm: DeclareIncidentFormReducer,
-    ongoingIncidents: IncidentListReducer
+    ongoingIncidents: IncidentListReducer,
+
   },
 });
