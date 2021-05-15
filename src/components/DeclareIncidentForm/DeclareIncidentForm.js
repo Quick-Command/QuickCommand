@@ -1,7 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import {
+  updateIncidentNameField
+} from './DeclareIncidentFormSlice'
 import './DeclareIncidentForm.css'
 
 const IncidentsMenu = () => {
+
+  const dispatch = useDispatch();
 
   return (
     <form>
@@ -9,7 +15,7 @@ const IncidentsMenu = () => {
       <h2>DECLARE NEW INCIDENT:</h2>
 
       <label for="incident-name">Incident Name:</label>
-      <input type="text" name="incident-name"></input>
+      <input type="text" name="incident-name" onChange={(event)=> dispatch(updateIncidentNameField(event.target.value))}></input>
 
       <label for="incident-type">Incident type:</label>
       <select>
