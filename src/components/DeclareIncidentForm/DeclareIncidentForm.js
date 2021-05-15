@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   updateIncidentNameField,
@@ -22,10 +22,10 @@ const DeclareIncidentForm = () => {
 
       <h2>DECLARE NEW INCIDENT:</h2>
 
-      <label for="incident-name">Incident Name:</label>
+      <label htmlFor="incident-name">Incident Name:</label>
       <input type="text" name="incident-name" onChange={(event)=> dispatch(updateIncidentNameField(event.target.value))}></input>
 
-      <label for="incident-type">Incident type:</label>
+      <label htmlFor="incident-type">Incident type:</label>
       <select onChange={(event) => dispatch(updateIncidentTypeSelection(event.target.value))}>
         <option value=''>--select--</option>
         <option>Wildfire</option>
@@ -36,10 +36,10 @@ const DeclareIncidentForm = () => {
         <option>Tornado</option>
       </select>
 
-      <label for="incident-date">Incident Date:</label>
+      <label htmlFor="incident-date">Incident Date:</label>
       <input type="date" onChange={(event)=> dispatch(updateIncidentDateSelection(event.target.value))}></input>
 
-      <label for="incident-summary">Incident summary:</label>
+      <label htmlFor="incident-summary">Incident summary:</label>
       <textarea onChange={(event) => dispatch(updateIncidentSummary(event.target.value))}></textarea>
 
       <button 
