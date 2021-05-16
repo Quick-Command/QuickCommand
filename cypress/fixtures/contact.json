@@ -1,0 +1,10 @@
+{
+  "id": "1",
+  "type": "contact",
+  "attributes": {
+    "name": "Moo Philips",
+    "email": "mphillips@email.gov",
+    "phone_number": "123-456-7890",
+    "job_title": "Incident Commander",
+  }
+}
