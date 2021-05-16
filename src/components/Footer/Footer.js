@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer data-cy='footer' className='footer'>
+    <footer data-cy='footer' className='footer-container'>
 
 
       <NavLink to='/passport'>Personnel Documents</NavLink>

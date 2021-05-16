@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <main className='app'>
-      <div>
+      <div className='content-wrap'>
         <Header />
         <Switch>
           <Route exact path='/' component={IncidentsMenu} />

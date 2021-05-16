@@ -1,4 +1,11 @@
+.app {
+  position: relative;
+  min-height: 90vh
+}
 
+.content-wrap {
+  padding-bottom: 2.5rem; 
+}
 
 nav {
   display: flex;

@@ -1,4 +1,18 @@
 .profiles {
-  display:flex;
-  justify-content: space space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 80vh;
+}
+
+img {
+  border-radius: 17%;
+  border: 3px solid #ddd;
+  padding: 5px;
+  width: 110px;
+}
+
+.profile-single {
+  padding: 2vw;
+  width: 175px;
 }
