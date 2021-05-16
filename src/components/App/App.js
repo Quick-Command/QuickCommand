@@ -4,15 +4,24 @@ import DatabaseMenu from '../DatabaseMenu/DatabaseMenu';
 import IncidentsMenu from '../IncidentsMenu/IncidentsMenu';
 import './App.css';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Profiles from '../Profiles/Profiles';
+import Passport from '../Passport/Passport';
+
 const App = () => {
 
   return (
     <main className='app'>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={IncidentsMenu} />
-        <Route path='/database' component={DatabaseMenu} />
-      </Switch>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={IncidentsMenu} />
+          <Route path='/database' component={DatabaseMenu} />
+          <Route path='/profiles' component={Profiles} />
+          <Route path='/passport' component={Passport} />
+        </Switch>
+        <Footer />
+      </div>
     </main>
   )
 
