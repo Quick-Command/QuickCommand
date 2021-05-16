@@ -8,8 +8,8 @@ const IncidentList = () => {
     counter++
     return (
       <div className='incident' key={counter}>
-        <h3>{incident.incidentName}</h3>
-        <p>{incident.incidentType} * DECLARED: {incident.incidentDate}</p>
+        <h3 data-cy='incident-name'>{incident.incidentName}</h3>
+        <p data-cy='incident-type'>{incident.incidentType} * DECLARED: {incident.incidentDate}</p>
       </div>
     )
   })

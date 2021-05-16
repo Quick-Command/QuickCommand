@@ -5,7 +5,7 @@ export default class DatabaseMenu extends Component {
   render() {
     return (
       <div>
-        <h2>This is the Database Menu</h2>
+        <h2 data-cy='database-menu'>This is the Database Menu</h2>
         {/* take in name , 
       dispatch to slice functions our request */}
 
