@@ -1,14 +1,18 @@
-import React from 'react'
+import React from 'react';
 import './DatabaseMenu.css';
-import NewContactForm from '../NewContactForm/NewContactForm'
-import DatabaseSearch from '../DatabaseSearch/DatabaseSearch'
+import NewContactForm from '../NewContactForm/NewContactForm';
+import DatabaseSearch from '../DatabaseSearch/DatabaseSearch';
+import ContactShowCard from '../ContactShowCard/ContactShowCard';
 
 const DatabaseMenu = () => {
 
   return (
     <div className='database-menu'>
       <DatabaseSearch />
-      <NewContactForm />     
+      <div>
+        <NewContactForm />     
+        <ContactShowCard />
+      </div>
     </div>
   )
 

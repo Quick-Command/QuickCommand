@@ -19,6 +19,7 @@ const DatabaseSearch = () => {
 
   return (
     <div>
+      <h2>SEARCH CONTACTS:</h2>
       <input
         onChange={e => dispatch(searchByName(e.target.value))}
       />
