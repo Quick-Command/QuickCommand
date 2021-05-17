@@ -1,22 +1,30 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  getOngoingIncidents
+} from './IncidentListSlice'
 import './IncidentList.css'
 
 const IncidentList = () => {
-  let counter = 0
-  const ongoingIncidents = useSelector(state => state.ongoingIncidents).ongoingIncidents.map(incident => {
-    counter++
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getOngoingIncidents)
+  })
+
+  const ongoingIncidents = useSelector(state => state.incidentList.ongoingIncidents).map(incident => {
     return (
-      <div className='incident' key={counter}>
-        <h3 data-cy='incident-name'>{incident.incidentName}</h3>
-        <p data-cy='incident-type'>{incident.incidentType} * DECLARED: {incident.incidentDate}</p>
+      <div className='incident' key={incident.id}>
+        <h3>{incident.attributes.name}</h3>
+        <p>{incident.attributes.type} * DECLARED: {incident.attributes.start_date}</p>
       </div>
     )
   })
 
   return (
     <div>
-      <h2 data-cy='ongoing-incidents'>ONGOING INCIDENTS:</h2>
+      <h2>ONGOING INCIDENTS:</h2>
       {ongoingIncidents}
     </div>
   )
