@@ -34,6 +34,8 @@ const NewContactForm = () => {
   return (
     <form onSubmit={handleSubmit}>
 
+      <h2>ADD NEW CONTACT:</h2>
+
       <label htmlFor='contact-name'>Name: </label>
       <input
         type="text"
