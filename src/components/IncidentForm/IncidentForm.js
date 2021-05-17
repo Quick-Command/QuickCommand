@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import {
   declareNewIncident
 } from '../IncidentList/IncidentListSlice'
-import './DeclareIncidentForm.css'
+import './IncidentForm.css'
 
 const IncidentForm = () => {
   

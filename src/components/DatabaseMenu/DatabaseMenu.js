@@ -11,3 +11,5 @@ const DatabaseMenu = () => {
   )
 
 }
+
+export default DatabaseMenu
