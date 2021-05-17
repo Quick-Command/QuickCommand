@@ -5,18 +5,18 @@ import './IncidentList.css'
 const IncidentList = () => {
   let counter = 0
   const ongoingIncidents = useSelector(state => state.ongoingIncidents).ongoingIncidents.map(incident => {
-    counter ++
+    counter++
     return (
       <div className='incident' key={counter}>
-        <h3>{incident.incidentName}</h3>
-        <p>{incident.incidentType} * DECLARED: {incident.incidentDate}</p>
+        <h3 data-cy='incident-name'>{incident.incidentName}</h3>
+        <p data-cy='incident-type'>{incident.incidentType} * DECLARED: {incident.incidentDate}</p>
       </div>
     )
   })
 
   return (
     <div>
-      <h2>ONGOING INCIDENTS:</h2>
+      <h2 data-cy='ongoing-incidents'>ONGOING INCIDENTS:</h2>
       {ongoingIncidents}
     </div>
   )

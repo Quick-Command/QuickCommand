@@ -1,22 +1,27 @@
 import React from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom'
-import DatabaseMenu from '../DatabaseMenu/DatabaseMenu'
-import IncidentsMenu from '../IncidentsMenu/IncidentsMenu'
+import { Switch, Route } from 'react-router-dom';
+import DatabaseMenu from '../DatabaseMenu/DatabaseMenu';
+import IncidentsMenu from '../IncidentsMenu/IncidentsMenu';
 import './App.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Profiles from '../Profiles/Profiles';
+import Passport from '../Passport/Passport';
 
 const App = () => {
-  
+
   return (
     <main className='app'>
-      <h1 className='site-header'>QuickCommand</h1>
-      <nav>
-        <NavLink to='/database' className='nav-link'>DATABASE</NavLink>
-        <NavLink to='/' className='nav-link'>INCIDENTS</NavLink>
-      </nav>
-      <Switch>
-        <Route exact path='/' component={IncidentsMenu} />
-        <Route path='/database' component={DatabaseMenu} />
-      </Switch>
+      <div className='content-wrap'>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={IncidentsMenu} />
+          <Route path='/database' component={DatabaseMenu} />
+          <Route path='/profiles' component={Profiles} />
+          <Route path='/passport' component={Passport} />
+        </Switch>
+        <Footer />
+      </div>
     </main>
   )
 

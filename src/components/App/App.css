@@ -1,6 +1,10 @@
-.site-header {
-  text-align: center;
-  margin-bottom: 10px;
+.app {
+  position: relative;
+  min-height: 90vh
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem; 
 }
 
 nav {
