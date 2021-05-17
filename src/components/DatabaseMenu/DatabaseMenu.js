@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './DatabaseMenu.css';
 import NewContactForm from '../NewContactForm/NewContactForm'
 
-export default class DatabaseMenu extends Component {
+const DatabaseMenu = () => {
 
-  render() {
-    return (
-      <div>
-        <NewContactForm />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <NewContactForm />
+    </div>
+  )
 
 }
+
+export default DatabaseMenu
