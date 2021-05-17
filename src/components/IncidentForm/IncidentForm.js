@@ -83,7 +83,7 @@ const IncidentForm = () => {
         name='incident-date'
         type="date" 
         onChange={e => setIncidentDate(e.target.value)}
-        value={incidentSummary}
+        value={incidentDate}
       />
 
       <label htmlFor="incident-summary">Incident summary:</label>

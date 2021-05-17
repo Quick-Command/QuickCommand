@@ -15,7 +15,7 @@ export const fetchOngoingIncidents = () => {
 }
 
 export const postNewIncident = (incidentObj) => {
-  return fetch(`${baseURL}/incidents?open=true`, {
+  return fetch(`${baseURL}/incidents`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
