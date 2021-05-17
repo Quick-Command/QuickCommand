@@ -6,11 +6,11 @@ import {
   updateIncidentDateSelection,
   updateIncidentSummary,
   clearInputs
-} from './DeclareIncidentFormSlice'
+} from './IncidentFormSlice'
 import {
   declareIncident
 } from '../IncidentList/IncidentListSlice'
-import './DeclareIncidentForm.css'
+import './IncidentForm.css'
 
 const DeclareIncidentForm = () => {
   

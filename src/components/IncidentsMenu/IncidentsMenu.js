@@ -1,5 +1,5 @@
 import React from 'react'
-import DeclareIncidentForm from '../DeclareIncidentForm/DeclareIncidentForm'
+import DeclareIncidentForm from '../IncidentForm/IncidentForm'
 import IncidentList from '../IncidentList/IncidentList'
 import './IncidentsMenu.css'
 
