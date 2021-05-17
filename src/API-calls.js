@@ -34,3 +34,8 @@ export const addNewContact = (newContact) => {
   })
   .then(checkResponse)
 }
+
+export const runNameQuery = (queryString) => {
+  return fetch(`${baseURL}/contacts?name=${queryString}`)
+    .then(checkResponse)
+}
