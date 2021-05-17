@@ -24,6 +24,19 @@ describe('QuickCommand', () => {
         .get('a[data-cy=incidents-btn]').contains('INCIDENTS')
     })
 
+    it('has a footer with profile links and a documentation link', () => {
+      cy.get('[data-cy=footer]').should('have.class', 'footer-container')
+        .get('a[data-cy=passport-link]').click()
+      cy.get('article[data-cy=passport-container]').should('have.class', 'passport-container')
+        .get('[data-cy=passport-doc]').should('have.class', 'passport-doc')
+        .get('a[data-cy=database-btn]').click()
+      cy.get('a[data-cy=profiles-link]').click()
+      cy.get('[data-cy=profiles]').should('have.class', 'profiles')
+        .get('div[class=profile-single]').first().children().first()
+        .should('have.attr', 'href')
+        .get('a[target=_blank]').contains('Jeremiah')
+    })
+
     it('has a section that lists current ongoing incidents', () => {
       cy.get('.incidents-menu').should('have.length', '1')
         .get('h2[data-cy=ongoing-incidents]').contains('ONGOING INCIDENTS')
