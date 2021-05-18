@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {
   declareNewIncident
-} from '../IncidentList/IncidentListSlice'
+} from '../OngoingIncidents/OngoingIncidentsSlice'
 import './IncidentForm.css'
 
 const IncidentForm = () => {

@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   getOngoingIncidents
-} from './IncidentListSlice'
-import './IncidentList.css'
+} from './OngoingIncidentsSlice'
+import './OngoingIncidents.css'
 
-const IncidentList = () => {
+const OngoingIncidents = () => {
 
   const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ const IncidentList = () => {
     dispatch(getOngoingIncidents)
   })
 
-  const ongoingIncidents = useSelector(state => state.incidentList.ongoingIncidents).map(incident => {
+  const ongoingIncidents = useSelector(state => state.ongoingIncidents.ongoingIncidents).map(incident => {
     return (
       <div className='incident' key={incident.id}>
         <h3>{incident.attributes.name}</h3>
@@ -31,4 +31,4 @@ const IncidentList = () => {
 
 }
 
-export default IncidentList;
+export default OngoingIncidents;

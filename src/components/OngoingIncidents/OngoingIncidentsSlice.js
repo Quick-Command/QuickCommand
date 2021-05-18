@@ -10,7 +10,7 @@ const initialState = {
 }
 
 export const getOngoingIncidents = createAsyncThunk(
-  'IncidentList/getOngoingIncidents',
+  'ongoingIncidents/getOngoingIncidents',
   async () => {
     const response = await fetchOngoingIncidents()
     return response.data
@@ -18,7 +18,7 @@ export const getOngoingIncidents = createAsyncThunk(
 )
 
 export const declareNewIncident = createAsyncThunk(
-  'IncidentList/declareNewIncident',
+  'ongoingIncidents/declareNewIncident',
   async(incidentObj) => {
     const response = await postNewIncident(incidentObj)
     return response.data
@@ -26,7 +26,7 @@ export const declareNewIncident = createAsyncThunk(
 )
 
 export const slice = createSlice({
-  name: 'incident-list',
+  name: 'ongoing-incidents',
   initialState,
   extraReducers: (builder) => {
     builder
