@@ -8,6 +8,11 @@ const checkResponse = (response) => {
   }
 }
 
+export const fetchResolvedIncidents = () => {
+  return fetch(`${baseURL}/incidents?open=false`)
+    .then(checkResponse)
+}
+
 export const fetchOngoingIncidents = () => {
   return fetch(`${baseURL}/incidents?open=true`)
     .then(checkResponse)
