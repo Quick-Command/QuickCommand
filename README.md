@@ -21,9 +21,9 @@ Cameron Mackintosh
 Chuck Morris
 Jeff Shepherd
 
+-------
 
-
-A [Front-End Project](https://frontend.turing.edu/projects/module-3/niche-audience.html) by [Jeff Shepherd](https://github.com/JeffShepherd).
+A [Front-End Project](https://mod4.turing.edu/projects/capstone.html) by [Cameron Mackintosh](https://github.com/cbmackintosh), [Chuck Morris](https://github.com/percworld), and [Jeff Shepherd](https://github.com/JeffShepherd).
 
 1. [Overview](#overview)
 2. [Planning Resources](#planning-resources)
@@ -38,19 +38,16 @@ A [Front-End Project](https://frontend.turing.edu/projects/module-3/niche-audien
 
 ## Overview
 
-_Wall-i_ is the [Turing School of Software and Design](https://turing.io/) Module 3 final solo project. The challenge of this project: work within constraints to deliver a product for your niche audience, which helps solve a problem unique to them.
+_QuickCommand_ is the [Turing School of Software and Design](https://turing.io/) Module 4 capstone group project.
 
-Given this challenge, I decided to create an application for finding, and downloading, awesome wallpapers for any device. I chose this as I had always wished there was a simple app that accomplishes this goal. Wall-i allows a user to view random photos, as well as search by a specific topic. It also lets a user favorite any photo they see, and return to a list of their favorite photos at any time. If a user wishes to use the photo as the wallpaper, they can click the download link available on every photo.
-
-To create this application, I leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As I worked, I also used Cypress for test-driven development of our application.
-
+OVERVIEW GOES HERE
 
 
 
 ## Planning Resources
 
-* [GitHub Project Board](https://github.com/JeffShepherd/Wall-i/projects/1)
-* [Miro Board - Wireframes](https://miro.com/app/board/o9J_lI88SmI=/)
+* [GitHub Project Board](https://github.com/orgs/Quick-Command/projects/1)
+* [Miro Board - Wireframes](https://miro.com/app/board/o9J_lExjyG8=/)
 
 
 ## Setup Instructions
@@ -59,19 +56,13 @@ To create this application, I leveraged React, React Router, JavaScript, HTML, a
 Clone down this repository to your local machine:
 
 ```
-git clone git@github.com:JeffShepherd/Wall-i.git
+git clone git@github.com:Quick-Command/QuickCommand.git
 ```
 
 CD into the new directory:
 
 ```
-cd Wall-i
-```
-
-Create a .env file for the API key (***please reach out to me for the key***):
-
-```
-touch .env
+cd QuickCommand
 ```
 
 Then install the library dependencies by running:
@@ -92,10 +83,8 @@ If you see `Compiled successfully!` in your terminal, the application is running
 
 ## Learning Goals
 Demonstrate mastery of the following:
-* React
-* Router
-* Asynchronous JavaScript
-* End to end testing with Cypress
+* GOALS GO HERE
+
 
 
 ## Technologies
@@ -129,22 +118,17 @@ Demonstrate mastery of the following:
 ---
 ## Challenges
 
-* Completing the project in a short time frame while interviewing and dealing with family emergencies
-* Deploying for the first time using environment variables
-* Unclear documentation for specific API features
+* CHALLENGES GO HERE
 
 
 ---
 ## Wins
 
-* Completing the project in a short time frame while interviewing and dealing with family emergencies
-* Achieving elegant simplicity in design (as a non-designer)
-* Figuring out how to force a download of a photo on-click
-* Confidence with Cypress testing
+* WINS GO HERE
+
 
 
 ---
 ## Future Iterations
 
-* Display additional search results (pagination)
-* Allow search results to scroll over a static landing page view
+* FUTURE ITERATIONS GO HERE
