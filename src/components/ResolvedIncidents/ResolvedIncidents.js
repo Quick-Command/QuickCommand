@@ -10,8 +10,8 @@ const ResolvedIncidents = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getResolvedIncidents)
-  })
+    dispatch(getResolvedIncidents())
+  }, [])
 
   const resolvedIncidents = useSelector(state => state.resolvedIncidents.resolvedIncidents).map(incident => {
     return (

@@ -45,11 +45,11 @@ const IncidentForm = () => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <h2>DECLARE NEW INCIDENT:</h2>
+      <h2 data-cy='declare-incident'>DECLARE NEW INCIDENT:</h2>
 
-      <label htmlFor="incident-name">Incident Name:</label>
+      <label htmlFor="incident-name" data-cy="incident-name">Incident Name:</label>
       <input 
-        type="text" 
+        type="text"
         name="incident-name" 
         onChange={e => setIncidentName(e.target.value)}
         value={incidentName}
@@ -62,9 +62,9 @@ const IncidentForm = () => {
         value={incidentLocation}
       />
 
-      <label htmlFor="incident-type">Incident type:</label>
+      <label htmlFor="incident-type">Incident Type:</label>
       <select 
-        name='incident-type' 
+        name='incident-type'
         onChange={e => setIncidentType(e.target.value)} 
         value={incidentType}
       >
@@ -80,13 +80,13 @@ const IncidentForm = () => {
 
       <label htmlFor="incident-date">Incident Date:</label>
       <input
-        name='incident-date'
+        name='incident-date' 
         type="date" 
         onChange={e => setIncidentDate(e.target.value)}
         value={incidentDate}
       />
 
-      <label htmlFor="incident-summary">Incident summary:</label>
+      <label htmlFor="incident-summary">Incident Summary:</label>
       <textarea
         name='incident-summary' 
         onChange={e => setIncidentSummary(e.target.value)}

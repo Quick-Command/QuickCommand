@@ -10,8 +10,8 @@ const OngoingIncidents = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getOngoingIncidents)
-  })
+    dispatch(getOngoingIncidents())
+  }, [])
 
   const ongoingIncidents = useSelector(state => state.ongoingIncidents.ongoingIncidents).map(incident => {
     return (
@@ -24,7 +24,7 @@ const OngoingIncidents = () => {
 
   return (
     <div>
-      <h2>ONGOING INCIDENTS:</h2>
+      <h2 data-cy='ongoing-incidents'>ONGOING INCIDENTS:</h2>
       {ongoingIncidents}
     </div>
   )

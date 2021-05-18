@@ -66,7 +66,9 @@ describe('QuickCommand', () => {
   describe('DATABASE view', () => {
     it('Shows a database of personnel', () => {
       cy.get('a[data-cy=database-btn]').click()
-      cy.get('h2[data-cy=database-menu]').contains('Database Menu')
+      cy.get('h2[data-cy=database-menu]').contains('SEARCH CONTACTS')
+      cy.get('h2[data-cy=database-menu]').contains('ADD NEW CONTACT')
+      cy.get('h2[data-cy=database-menu]').contains('CONTACT DETAILS')
     })
   })
 })

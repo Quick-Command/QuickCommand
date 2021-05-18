@@ -9,12 +9,12 @@ const checkResponse = (response) => {
 }
 
 export const fetchResolvedIncidents = () => {
-  return fetch(`${baseURL}/incidents?open=false`)
+  return fetch(`${baseURL}/incidents?active=false`)
     .then(checkResponse)
 }
 
 export const fetchOngoingIncidents = () => {
-  return fetch(`${baseURL}/incidents?open=true`)
+  return fetch(`${baseURL}/incidents?active=true`)
     .then(checkResponse)
 }
 
