@@ -1,0 +1,18 @@
+.app {
+  position: relative;
+  min-height: 90vh
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem; 
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.nav-link {
+  margin: 30px;
+}
