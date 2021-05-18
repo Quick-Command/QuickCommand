@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import * as d3 from "d3";
 import OrgChart from '../OrgChart/OrgChart'
 import './ChartView.css'
 
@@ -7,50 +6,83 @@ const ChartView = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-
-    let test = [
-      {"nodeId":"O-1","parentNodeId":null,"width":342,"height":146,"borderWidth":1,"borderRadius":5,"borderColor":{"red":15,"green":140,"blue":121,"alpha":1},
-        "backgroundColor":{"red":51,"green":182,"blue":208,"alpha":1},
-        "nodeImage":{"url":"https://avatars.githubusercontent.com/damwhit","width":100,"height":100,"centerTopDistance":0,"centerLeftDistance":0,"cornerShape":"CIRCLE","shadow":false,"borderWidth":0,"borderColor":{"red":19,"green":123,"blue":128,"alpha":1}},
-        "nodeIcon":{"icon":"https://to.ly/1yZnX","size":30},
-        "template":
-          `<div> 
-            <div style="margin-left:70px;\n margin-top:10px;\n font-size:20px;\n font-weight:bold;\n ">David David </div>\n  
-            <div style="margin-left:70px;\n margin-top:3px;\n font-size:16px;\n ">Chief Cool Officer </div>\n\n  
-            <div style="margin-left:70px;\n margin-top:3px;\n font-size:14px;\n "Bureau of Cool</div>\n\n 
-            <div style="margin-left:126px;\n margin-top:15px;\n font-size:13px;\n  position:absolute;\n   bottom:5px;\n  ">\n  
-              <div>NY-D@damwhit.com</div>\n  
-              <div style="margin-top:5px">123-456-7890</div>\n  
-            </div>\n  
-          </div>`,
-        "connectorLineColor":{"red":220,"green":189,"blue":207,"alpha":1},"connectorLineWidth":5,"dashArray":"","expanded":false,"directSubordinates":2,"totalSubordinates":2
-      },
-      {"nodeId":"O-2","parentNodeId":"O-1","width":342,"height":146,"borderWidth":1,"borderRadius":5,"borderColor":{"red":15,"green":140,"blue":121,"alpha":1},
-        "backgroundColor":{"red":51,"green":182,"blue":208,"alpha":1},
-        "nodeImage":{"url":"https://avatars.githubusercontent.com/cbmackintosh","width":100,"height":100,"centerTopDistance":0,"centerLeftDistance":0,"cornerShape":"CIRCLE","shadow":false,"borderWidth":0,"borderColor":{"red":19,"green":123,"blue":128,"alpha":1}},
-        "nodeIcon":{"icon":"https://to.ly/1yZnX","size":30},
-        "template":"<div> <div style=\"margin-left:70px;\n margin-top:10px;\n font-size:20px;\n font-weight:bold;\n \">Cameron </div>\n  <div style=\"margin-left:70px;\n margin-top:3px;\n font-size:16px;\n \">Title Goes Here </div>\n\n  <div style=\"margin-left:70px;\n margin-top:3px;\n font-size:14px;\n \"Bureau of Cool</div>\n\n <div style=\"margin-left:126px;\n margin-top:15px;\n font-size:13px;\n  position:absolute;\n   bottom:5px;\n  \">\n  <div>NY-D@damwhit.com</div>\n  <div style=\"margin-top:5px\">123-456-7890</div>\n  </div>\n  </div>",
-        "connectorLineColor":{"red":220,"green":189,"blue":207,"alpha":1},"connectorLineWidth":5,"dashArray":"","expanded":false
-      },
-      {"nodeId":"O-3","parentNodeId":"O-1","width":342,"height":146,"borderWidth":1,"borderRadius":5,"borderColor":{"red":15,"green":140,"blue":121,"alpha":1},
-        "backgroundColor":{"red":51,"green":182,"blue":208,"alpha":1},
-        "nodeImage":{"url":"https://avatars.githubusercontent.com/percworld","width":100,"height":100,"centerTopDistance":0,"centerLeftDistance":0,"cornerShape":"CIRCLE","shadow":false,"borderWidth":0,"borderColor":{"red":19,"green":123,"blue":128,"alpha":1}},
-        "nodeIcon":{"icon":"https://to.ly/1yZnX","size":30},
-        "template":"<div> <div style=\"margin-left:70px;\n margin-top:10px;\n font-size:20px;\n font-weight:bold;\n \">Chuck </div>\n  <div style=\"margin-left:70px;\n margin-top:3px;\n font-size:16px;\n \">Title Goes Here </div>\n\n  <div style=\"margin-left:70px;\n margin-top:3px;\n font-size:14px;\n \"Bureau of Cool</div>\n\n <div style=\"margin-left:126px;\n margin-top:15px;\n font-size:13px;\n  position:absolute;\n   bottom:5px;\n  \">\n  <div>NY-D@damwhit.com</div>\n  <div style=\"margin-top:5px\">123-456-7890</div>\n  </div>\n  </div>",
-        "connectorLineColor":{"red":220,"green":189,"blue":207,"alpha":1},"connectorLineWidth":5,"dashArray":"","expanded":false
-      },
+    let testObject = [
+      {id:1, name:'chuck', title:'maestro', email:'chuck@chuck.com', phone:'123-123-123'},
+      {id:2, name:'chuck2', title:'maestro2', email:'chuck2@chuck.com', phone:'123-123-123'},
+      {id:3, name:'chuck3', title:'maestro3', email:'chuck3@chuck.com', phone:'123-123-123'},
+      {id:4, name:'chuck4', title:'maestro4', email:'chuck4@chuck.com', phone:'123-123-123'},
+      {id:5, name:'chuck5', title:'maestro5', email:'chuck5@chuck.com', phone:'123-123-123'},
+      {id:6, name:'chuck6', title:'maestro6', email:'chuck6@chuck.com', phone:'123-123-123'},
+      {id:7, name:'chuck7', title:'maestro7', email:'chuck7@chuck.com', phone:'123-123-123'},
+      {id:8, name:'chuck8', title:'maestro8', email:'chuck8@chuck.com', phone:'123-123-123'},
     ]
-    
-    setData(test)
+
+    let testData = testObject.map((item) => {
+     return {
+      nodeId: item.id,
+      parentNodeId: item.id === 1 ? null : 1,
+      width: 330,
+      height: 147,
+      borderWidth: 1, 
+      borderRadius: 5, 
+      backgroundColor:{"red":51,"green":182,"blue":208,"alpha":1},
+      nodeImage: {
+        url:
+          "https://raw.githubusercontent.com/bumbeishvili/Assets/master/Projects/D3/Organization%20Chart/general.jpg",
+        width: 100,
+        height: 100,
+        centerTopDistance: 0,
+        centerLeftDistance: 0,
+        cornerShape: "ROUNDED",
+        shadow: true,
+        borderWidth: 0,
+      },
+      nodeIcon: {
+        icon: "https://to.ly/1yZnX",
+        size: 30
+      },
+      connectorLineColor: {
+        red: 220,
+        green: 189,
+        blue: 207,
+        alpha: 1
+      },
+      connectorLineWidth: 5,
+      dashArray: "",
+      expanded: false,
+      template: `<div>
+                  <div style="margin-left:80px;
+                              margin-top:10px;
+                              font-size:20px;
+                              font-weight:bold;
+                         ">${item.name} </div>
+                 <div style="margin-left:80px;
+                              margin-top:3px;
+                              font-size:16px;
+                         ">${item.title}</div>
+                 <div style="margin-left:200px;
+                             margin-top:15px;
+                             font-size:13px;
+                             position:absolute;
+                             bottom:5px;
+                            ">
+                      <div>${item.email}</div>
+                      <div style="margin-top:5px">${item.phone}</div>
+                 </div>
+              </div>`
+    };
+  })
+
+  console.log(testData)
+
+    setData(testData)
 
   }, []);
 
 
-
-
   return (
     <section className='chart-view-container'>
-      <OrgChart data={data} />
+      <OrgChart data={data}/>
     </section>
   )
 

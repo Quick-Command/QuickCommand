@@ -15,21 +15,19 @@ const OrgChart = (props, ref) => {
       chart
         .container(d3Container.current)
         .data(props.data)
-        .svgWidth(500)
+        .svgWidth(5000)
+        // .svgHeight(500)
         .initialZoom(0.4)
-        // .onNodeClick(d => {
-        //   console.log(d + " node clicked");
-        //   console.log("props", Object.keys(props), d);
-        //   props.onNodeClick(d);
-        // })
+        .onNodeClick(d => {
+        // popout to view specific card in chart goes here
+          console.log('clicked node ' + d)
+        })
         .render();
     }
   }, [props.data, d3Container.current]);
 
   return (
-    <div>
       <div ref={d3Container} />
-    </div>
   );
 };
 
