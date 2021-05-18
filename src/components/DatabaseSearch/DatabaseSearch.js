@@ -20,7 +20,7 @@ const DatabaseSearch = () => {
 
   return (
     <div>
-      <h2>SEARCH CONTACTS:</h2>
+      <h2 data-cy="search-contacts">SEARCH CONTACTS:</h2>
       <input
         onChange={e => dispatch(searchByName(e.target.value))}
       />

@@ -34,7 +34,7 @@ const NewContactForm = () => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <h2>ADD NEW CONTACT:</h2>
+      <h2 data-cy="add-new-contact">ADD NEW CONTACT:</h2>
 
       <label htmlFor='contact-name'>Name: </label>
       <input

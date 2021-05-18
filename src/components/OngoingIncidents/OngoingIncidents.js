@@ -11,7 +11,7 @@ const OngoingIncidents = () => {
 
   useEffect(() => {
     dispatch(getOngoingIncidents())
-  }, [])
+  }, [dispatch])
 
   const ongoingIncidents = useSelector(state => state.ongoingIncidents.ongoingIncidents).map(incident => {
     return (

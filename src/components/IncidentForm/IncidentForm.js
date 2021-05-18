@@ -50,7 +50,8 @@ const IncidentForm = () => {
       <label htmlFor="incident-name" data-cy="incident-name">Incident Name:</label>
       <input 
         type="text"
-        name="incident-name" 
+        name="incident-name"
+        data-cy="incident-name" 
         onChange={e => setIncidentName(e.target.value)}
         value={incidentName}
       />
@@ -62,9 +63,10 @@ const IncidentForm = () => {
         value={incidentLocation}
       />
 
-      <label htmlFor="incident-type">Incident Type:</label>
+      <label htmlFor="incident-type" data-cy="incident-type">Incident Type:</label>
       <select 
         name='incident-type'
+        data-cy="incident-type"
         onChange={e => setIncidentType(e.target.value)} 
         value={incidentType}
       >
@@ -78,22 +80,24 @@ const IncidentForm = () => {
         <option>Mass shooting</option>
       </select>
 
-      <label htmlFor="incident-date">Incident Date:</label>
+      <label htmlFor="incident-date" data-cy="incident-date">Incident Date:</label>
       <input
+        data-cy="incident-date"
         name='incident-date' 
         type="date" 
         onChange={e => setIncidentDate(e.target.value)}
         value={incidentDate}
       />
 
-      <label htmlFor="incident-summary">Incident Summary:</label>
+      <label htmlFor="incident-summary" data-cy="incident-summary">Incident Summary:</label>
       <textarea
-        name='incident-summary' 
+        name='incident-summary'
+        data-cy="incident-summary" 
         onChange={e => setIncidentSummary(e.target.value)}
         value={incidentSummary}
       />
 
-      <button type='submit'>DECLARE</button>
+      <button type='submit' data-cy="declare-submission">DECLARE</button>
     </form>
   )
 

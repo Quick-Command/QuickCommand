@@ -8,7 +8,7 @@ const ContactShowCard = () => {
   if (displayedContact.attributes) {
     return (
       <div>
-        <h2>CONTACT DETAILS:</h2>
+        <h2 data-cy="contact-details">CONTACT DETAILS:</h2>
         <p>{displayedContact.attributes.name}</p>
         <p>{displayedContact.attributes.job_title}</p>
         <p>{displayedContact.attributes.email}</p>
@@ -18,7 +18,7 @@ const ContactShowCard = () => {
   } else {
     return(
       <div>
-        <h2>CONTACT DETAILS:</h2>
+        <h2 data-cy="contact-details">CONTACT DETAILS:</h2>
         <p>no contact displayed</p>
       </div>
     )
