@@ -6,22 +6,37 @@ import './ChartView.css'
 const ChartView = () => {
   const [data, setData] = useState(null);
 
-  const createTestData = () => {
-    let testObject = [
-      {id:1, attributes: {name:'chuck', title:'maestro', email:'chuck@chuck.com', phone:'123-123-123'}},
-      {id:2, attributes: {name:'chuck2', title:'maestro2', email:'chuck2@chuck.com', phone:'123-123-123'}},
-      {id:3, name:'', title:'maestro3', email:'', phone:''},
-      {id:4, name:'', title:'maestro4', email:'', phone:''},
-      {id:5, name:'chuck5', title:'maestro5', email:'chuck5@chuck.com', phone:'123-123-123'},
-      {id:6, name:'chuck6', title:'maestro6', email:'chuck6@chuck.com', phone:'123-123-123'},
-      {id:7, name:'chuck7', title:'maestro7', email:'chuck7@chuck.com', phone:'123-123-123'},
-      {id:8, name:'chuck8', title:'maestro8', email:'chuck8@chuck.com', phone:'123-123-123'},
+  const createChartData = () => {
+    //below data is for testing only (to be replaced with api call values)
+    const testObject = [
+      {id:8, attributes: {name:'chuck', title:'PIO', email:'chuck@chuck.com', phone:'123-123-123'}},
+      {id:2, attributes: {name:'chuck2', title:'Safety Officer', email:'chuck2@chuck.com', phone:'123-123-123'}},
+      {id:5, attributes: {name:'chuck5', title:'Operations Chief', email:'chuck5@chuck.com', phone:'123-123-123'}},
+      {id:6, attributes: {name:'chuck6', title:'Finance Chief', email:'chuck6@chuck.com', phone:'123-123-123'}}
     ]
 
-    return testObject.map((item) => {
+    //define default chart values
+    let chartValues = {
+      'Incident Commander': {id:1,attributes: {name:'Unassigned', title:'Incident Commander', email:'', phone:''}},
+      'PIO': {attributes: {name:'Unassigned', title:'PIO', email:'', phone:''}},
+      'Safety Officer': {attributes: {name:'Unassigned', title:'Safety Officer', email:'', phone:''}},
+      'Liaison Officer': {attributes: {name:'Unassigned', title:'Liaison Officer', email:'', phone:''}},
+      'Operations Chief': {attributes: {name:'Unassigned', title:'Operations Chief', email:'', phone:''}},
+      'Logistics Chief': {attributes: {name:'Unassigned', title:'Logistics Chief', email:'', phone:''}},
+      'Finance Chief': {attributes: {name:'Unassigned', title:'Finance Chief', email:'', phone:''}},
+      'Planning Chief​': {attributes: {name:'Unassigned', title:'Planning Chief​', email:'', phone:''}}
+    }
+
+    //iterate through incident data and replace any default values with assignees
+    testObject.forEach(assignee => {
+      chartValues[assignee.attributes.title] = assignee;
+    })
+
+
+    return Object.values(chartValues).map((item) => {
      return {
-      nodeId: item.id,
-      parentNodeId: item.id === 1 ? null : 1,
+      nodeId: item.id || Date.now(),
+      parentNodeId: item.attributes.title === 'Incident Commander' ? null : 1,
       width: 330,
       height: 147,
       borderWidth: 1, 
@@ -56,32 +71,29 @@ const ChartView = () => {
                               margin-top:10px;
                               font-size:20px;
                               font-weight:bold;
-                         ">${item.name || 'unassigned'} </div>
+                         ">${item.attributes.name || 'unassigned'} </div>
                  <div style="margin-left:80px;
                               margin-top:3px;
                               font-size:16px;
-                         ">${item.title}</div>
+                         ">${item.attributes.title}</div>
                  <div style="margin-left:200px;
                              margin-top:15px;
                              font-size:13px;
                              position:absolute;
                              bottom:5px;
                             ">
-                      <div>${item.email}</div>
-                      <div style="margin-top:5px">${item.phone}</div>
+                      <div>${item.attributes.email}</div>
+                      <div style="margin-top:5px">${item.attributes.phone}</div>
                  </div>
               </div>`
     };
   })
   }
 
-  
+
   useEffect(() => {
-
-    setData(createTestData())
-
+    setData(createChartData())
   }, []);
-
 
   return (
     <div className='chart-view-container'>
