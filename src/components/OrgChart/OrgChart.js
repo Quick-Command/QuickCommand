@@ -27,8 +27,8 @@ const OrgChart = (props) => {
   }, [props.data]);
 
   return (
-    <article className='test1'>
-      <div className='test2' ref={d3Container} />
+    <article>
+      <div ref={d3Container} />
     </article>
   );
 };
