@@ -6,10 +6,10 @@ import './ChartView.css'
 const ChartView = () => {
   const [data, setData] = useState(null);
 
-  useEffect(() => {
+  const createTestData = () => {
     let testObject = [
-      {id:1, name:'chuck', title:'maestro', email:'chuck@chuck.com', phone:'123-123-123'},
-      {id:2, name:'chuck2', title:'maestro2', email:'chuck2@chuck.com', phone:'123-123-123'},
+      {id:1, attributes: {name:'chuck', title:'maestro', email:'chuck@chuck.com', phone:'123-123-123'}},
+      {id:2, attributes: {name:'chuck2', title:'maestro2', email:'chuck2@chuck.com', phone:'123-123-123'}},
       {id:3, name:'', title:'maestro3', email:'', phone:''},
       {id:4, name:'', title:'maestro4', email:'', phone:''},
       {id:5, name:'chuck5', title:'maestro5', email:'chuck5@chuck.com', phone:'123-123-123'},
@@ -18,7 +18,7 @@ const ChartView = () => {
       {id:8, name:'chuck8', title:'maestro8', email:'chuck8@chuck.com', phone:'123-123-123'},
     ]
 
-    let testData = testObject.map((item) => {
+    return testObject.map((item) => {
      return {
       nodeId: item.id,
       parentNodeId: item.id === 1 ? null : 1,
@@ -73,10 +73,12 @@ const ChartView = () => {
               </div>`
     };
   })
+  }
 
-  console.log(testData)
+  
+  useEffect(() => {
 
-    setData(testData)
+    setData(createTestData())
 
   }, []);
 
