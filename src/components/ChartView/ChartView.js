@@ -102,9 +102,7 @@ const ChartView = () => {
         <OrgChart data={data}/>
       </div>
       <section className="sidebar-container">
-        {/* overview and declare over button here */}
         <IncidentInfo />
-        {/* assignment pane here */}
         <PositionAssignment />
       </section>
     </ div>
