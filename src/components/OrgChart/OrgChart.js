@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useRef} from "react";
 import TreeChart from "d3-org-chart";
 
-const OrgChart = (props, ref) => {
+const OrgChart = (props) => {
   const d3Container = useRef(null);
-  let chart = null;
+  
 
-
-  // We need to manipulate DOM
   useLayoutEffect(() => {
+    let chart = null;
+
     if (props.data && d3Container.current) {
       if (!chart) {
         chart = new TreeChart();
@@ -24,7 +24,7 @@ const OrgChart = (props, ref) => {
         })
         .render();
     }
-  }, [props.data, d3Container.current]);
+  }, [props.data]);
 
   return (
     <article className='test1'>
