@@ -15,9 +15,9 @@ const OrgChart = (props, ref) => {
       chart
         .container(d3Container.current)
         .data(props.data)
-        .svgWidth(5000)
+        // .svgWidth(5000)
         // .svgHeight(500)
-        .initialZoom(0.4)
+        .initialZoom(0.25)
         .onNodeClick(d => {
         // popout to view specific card in chart goes here
           console.log('clicked node ' + d)
@@ -27,7 +27,9 @@ const OrgChart = (props, ref) => {
   }, [props.data, d3Container.current]);
 
   return (
-      <div ref={d3Container} />
+    <article className='test1'>
+      <div className='test2' ref={d3Container} />
+    </article>
   );
 };
 

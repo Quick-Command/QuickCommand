@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import OrgChart from '../OrgChart/OrgChart'
+import IncidentInfo from '../IncidentInfo/IncidentInfo'
 import './ChartView.css'
 
 const ChartView = () => {
@@ -9,8 +10,8 @@ const ChartView = () => {
     let testObject = [
       {id:1, name:'chuck', title:'maestro', email:'chuck@chuck.com', phone:'123-123-123'},
       {id:2, name:'chuck2', title:'maestro2', email:'chuck2@chuck.com', phone:'123-123-123'},
-      {id:3, name:'chuck3', title:'maestro3', email:'chuck3@chuck.com', phone:'123-123-123'},
-      {id:4, name:'chuck4', title:'maestro4', email:'chuck4@chuck.com', phone:'123-123-123'},
+      {id:3, name:'', title:'maestro3', email:'', phone:''},
+      {id:4, name:'', title:'maestro4', email:'', phone:''},
       {id:5, name:'chuck5', title:'maestro5', email:'chuck5@chuck.com', phone:'123-123-123'},
       {id:6, name:'chuck6', title:'maestro6', email:'chuck6@chuck.com', phone:'123-123-123'},
       {id:7, name:'chuck7', title:'maestro7', email:'chuck7@chuck.com', phone:'123-123-123'},
@@ -55,7 +56,7 @@ const ChartView = () => {
                               margin-top:10px;
                               font-size:20px;
                               font-weight:bold;
-                         ">${item.name} </div>
+                         ">${item.name || 'unassigned'} </div>
                  <div style="margin-left:80px;
                               margin-top:3px;
                               font-size:16px;
@@ -81,9 +82,16 @@ const ChartView = () => {
 
 
   return (
-    <section className='chart-view-container'>
-      <OrgChart data={data}/>
-    </section>
+    <div className='chart-view-container'>
+      <div className="org-chart-container">
+        <OrgChart data={data}/>
+      </div>
+      <section className="sidebar-container">
+        {/* overview and declare over button here */}
+        <IncidentInfo />
+        {/* assignment pane here */}
+      </section>
+    </ div>
   )
 
 }
