@@ -1,14 +1,18 @@
 import React from 'react'
-import DeclareIncidentForm from '../DeclareIncidentForm/DeclareIncidentForm'
-import IncidentList from '../IncidentList/IncidentList'
+import IncidentForm from '../IncidentForm/IncidentForm'
+import OngoingIncidents from '../OngoingIncidents/OngoingIncidents'
+import ResolvedIncidents from '../ResolvedIncidents/ResolvedIncidents'
 import './IncidentsMenu.css'
 
 const IncidentsMenu = () => {
 
   return (
     <div className='incidents-menu'>
-      <IncidentList />
-      <DeclareIncidentForm />
+      <div>
+        <OngoingIncidents />
+        <ResolvedIncidents />
+      </div>  
+      <IncidentForm />
     </div>
   )
 

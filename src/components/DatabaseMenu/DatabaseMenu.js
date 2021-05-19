@@ -1,16 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react';
 import './DatabaseMenu.css';
-export default class DatabaseMenu extends Component {
+import NewContactForm from '../NewContactForm/NewContactForm';
+import DatabaseSearch from '../DatabaseSearch/DatabaseSearch';
+import ContactShowCard from '../ContactShowCard/ContactShowCard';
 
-  render() {
-    return (
+const DatabaseMenu = () => {
+
+  return (
+    <div className='database-menu'>
+      <DatabaseSearch />
       <div>
-        <h2 data-cy='database-menu'>This is the Database Menu</h2>
-        {/* take in name , 
-      dispatch to slice functions our request */}
-
+        <NewContactForm />     
+        <ContactShowCard />
       </div>
-    )
-  }
+    </div>
+  )
 
 }
+
+export default DatabaseMenu

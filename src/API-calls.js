@@ -1,7 +1,51 @@
+const baseURL = `https://qc-engine.herokuapp.com/api/v1`
 
-// const baseURL = ``
+const checkResponse = (response) => {
+  if (!response.ok) {
+    throw new Error()
+  } else {
+    return response.json()
+  }
+}
 
-// export const getActiveIncidents = () => {
-//   return fetch(`${baseURL}/api/v1/incidents?open=true`)
-//   .then(response => response.json())
-// }
+export const fetchResolvedIncidents = () => {
+  return fetch(`${baseURL}/incidents?active=false`)
+    .then(checkResponse)
+}
+
+export const fetchOngoingIncidents = () => {
+  return fetch(`${baseURL}/incidents?active=true`)
+    .then(checkResponse)
+}
+
+export const postNewIncident = (incidentObj) => {
+  return fetch(`${baseURL}/incidents`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(incidentObj)
+  })
+  .then(checkResponse)
+}
+
+export const addNewContact = (newContact) => {
+  return fetch(`${baseURL}/contacts`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newContact)
+  })
+  .then(checkResponse)
+}
+
+export const runNameQuery = (queryString) => {
+  return fetch(`${baseURL}/contacts?name=${queryString}`)
+    .then(checkResponse)
+}
+
+export const fetchContactDets = (id) => {
+  return fetch(`${baseURL}/contacts/${id}`)
+    .then(checkResponse)
+}
