@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import OrgChart from '../OrgChart/OrgChart'
 import IncidentInfo from '../IncidentInfo/IncidentInfo'
+import PositionAssignment from '../PositionAssignment/PositionAssignment'
 import './ChartView.css'
 
 const ChartView = () => {
@@ -104,6 +105,7 @@ const ChartView = () => {
         {/* overview and declare over button here */}
         <IncidentInfo />
         {/* assignment pane here */}
+        <PositionAssignment />
       </section>
     </ div>
   )
