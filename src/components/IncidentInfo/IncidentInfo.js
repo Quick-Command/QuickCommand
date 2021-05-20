@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { useDispatch } from "react-redux";
+import { getIncidentInfo } from './IncidentInfoSlice.js'
 import './IncidentInfo.css'
 
 
 const IncidentInfo = ({ id }) => {
-
+  const dispatch = useDispatch()
   // INCIDENT DATA:
   // {
   //   "data": {
@@ -20,6 +22,11 @@ const IncidentInfo = ({ id }) => {
   //     }
   //   }
   // }
+
+  useEffect(() => {
+    dispatch(getIncidentInfo(id))
+  }, [dispatch])
+
 
   return (
     <section className="incident-info-container">
