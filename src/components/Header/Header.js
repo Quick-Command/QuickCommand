@@ -5,7 +5,7 @@ import './Header.css';
 const Header = () => {
   return (
     <div>
-      <img className='logo' src={'/qc-logo-7-removebg-preview.png'}></img>
+      <img className='logo' src={'/qc-logo-8.png'} alt='Quick Command Logo'></img>
       <h1 className='site-header'>QuickCommand</h1>
       <nav>
         <NavLink to='/database' className='nav-link' data-cy='database-btn'>DATABASE</NavLink>

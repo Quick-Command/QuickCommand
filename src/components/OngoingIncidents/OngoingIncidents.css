@@ -4,3 +4,7 @@
   margin-bottom: 5px;
   padding: 10px;
 }
+
+.ongoing-container {
+  overflow-y: scroll;
+}

@@ -25,7 +25,9 @@ const OngoingIncidents = () => {
   return (
     <div>
       <h2 data-cy='ongoing-incidents'>ONGOING INCIDENTS:</h2>
-      {ongoingIncidents}
+      <section className='ongoing-container'>
+        {ongoingIncidents}
+      </section>
     </div>
   )
 

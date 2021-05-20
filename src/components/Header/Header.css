@@ -1,5 +1,6 @@
 .site-header {
   text-align: center;
+  margin-top: 2vh;
   margin-left: 22vw;
   margin-bottom: 0;
   padding: 0;
@@ -10,7 +11,7 @@
 
 .logo {
   padding: 0;
-  margin-top: -4vh;
+  margin-top: 0vh;
   margin-left: -6vw;
   width: 125px;
   display: inline-block;
