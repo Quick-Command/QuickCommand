@@ -1,0 +1,16 @@
+.chart-view-container {
+  width: 100%;
+  display: flex;
+}
+
+.sidebar-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.org-chart-container {
+  width: 70%;
+}

@@ -1,0 +1,26 @@
+.assignment-container {
+  width: 95%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-top: 5%;
+}
+
+.assignee-search-form {
+  width: 100%;
+}
+
+.assignee-search-result {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+}
+
+.assignee-search-result > button {
+  height: 50%;
+}
