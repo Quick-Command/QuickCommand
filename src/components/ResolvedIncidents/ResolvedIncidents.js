@@ -23,9 +23,11 @@ const ResolvedIncidents = () => {
   })
 
   return (
-    <div>
+    <div >
       <h2>RESOLVED INCIDENTS:</h2>
-      {resolvedIncidents}
+      <article className='resolved-container'>
+        {resolvedIncidents}
+      </article>
     </div>
   )
 

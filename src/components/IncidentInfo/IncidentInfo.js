@@ -11,7 +11,8 @@ const IncidentInfo = (id) => {
         <div></div>
       </article>
       <a href="http://google.com/maps/search/liquor+store/">Maps</a>
-      <section>Prelim Instructions</section>
+      <section>Reminders / Prelim Instructions related to type</section>
+
 
 
 
