@@ -4,3 +4,12 @@
   margin-bottom: 5px;
   padding: 10px;
 }
+
+.incident-text {
+  font-size: 22px;
+}
+
+.ongoing-container {
+  max-height: 45vh;
+  overflow-y: scroll;
+}

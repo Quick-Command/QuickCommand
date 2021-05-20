@@ -6,7 +6,7 @@ import {
 import './IncidentForm.css'
 
 const IncidentForm = () => {
-  
+
   const [incidentName, setIncidentName] = useState('');
   const [incidentType, setIncidentType] = useState('');
   const [incidentDate, setIncidentDate] = useState('');
@@ -45,13 +45,13 @@ const IncidentForm = () => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <h2 data-cy='declare-incident'>DECLARE NEW INCIDENT:</h2>
+      <h2 data-cy='declare-incident' className='incident-text'>DECLARE NEW INCIDENT:</h2>
 
       <label htmlFor="incident-name" data-cy="incident-name">Incident Name:</label>
-      <input 
+      <input
         type="text"
         name="incident-name"
-        data-cy="incident-name" 
+        data-cy="incident-name"
         onChange={e => setIncidentName(e.target.value)}
         value={incidentName}
       />
@@ -64,10 +64,10 @@ const IncidentForm = () => {
       />
 
       <label htmlFor="incident-type" data-cy="incident-type">Incident Type:</label>
-      <select 
+      <select
         name='incident-type'
         data-cy="incident-type"
-        onChange={e => setIncidentType(e.target.value)} 
+        onChange={e => setIncidentType(e.target.value)}
         value={incidentType}
       >
         <option value=''>--select--</option>
@@ -83,8 +83,8 @@ const IncidentForm = () => {
       <label htmlFor="incident-date" data-cy="incident-date">Incident Date:</label>
       <input
         data-cy="incident-date"
-        name='incident-date' 
-        type="date" 
+        name='incident-date'
+        type="date"
         onChange={e => setIncidentDate(e.target.value)}
         value={incidentDate}
       />
@@ -92,7 +92,7 @@ const IncidentForm = () => {
       <label htmlFor="incident-summary" data-cy="incident-summary">Incident Summary:</label>
       <textarea
         name='incident-summary'
-        data-cy="incident-summary" 
+        data-cy="incident-summary"
         onChange={e => setIncidentSummary(e.target.value)}
         value={incidentSummary}
       />

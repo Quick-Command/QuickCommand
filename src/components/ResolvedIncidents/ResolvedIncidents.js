@@ -23,9 +23,11 @@ const ResolvedIncidents = () => {
   })
 
   return (
-    <div>
-      <h2>RESOLVED INCIDENTS:</h2>
-      {resolvedIncidents}
+    <div >
+      <h2 className='incident-text'>RESOLVED INCIDENTS:</h2>
+      <article className='resolved-container'>
+        {resolvedIncidents}
+      </article>
     </div>
   )
 
