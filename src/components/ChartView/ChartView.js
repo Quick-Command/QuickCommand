@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import OrgChart from '../OrgChart/OrgChart'
 import PositionAssignment from '../PositionAssignment/PositionAssignment'
 import './ChartView.css'
@@ -13,6 +13,7 @@ const ChartView = ({ id }) => {
 
   useEffect(() => {
     dispatch(getIncidentContacts(id))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const data = useSelector(state => state.incidentContacts.incidentContacts)
