@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import OrgChart from '../OrgChart/OrgChart'
-import IncidentInfo from '../IncidentInfo/IncidentInfo'
 import PositionAssignment from '../PositionAssignment/PositionAssignment'
 import './ChartView.css'
+import { NavLink } from "react-router-dom";
 
 const ChartView = () => {
   const [data, setData] = useState(null);
@@ -102,9 +102,9 @@ const ChartView = () => {
         <OrgChart data={data} />
       </div>
       <section className="sidebar-container">
-        <section className="incident-info-container">
-          <h2>Incident Name Here</h2>
-          <button>more info</button>
+        <section className="incident-link-container">
+          <h2>Inferno @ Monticello</h2>
+          <NavLink to='./incident/1'>MORE INFO</NavLink>
         </section>
         <PositionAssignment />
       </section>

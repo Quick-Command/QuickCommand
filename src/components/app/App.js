@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 import Profiles from '../Profiles/Profiles';
 import Passport from '../Passport/Passport';
 import ChartView from '../ChartView/ChartView';
-
+import IncidentInfo from '../IncidentInfo/IncidentInfo'
 const App = () => {
 
   return (
@@ -22,7 +22,10 @@ const App = () => {
           <Route path='/passport' component={Passport} />
           {/* below is test-only for specific incident view */}
           <Route path='/test' component={ChartView} />
-          <Route path='/incident:id' render={() => { }} />
+          <Route path='/incident/:id' render={({ match }) => {
+            const { id } = match.params;
+            return (<IncidentInfo id={id} />)
+          }} />
         </Switch>
         <Footer />
       </div>

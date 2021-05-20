@@ -1,12 +1,20 @@
 import React from "react";
 import './IncidentInfo.css'
 
-const IncidentInfo = () => {
+const IncidentInfo = (id) => {
 
   return (
     <section className="incident-info-container">
-      <h2>Incident Name Here</h2>
-      <button>more info</button>
+      <div>Details on Incident</div>
+      <p></p>
+      <article>Weather Report
+        <div></div>
+      </article>
+      <a href="http://google.com/maps/search/liquor+store/">Maps</a>
+      <section>Prelim Instructions</section>
+
+
+
     </section>
   );
 };
