@@ -10,6 +10,6 @@
 }
 
 .ongoing-container {
-  max-height: 30vh;
+  max-height: 45vh;
   overflow-y: scroll;
 }
