@@ -5,6 +5,10 @@
   padding: 10px;
 }
 
+.incident-text {
+  font-size: 22px;
+}
+
 .ongoing-container {
   max-height: 30vh;
   overflow-y: scroll;
