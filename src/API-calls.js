@@ -54,3 +54,9 @@ export const fetchIncidentContacts = (id) => {
   return fetch(`${baseURL}/incidents/${id}/contacts`)
     .then(checkResponse)
 }
+
+
+export const fetchIncidentInfo = (id) => {
+  return fetch(`${baseURL}/incidents/${id}`)
+    .then(checkResponse)
+}

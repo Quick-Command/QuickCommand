@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getIncidentInfo } from './IncidentInfoSlice.js'
 import './IncidentInfo.css'
 
 
 const IncidentInfo = ({ id }) => {
-
+  const dispatch = useDispatch()
   // INCIDENT DATA:
   // {
   //   "data": {
@@ -21,19 +23,28 @@ const IncidentInfo = ({ id }) => {
   //   }
   // }
 
+  useEffect(() => {
+    dispatch(getIncidentInfo(id))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch])
+
+  const currentInfo = useSelector(state => state.incidentInfo.data.attributes)
+
   return (
     <section className="incident-info-container">
-      <div>Details on Incident</div>
-      <div>Wind ' sunrise</div>
-      <p></p>
+      <p>{currentInfo.name}</p>
+      <p>{currentInfo.location}</p>
+      <p>{currentInfo.incident_type}</p>
+      <p>{currentInfo.description}</p>
+      <p>{currentInfo.start_date}</p>
+      <p>{currentInfo.close_date}</p>
+
       <article>Weather Report
         <div></div>
       </article>
+
       <a href="http://google.com/maps/search/liquor+store/">Maps</a>
       <section>Reminders / Prelim Instructions related to type</section>
-
-
-
 
     </section>
   );
