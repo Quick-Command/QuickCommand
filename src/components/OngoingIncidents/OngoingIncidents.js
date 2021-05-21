@@ -18,8 +18,8 @@ const OngoingIncidents = () => {
 
   const ongoingIncidents = useSelector(state => state.ongoingIncidents.ongoingIncidents).map(incident => {
     return (
-      <Link className='incident-container' to={`/incident/${incident.id}`}>
-        <div className='incident' key={incident.id}>
+      <Link className='incident-container' to={`/incident/${incident.id}`} key={incident.id}>
+        <div className='incident' >
           <h3>
             <span><Fire className='element'></Fire></span>{incident.attributes.type}{incident.attributes.name}
           </h3>

@@ -6,7 +6,7 @@ import {
 } from './ResolvedIncidentsSlice'
 import './ResolvedIncidents.css'
 import { formatDate } from '../../utilities'
-import { ReactComponent as earthquake } from '../../Icons/earthquake.svg'
+// import { ReactComponent as earthquake } from '../../Icons/earthquake.svg'
 import { ReactComponent as Fire } from '../../Icons/gripfire-brands.svg'
 
 const ResolvedIncidents = () => {
@@ -19,8 +19,8 @@ const ResolvedIncidents = () => {
 
   const resolvedIncidents = useSelector(state => state.resolvedIncidents.resolvedIncidents).map(incident => {
     return (
-      <Link to={`/incident/${incident.id}`}>
-        <div className='incident resolved-incident' key={incident.id}>
+      <Link to={`/incident/${incident.id}`} key={incident.id}>
+        <div className='incident resolved-incident' >
           <h3>
             <span><Fire className='element'></Fire></span>{incident.attributes.type}{incident.attributes.name}
           </h3>
