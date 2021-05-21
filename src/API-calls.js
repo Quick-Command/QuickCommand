@@ -26,7 +26,7 @@ export const postNewIncident = (incidentObj) => {
     },
     body: JSON.stringify(incidentObj)
   })
-  .then(checkResponse)
+    .then(checkResponse)
 }
 
 export const addNewContact = (newContact) => {
@@ -37,7 +37,7 @@ export const addNewContact = (newContact) => {
     },
     body: JSON.stringify(newContact)
   })
-  .then(checkResponse)
+    .then(checkResponse)
 }
 
 export const runNameQuery = (queryString) => {
@@ -47,5 +47,16 @@ export const runNameQuery = (queryString) => {
 
 export const fetchContactDets = (id) => {
   return fetch(`${baseURL}/contacts/${id}`)
+    .then(checkResponse)
+}
+
+export const fetchIncidentContacts = (id) => {
+  return fetch(`${baseURL}/incidents/${id}/contacts`)
+    .then(checkResponse)
+}
+
+
+export const fetchIncidentInfo = (id) => {
+  return fetch(`${baseURL}/incidents/${id}`)
     .then(checkResponse)
 }

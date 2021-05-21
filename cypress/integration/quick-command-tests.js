@@ -1,5 +1,3 @@
-import { isAsyncThunkAction } from "@reduxjs/toolkit";
-
 const url = "https://qc-engine.herokuapp.com/api";
 
 describe('QuickCommand', () => {
@@ -21,7 +19,7 @@ describe('QuickCommand', () => {
     })
 
     it('has a header with navlinks and title', () => {
-      cy.get('.site-header').contains('QuickCommand')
+      cy.get('.app-name').contains('QuickCommand')
         .get('a[data-cy=database-btn]').contains('DATABASE')
         .get('a[data-cy=incidents-btn]').contains('INCIDENTS')
     })
@@ -59,7 +57,7 @@ describe('QuickCommand', () => {
         .get('input[data-cy=incident-date]').type('2021-05-21')
         .get('textarea[data-cy=incident-summary]').type('5.4 Richter Scale quake has disrupted the village of Palo Alto')
         .get('button[data-cy=declare-submission]').click()
-        // needs to be reworked since incidents are now declared via network request but the endpoint isn't working yet
+      // needs to be reworked since incidents are now declared via network request but the endpoint isn't working yet
       // cy.get('h3[data-cy=incident-name]').contains('San Andreas Faultline Disruption')
       //   .get('p[data-cy=incident-type]').contains('Earthquake')
       //   .contains('2021-05-21')

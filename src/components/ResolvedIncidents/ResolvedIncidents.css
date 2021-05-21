@@ -1,0 +1,4 @@
+.resolved-container {
+  max-height: 22vh;
+  overflow-y: scroll;
+}

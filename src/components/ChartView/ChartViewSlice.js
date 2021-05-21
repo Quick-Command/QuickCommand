@@ -8,8 +8,9 @@ const initialState = {
 
 export const getIncidentContacts = createAsyncThunk(
   'incidentContacts/getIncidentContacts',
-  async () => {
-    const response = await fetchIncidentContacts()
+
+  async (id) => {
+    const response = await fetchIncidentContacts(id)
     return response.data;
   }
 )
