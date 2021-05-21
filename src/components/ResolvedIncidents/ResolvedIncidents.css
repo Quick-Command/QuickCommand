@@ -2,3 +2,7 @@
   max-height: 22vh;
   overflow-y: scroll;
 }
+ .element {
+   width: 1em;
+   margin-right: .5em;
+ }
