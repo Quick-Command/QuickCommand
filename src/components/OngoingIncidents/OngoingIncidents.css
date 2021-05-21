@@ -13,3 +13,7 @@
   max-height: 45vh;
   overflow-y: scroll;
 }
+
+a {
+  text-decoration: none;
+}
