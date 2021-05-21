@@ -1,8 +1,14 @@
 .resolved-container {
-  max-height: 22vh;
+  max-height: 27vh;
   overflow-y: scroll;
 }
+
+/* .resolved-incident {
+  height: 10vh;
+  
+} */
  .element {
    width: 1em;
-   margin-right: .5em;
+   margin-right: .25em;
+   margin-top: .75vh;
  }

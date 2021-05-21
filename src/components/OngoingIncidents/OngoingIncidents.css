@@ -3,7 +3,7 @@
 }
 
 .ongoing-container {
-  max-height: 41vh;
+  max-height: 38.5vh;
   overflow-y: scroll;
 }
 
@@ -15,11 +15,13 @@
   background-color: whitesmoke;
   /* margin-bottom: 1vh; */
   padding: 1vh;
+  padding-top: 0
   /* height: 4vh; */
  
 }
 h3 {
   margin: 1.5vh;
+  margin-top: 0
 }
 
 p {
