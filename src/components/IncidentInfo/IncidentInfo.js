@@ -25,6 +25,7 @@ const IncidentInfo = ({ id }) => {
 
   useEffect(() => {
     dispatch(getIncidentInfo(id))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 
   const currentInfo = useSelector(state => state.incidentInfo.data.attributes)
