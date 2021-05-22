@@ -29,7 +29,8 @@
 
 .header-links {
   margin-top: 1vh;
-  text-decoration: none;
+  /* text-decoration: none;
+  color: cornflowerblue; */
 }
 
 .nav-link {

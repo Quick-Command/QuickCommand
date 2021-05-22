@@ -9,7 +9,9 @@
 
 .incident-container {
   contain: content;
+  text-decoration: none;
 }
+
 .incident {
   border: 1px solid black;
   background-color: whitesmoke;
@@ -35,4 +37,5 @@ p {
 
 a {
   text-decoration: none;
+  color: cornflowerblue;
 }

@@ -5,9 +5,7 @@ import {
   getResolvedIncidents
 } from './ResolvedIncidentsSlice'
 import './ResolvedIncidents.css'
-import { formatDate } from '../../utilities'
-// import { ReactComponent as earthquake } from '../../Icons/earthquake.svg'
-import { ReactComponent as Fire } from '../../Icons/gripfire-brands.svg'
+import { formatDate, getIcon } from '../../utilities'
 
 const ResolvedIncidents = () => {
 
@@ -22,7 +20,7 @@ const ResolvedIncidents = () => {
       <Link to={`/incident/${incident.id}`} key={incident.id}>
         <div className='incident resolved-incident' >
           <h3>
-            <span><Fire className='element'></Fire></span>{incident.attributes.type}{incident.attributes.name}
+            <span>{getIcon(incident)}</span>{incident.attributes.type}{incident.attributes.name}
           </h3>
           <p>* DECLARED: {formatDate(incident.attributes.start_date)}</p>
           <p>* RESOLVED: {formatDate(incident.attributes.close_date)}</p>
