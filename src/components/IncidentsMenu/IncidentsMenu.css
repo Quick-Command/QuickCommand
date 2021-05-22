@@ -1,4 +1,6 @@
 .incidents-menu {
   display: flex;
   justify-content: space-around;
+  max-height: 81vh;
+  overflow: hidden;
 }
