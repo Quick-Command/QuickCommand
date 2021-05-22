@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {
   declareNewIncident
 } from '../OngoingIncidents/OngoingIncidentsSlice'
@@ -21,18 +21,16 @@ const IncidentForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const incidentObj = {
-      id: `${Date.now()}`,
-      type: 'incident',
-      attributes: {
-        name: incidentName,
-        type: incidentType,
-        status: 'open',
-        description: incidentSummary,
-        location: incidentLocation,
-        start_date: incidentDate,
-        close_date: ""
-      }
+      name: incidentName,
+      incident_type: incidentType,
+      description: incidentSummary,
+      location: incidentLocation,
+      city: incidentCity,
+      state: incidentState,
+      start_date: incidentDate,
+      close_date: ""
     }
+    console.log(incidentObj)
     dispatch(declareNewIncident(incidentObj))
     clearInputs()
   }
@@ -86,13 +84,15 @@ const IncidentForm = () => {
         value={incidentType}
       >
         <option value=''>--select--</option>
-        <option>Wildfire</option>
-        <option>Hazmat</option>
-        <option>Hurricane</option>
-        <option>Flooding</option>
+        <option>Accident</option>
+        <option>Fire</option>
+        <option>Flood</option>
         <option>Earthquake</option>
         <option>Tornado</option>
-        <option>Mass shooting</option>
+        <option>Shooting</option>
+        <option>Power Outage</option>
+        <option>Hazmat Spill</option>
+        <option>Hurricane</option>
       </select>
 
       <label htmlFor="incident-date" data-cy="incident-date">Incident Date:</label>

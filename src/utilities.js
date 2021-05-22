@@ -6,6 +6,7 @@ import { ReactComponent as Tornado } from '../src/Icons/tornado.svg'
 import { ReactComponent as Accident } from '../src/Icons/accident.svg'
 import { ReactComponent as Power } from '../src/Icons/power.svg'
 import { ReactComponent as Hazmat } from '../src/Icons/hazard.svg'
+import { ReactComponent as Hurricane } from '../src/Icons/hurricane.svg'
 
 export const formatDate = inputDate => {
   const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -32,6 +33,8 @@ export const getIcon = incident => {
       return <Power className='element' />
     case 'hazmat spill':
       return <Hazmat className='hazard' />
+    case 'hurricane':
+      return <Hurricane className='hurricane' />
     default:
       break
   }
