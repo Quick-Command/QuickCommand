@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   declareNewIncident
 } from '../OngoingIncidents/OngoingIncidentsSlice'
 import './IncidentForm.css'
+import { statesCodes } from '../../utilities'
 
 const IncidentForm = () => {
 
@@ -12,6 +13,8 @@ const IncidentForm = () => {
   const [incidentDate, setIncidentDate] = useState('');
   const [incidentSummary, setIncidentSummary] = useState('');
   const [incidentLocation, setIncidentLocation] = useState('');
+  const [incidentCity, setIncidentCity] = useState('');
+  const [incidentState, setIncidentState] = useState('');
 
   const dispatch = useDispatch();
 
@@ -40,6 +43,8 @@ const IncidentForm = () => {
     setIncidentDate('');
     setIncidentSummary('');
     setIncidentLocation('');
+    setIncidentCity('');
+    setIncidentState('');
   }
 
   return (
@@ -62,6 +67,16 @@ const IncidentForm = () => {
         onChange={e => setIncidentLocation(e.target.value)}
         value={incidentLocation}
       />
+
+      <label htmlFor='incident-city'>Incident City:</label>
+      <input
+        name='incident-city'
+        onChange={e => setIncidentCity(e.target.value)}
+        value={incidentCity}
+      />
+
+      <label htmlFor='incident-state'>Incident State:</label>
+      {statesCodes('incident', setIncidentState, incidentState)}
 
       <label htmlFor="incident-type" data-cy="incident-type">Incident Type:</label>
       <select

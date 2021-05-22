@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
 import { addNewContact } from '../../API-calls'
 import './NewContactForm.css'
+import { statesCodes } from '../../utilities';
 
 const NewContactForm = () => {
-  
-  const [contactName, setContactName] = useState('');
+
+  const [contactFirstName, setContactFirstName] = useState('');
+  const [contactLastName, setContactLastName] = useState('');
   const [contactEmail, setContactEmail] = useState('')
   const [contactPhone, setContactPhone] = useState('')
   const [contactJobTitle, setContactJobTitle] = useState('')
   const [contactCity, setContactCity] = useState('')
   const [contactState, setContactState] = useState('')
   const [contactRoles, setContactRoles] = useState([])
-  
+
   const handleSubmit = e => {
     e.preventDefault()
     const newContact = {
-      "name": contactName,
+      "name": `${contactFirstName} ${contactLastName}`,
       "email": contactEmail,
       "phone_number": contactPhone,
       "job_title": contactJobTitle,
@@ -28,7 +30,8 @@ const NewContactForm = () => {
   }
 
   const clearInputs = () => {
-    setContactName('')
+    setContactFirstName('')
+    setContactLastName('')
     setContactEmail('')
     setContactPhone('')
     setContactJobTitle('')
@@ -53,12 +56,20 @@ const NewContactForm = () => {
 
       <h2 data-cy="add-new-contact">ADD NEW CONTACT:</h2>
 
-      <label htmlFor='contact-name'>Name: </label>
+      <label htmlFor='contact-first-name'>First Name: </label>
       <input
         type="text"
-        name='contact-name'
-        onChange={e => setContactName(e.target.value)}
-        value={contactName}
+        name='contact-first-name'
+        onChange={e => setContactFirstName(e.target.value)}
+        value={contactFirstName}
+      />
+
+      <label htmlFor='contact-last-name'>Last Name: </label>
+      <input
+        type="text"
+        name='contact-last-name'
+        onChange={e => setContactLastName(e.target.value)}
+        value={contactLastName}
       />
 
       <label htmlFor='contact-email'>Email:</label>
@@ -95,63 +106,7 @@ const NewContactForm = () => {
       />
 
       <label htmlFor='contact-state'>State:</label>
-      <select
-        name='contact-state'
-        onChange={e => setContactState(e.target.value)}
-        value={contactState}
-      >
-        <option value="">--select--</option>
-        <option>AL</option>
-        <option>AK</option>
-        <option>AZ</option>
-        <option>AR</option>
-        <option>CA</option>
-        <option>CO</option>
-        <option>CT</option>
-        <option>DE</option>
-        <option>FL</option>
-        <option>GA</option>
-        <option>HI</option>
-        <option>ID</option>
-        <option>IL</option>
-        <option>IN</option>
-        <option>IA</option>
-        <option>KS</option>
-        <option>KY</option>
-        <option>LA</option>
-        <option>ME</option>
-        <option>MD</option>
-        <option>MA</option>
-        <option>MI</option>
-        <option>MN</option>
-        <option>MS</option>
-        <option>MO</option>
-        <option>MT</option>
-        <option>NE</option>
-        <option>NV</option>
-        <option>NH</option>
-        <option>NJ</option>
-        <option>NM</option>
-        <option>NY</option>
-        <option>NC</option>
-        <option>ND</option>
-        <option>OH</option>
-        <option>OK</option>
-        <option>OR</option>
-        <option>PA</option>
-        <option>RI</option>
-        <option>SE</option>
-        <option>SD</option>
-        <option>TN</option>
-        <option>TX</option>
-        <option>UT</option>
-        <option>VT</option>
-        <option>VA</option>
-        <option>WA</option>
-        <option>WV</option>
-        <option>WI</option>
-        <option>WY</option>
-      </select>
+      {statesCodes('contact', setContactState, contactState)}
 
       <label htmlFor='contact-roles'>Qualifications:</label>
       <fieldset onChange={e => handleRoleSelection(e)}>
