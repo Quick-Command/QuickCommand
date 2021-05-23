@@ -6,22 +6,6 @@ import { formatDate, getInstructions } from '../../utilities'
 
 const IncidentInfo = ({ id }) => {
   const dispatch = useDispatch()
-  // INCIDENT DATA:
-  // {
-  //   "data": {
-  //     "id": "1",
-  //       "type": "incident",
-  //         "attributes": {
-  //       "name": "October 2011 2.0 earthquake",
-  //         "active": false,
-  //           "incident_type": "Earthquake",
-  //             "description": "2.0 earthquake, facade damage to some buildings, 10 trees fell",
-  //               "location": "City Proper",
-  //                 "start_date": "2020-01-10T00:00:00.000Z",
-  //                   "close_date": "2020-11-05T00:00:00.000Z"
-  //     }
-  //   }
-  // }
 
   useEffect(() => {
     dispatch(getIncidentInfo(id))
@@ -35,6 +19,7 @@ const IncidentInfo = ({ id }) => {
   return (
     <section className="incident-info-container">
       {incident ? <div>
+
         <p data-cy='info-name' className='info info-name'>{incident.name}</p>
         <p data-cy='info-type' className='info info-type'>Type: {incident.incident_type}</p>
         <p data-cy='info-location' className='info info-location'>Located at: {incident.location} in {incident.city}, {incident.state}</p>

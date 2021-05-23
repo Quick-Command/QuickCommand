@@ -105,15 +105,8 @@ export const statesCodes = (type, setValue, value) => {
 
 export const getInstructions = (type) => {
   switch (type) {
-    case 'Earthquake':
-      return <div>
-        <p>EARTHQUAKE PREPAREDNESS</p>
-        <p>♦ Know how and where to take cover during a quake</p>
-        <p>♦ Anchor bookcases, cabinets, and files over 42 inches.  Do not stack furniture</p>
-        <p>♦ Move tall furniture away from exits.  Do not use tall furniture as room dividers</p>
-        <p>♦ Secure computers, equipment, and display cases.  Store heavy items at floor level</p>
-        <p>♦ Back-up data and sensitive information, store duplicates off-site</p>
-      </div>
+    case 'Accident':
+      return
     case 'Fire':
       return <div>
         <p>FIRE PREPAREDNESS</p>
@@ -125,6 +118,21 @@ export const getInstructions = (type) => {
         <p>♦ Do not use mechanical rooms or utility rooms for storage</p>
         <p>♦ Do not smoke in facility</p>
       </div>
+    case 'Flood':
+      return
+    case 'Earthquake':
+      return <div>
+        <p>EARTHQUAKE PREPAREDNESS</p>
+        <p>♦ Know how and where to take cover during a quake</p>
+        <p>♦ Anchor bookcases, cabinets, and files over 42 inches.  Do not stack furniture</p>
+        <p>♦ Move tall furniture away from exits.  Do not use tall furniture as room dividers</p>
+        <p>♦ Secure computers, equipment, and display cases.  Store heavy items at floor level</p>
+        <p>♦ Back-up data and sensitive information, store duplicates off-site</p>
+      </div>
+    case 'Tornado':
+      return
+    case 'Shooting':
+      return
     case 'Power Outage':
       return <div>
         <p>POWER EMERGENCY</p>
@@ -134,7 +142,10 @@ export const getInstructions = (type) => {
         <p>♦ Do not overload power strips.  Extension cords are for emergency use only</p>
         <p>♦ Keep offsite duplicates of critical data and cultures</p>
       </div>
-
+    case 'Hazmat Spill':
+      return
+    case 'Hurricane':
+      return
 
     default:
       break
