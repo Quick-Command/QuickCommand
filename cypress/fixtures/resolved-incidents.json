@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "incident",
+      "attributes": {
+        "name": "October 2011 2.0 earthquake",
+        "active": false,
+        "incident_type": "Earthquake",
+        "description": "2.0 earthquake, facade damage to some buildings, 10 trees fell",
+        "start_date": "2020-01-10T00:00:00.000Z",
+        "close_date": "2020-11-05T00:00:00.000Z",
+        "location": "City Proper",
+        "city": "Denver",
+        "state": "CO"
+      }
+    },
+    {
+      "id": "2",
+      "type": "incident",
+      "attributes": {
+        "name": "Bear Creek Park Oil Spill",
+        "active": false,
+        "incident_type": "Hazmat Spill",
+        "description": "Exxon manufacturing plant oil spill affected 500 sf",
+        "start_date": "2020-02-10T00:00:00.000Z",
+        "close_date": "2020-05-20T00:00:00.000Z",
+        "location": "Bear Creek Park",
+        "city": "Denver ",
+        "state": "CO"
+      }
+    },
+    {
+      "id": "3",
+      "type": "incident",
+      "attributes": {
+        "name": "Barker Distribution Substation - tree fall",
+        "active": false,
+        "incident_type": "Power Outage",
+        "description": "Tree feel on power grid, causing outage for 100 homes for 7 hours",
+        "start_date": "2020-03-10T00:00:00.000Z",
+        "close_date": "2020-03-20T00:00:00.000Z",
+        "location": "Barker Distribution Substation",
+        "city": "Aurora",
+        "state": "CO"
+      }
+    },
+    {
+      "id": "4",
+      "type": "incident",
+      "attributes": {
+        "name": "Cherry Creek Fire",
+        "active": false,
+        "incident_type": "Fire",
+        "description": "2 alarm fire due to storm",
+        "start_date": "2021-01-10T00:00:00.000Z",
+        "close_date": "2021-03-31T00:00:00.000Z",
+        "location": "Cherry Creek Fire",
+        "city": "Denver",
+        "state": "CO"
+      }
+    },
+    {
+      "id": "5",
+      "type": "incident",
+      "attributes": {
+        "name": "5 car accident",
+        "active": false,
+        "incident_type": "Accident",
+        "description": "Details in police report #PR0977237619",
+        "start_date": "2020-09-10T00:00:00.000Z",
+        "close_date": "2020-10-10T00:00:00.000Z",
+        "location": "W 6TH AVE / N PERRY ST",
+        "city": "Denver ",
+        "state": "CO"
+      }
+    }
+  ]
+}
