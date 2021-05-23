@@ -10,7 +10,7 @@ const initialState = {
 
 export const getIncidentInfo = createAsyncThunk(
   'incidentInfo/getIncidentInfo',
-  async(id) => {
+  async (id) => {
     const response = await fetchIncidentInfo(id)
     return response.data
   }
