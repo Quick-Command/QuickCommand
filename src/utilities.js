@@ -40,6 +40,32 @@ export const getIcon = incident => {
   }
 }
 
+export const getIconByType = type => {
+  switch ((type).toLowerCase()) {
+
+    case 'Accident':
+      return <Accident className='element'></Accident>
+    case 'Fire':
+      return <Fire className='info-type fire'></Fire>
+    case 'Flood':
+      return <Flood className='info-type element'></Flood>
+    case 'Earthquake':
+      return <Earthquake className='info-type earthquake'></Earthquake>
+    case 'Tornado':
+      return <Tornado className='info-type tornado'></Tornado>
+    case 'Shooting':
+      return <Shooting className='info-type element'></Shooting>
+    case 'Power Outage':
+      return <Power className='info-type element' />
+    case 'Hazmat Spill':
+      return <Hazmat className='info-type hazard' />
+    case 'Hurricane':
+      return <Hurricane className='info-type hurricane' />
+    default:
+      break
+  }
+}
+
 export const statesCodes = (type, setValue, value) => {
   const name = `${type}-state`
   return (
@@ -109,6 +135,7 @@ export const getInstructions = (type) => {
       return
     case 'Fire':
       return <div>
+
         <p>FIRE PREPAREDNESS</p>
         <p>♦ Know the location of alarm stations and extinguishers.  Know how to use them</p>
         <p>♦ Leave fire doors closed at all times</p>
@@ -122,25 +149,55 @@ export const getInstructions = (type) => {
       return
     case 'Earthquake':
       return <div>
+        On Site Procedure Order:
+        1. Rapid damage assessment.
+        2. Search and rescue.
+        3. Emergency medical care.
+        4. Fire-fighting.
+        5. Emergency restoration of essential services.
+        6. Emergency communications.
+        7. Crisis decision-making.
+        8. Evacuation, protection of lives and property.
+        9. The provision of emergency shelter for victims.
+        10. Debris removal (also associated with recovery).
         <p>EARTHQUAKE PREPAREDNESS</p>
-        <p>♦ Know how and where to take cover during a quake</p>
-        <p>♦ Anchor bookcases, cabinets, and files over 42 inches.  Do not stack furniture</p>
-        <p>♦ Move tall furniture away from exits.  Do not use tall furniture as room dividers</p>
-        <p>♦ Secure computers, equipment, and display cases.  Store heavy items at floor level</p>
+        <p>♦ Move tall furniture away from exits.</p>
         <p>♦ Back-up data and sensitive information, store duplicates off-site</p>
       </div>
     case 'Tornado':
+      <div>
+        <p>I.To ensure the survival of the maximum number of victims, keep them in the best
+        possible health in the circumstances.Search and rescue operations in collapsed
+        buildings is a particularly difficult challenge, especially in less developed areas
+      where there is less machinery and rescue equipment.</p>
+        <p>II.Reestablish self - sufficiency and essential services as quickly as possible for all
+        population groups, with special attention to those whose needs are greatest, the most
+        vulnerable and underprivileged.The continued operation of critical facilities(i.e.,
+        hospitals, emergency centers, water treatment facilities, air traffic control towers,
+        etc.) and restoration of lifelines are essential(MCEER, 2000; NRC, 2003).</p>
+        <p>III.Inspection and condemnation of damaged infrastructure(especially unstable
+        structures that may be dangerous due to aftershocks) and emergency / temporary
+      repairs should be made where feasible.</p>
+        <p>IV.In cases involving population displacements and temporary housing, the aim is to find
+        durable solutions as quickly as possible, while ensuring protection and assistance as
+        necessary in the meantime.</p>
+        <p>V.Accomplish all of the above in a “sustainable” manner that contributes to long - term
+        development goals and reduces vulnerability to future damaging earthquakes or
+      other hazards.</p>
+      </div>
       return
     case 'Shooting':
       return
     case 'Power Outage':
       return <div>
         <p>POWER EMERGENCY</p>
-        <p>♦ Identify and prioritize vital power-dependent functions, operations, and equipment</p>
-        <p>♦ Determine whether you have emergency power outlets in your area.  Plan to use them for priority functions only</p>
-        <p>♦ Determine if there is emergency lighting in your area.  Keep flashlights available in all work areas</p>
-        <p>♦ Do not overload power strips.  Extension cords are for emergency use only</p>
-        <p>♦ Keep offsite duplicates of critical data and cultures</p>
+        <div className='text-left'>
+          <p>♦ Identify and prioritize vital power-dependent functions, operations, and equipment</p>
+          <p>♦ Determine whether you have emergency power outlets in your area.  Plan to use them for priority functions only</p>
+          <p>♦ Determine if there is emergency lighting in your area.  Keep flashlights available in all work areas</p>
+          <p>♦ Do not overload power strips.  Extension cords are for emergency use only</p>
+          <p>♦ Keep offsite duplicates of critical data and cultures</p>
+        </div>
       </div>
     case 'Hazmat Spill':
       return

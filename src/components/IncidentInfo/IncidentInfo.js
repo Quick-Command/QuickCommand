@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getIncidentInfo } from './IncidentInfoSlice.js'
 import './IncidentInfo.css'
-import { formatDate, getInstructions } from '../../utilities'
+import { formatDate, getIconByType, getInstructions } from '../../utilities'
 
 const IncidentInfo = ({ id }) => {
   const dispatch = useDispatch()
@@ -19,9 +19,10 @@ const IncidentInfo = ({ id }) => {
   return (
     <section className="incident-info-container">
       {incident ? <div>
-
+        {console.log(incident)}
         <p data-cy='info-name' className='info info-name'>{incident.name}</p>
-        <p data-cy='info-type' className='info info-type'>Type: {incident.incident_type}</p>
+        <p data-cy='info-type' className='info type'><span className='info-type'>{getIconByType(incident.incident_type)}</span>{incident.incident_type}</p>
+        <a href={mapURL} target="_blank" rel="noopener noreferrer" className='map-btn'>Click to get Map to Headquarters</a>
         <p data-cy='info-location' className='info info-location'>Located at: {incident.location} in {incident.city}, {incident.state}</p>
         <p data-cy='info-desc' className='info info-desc'>Summary: {incident.description}</p>
         <p data-cy='info-start-date' className='info info-start-date'>Declaration: {formatDate(incident.start_date)}</p>
@@ -30,7 +31,6 @@ const IncidentInfo = ({ id }) => {
       </div> : <p>Loading...</p>}
       <article data-cy='info-weather' className='info-weather'>Weather Report Coming Soon!</article>
 
-      <a href={mapURL} target="_blank" rel="noopener noreferrer">Map to Headquarters</a>
 
     </section>
 

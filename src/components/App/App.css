@@ -1,10 +1,14 @@
 .app {
     position: relative;
-    height: 100vh
+    height: 100vh;
+    background-color: #E4FFE1;
+    color: #23395B;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .content-wrap {
   padding-bottom: 3.5rem;
+  overflow-y: scroll;
 }
 
 nav {
@@ -13,6 +17,5 @@ nav {
     border-bottom: 1px solid lightgray;
 }
 
-.nav-link {
-    margin: 30px;
-}
+
+

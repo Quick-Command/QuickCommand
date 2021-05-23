@@ -4,6 +4,10 @@
   margin-top: 4vh;
 }
 
+.incident-info-container > div > p {
+  
+}
+
 .info {
   padding: 1vh;
 }
@@ -16,5 +20,55 @@
 
 .info-instructions {
   text-align: center;
+  background-color: #F4FDD9
 }
 
+.text-left {
+  text-align:left;
+}
+
+.map-btn {
+  color: #f0a868;
+  background-color: #6A8D73;
+  padding-right: .25em;
+  padding-left: .25em;
+}
+
+.info-weather {
+  color: #6A8D73;
+  background-color: #f0a868;
+  padding-right: .25em;
+  padding-left: .25em;
+}
+
+
+.info-type {
+  width: 1.5em;
+  margin-right: .4em;
+  margin-top: .75vh;
+  text-align: center;
+}
+
+.type {
+  text-align: center;
+}
+
+.fire {
+  width: 1em;
+  margin-right: .4em;
+  margin-top: .75vh;
+}
+.earthquake {
+  width: 1.5em;
+}
+.tornado {
+  width: 1.5em;
+}
+
+.hazard {
+  width: 1.5em;
+  margin-top: .5vh;
+}
+.hurricane {
+  width: 1em;
+}
