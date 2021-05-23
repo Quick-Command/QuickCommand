@@ -4,6 +4,7 @@ import {
   declareNewIncident
 } from '../OngoingIncidents/OngoingIncidentsSlice'
 import './IncidentForm.css'
+import { statesCodes } from '../../utilities'
 
 const IncidentForm = () => {
 
@@ -12,24 +13,24 @@ const IncidentForm = () => {
   const [incidentDate, setIncidentDate] = useState('');
   const [incidentSummary, setIncidentSummary] = useState('');
   const [incidentLocation, setIncidentLocation] = useState('');
+  const [incidentCity, setIncidentCity] = useState('');
+  const [incidentState, setIncidentState] = useState('');
 
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault()
     const incidentObj = {
-      id: `${Date.now()}`,
-      type: 'incident',
-      attributes: {
-        name: incidentName,
-        type: incidentType,
-        status: 'open',
-        description: incidentSummary,
-        location: incidentLocation,
-        start_date: incidentDate,
-        close_date: ""
-      }
+      name: incidentName,
+      incident_type: incidentType,
+      description: incidentSummary,
+      location: incidentLocation,
+      city: incidentCity,
+      state: incidentState,
+      start_date: incidentDate,
+      close_date: ""
     }
+    console.log(incidentObj)
     dispatch(declareNewIncident(incidentObj))
     clearInputs()
   }
@@ -40,6 +41,8 @@ const IncidentForm = () => {
     setIncidentDate('');
     setIncidentSummary('');
     setIncidentLocation('');
+    setIncidentCity('');
+    setIncidentState('');
   }
 
   return (
@@ -63,6 +66,16 @@ const IncidentForm = () => {
         value={incidentLocation}
       />
 
+      <label htmlFor='incident-city'>Incident City:</label>
+      <input
+        name='incident-city'
+        onChange={e => setIncidentCity(e.target.value)}
+        value={incidentCity}
+      />
+
+      <label htmlFor='incident-state'>Incident State:</label>
+      {statesCodes('incident', setIncidentState, incidentState)}
+
       <label htmlFor="incident-type" data-cy="incident-type">Incident Type:</label>
       <select
         name='incident-type'
@@ -71,13 +84,15 @@ const IncidentForm = () => {
         value={incidentType}
       >
         <option value=''>--select--</option>
-        <option>Wildfire</option>
-        <option>Hazmat</option>
-        <option>Hurricane</option>
-        <option>Flooding</option>
+        <option>Accident</option>
+        <option>Fire</option>
+        <option>Flood</option>
         <option>Earthquake</option>
         <option>Tornado</option>
-        <option>Mass shooting</option>
+        <option>Shooting</option>
+        <option>Power Outage</option>
+        <option>Hazmat Spill</option>
+        <option>Hurricane</option>
       </select>
 
       <label htmlFor="incident-date" data-cy="incident-date">Incident Date:</label>
