@@ -7,13 +7,14 @@ import ContactShowCard from '../ContactShowCard/ContactShowCard';
 const DatabaseMenu = () => {
 
   return (
-    <div className='database-menu'>
-      <DatabaseSearch />
-      <div>
-        <NewContactForm />     
+    <div className='database-container'>
+      <div className='database-menu'>
+        <DatabaseSearch />
+        <NewContactForm />
         <ContactShowCard />
       </div>
     </div>
+
   )
 
 }

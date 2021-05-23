@@ -14,20 +14,23 @@
 
 .incident {
   border: 1px solid black;
-  background-color: whitesmoke;
-  /* margin-bottom: 1vh; */
+  /* color: #f0a868; */
+  color: #FFE8C2;
+  background-color: #6A8D73;
   padding: 1vh;
-  padding-top: 0
+  padding-top: 0;
   /* height: 4vh; */
- 
 }
+
 h3 {
   margin: 1.5vh;
-  margin-top: 0
+  margin-top: 0;
+  font-size: 16px;
 }
 
 p {
   margin: 0;
+  font-size: 12px;
 }
 .incident-text {
   font-size: 22px;
@@ -37,5 +40,9 @@ p {
 
 a {
   text-decoration: none;
-  color: cornflowerblue;
+  background-color: #6A8D73;
+  color:#FFE8C2;
+  padding-right: .25em;
+  padding-left: .25em;
+  margin-left: 5em;
 }
