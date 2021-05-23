@@ -3,3 +3,18 @@
   margin-left: 1vw;
   margin-top: 4vh;
 }
+
+.info {
+  padding: 1vh;
+}
+
+.info-name {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.info-instructions {
+  text-align: center;
+}
+

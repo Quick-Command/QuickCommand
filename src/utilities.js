@@ -103,3 +103,51 @@ export const statesCodes = (type, setValue, value) => {
   )
 }
 
+export const getInstructions = (type) => {
+  switch (type) {
+    case 'Accident':
+      return
+    case 'Fire':
+      return <div>
+        <p>FIRE PREPAREDNESS</p>
+        <p>♦ Know the location of alarm stations and extinguishers.  Know how to use them</p>
+        <p>♦ Leave fire doors closed at all times</p>
+        <p>♦ Clear obstructed corridors, aisles and room exits</p>
+        <p>♦ Use only grounded electrical plugs</p>
+        <p>♦ Limit use of extension cords and multiple outlets</p>
+        <p>♦ Do not use mechanical rooms or utility rooms for storage</p>
+        <p>♦ Do not smoke in facility</p>
+      </div>
+    case 'Flood':
+      return
+    case 'Earthquake':
+      return <div>
+        <p>EARTHQUAKE PREPAREDNESS</p>
+        <p>♦ Know how and where to take cover during a quake</p>
+        <p>♦ Anchor bookcases, cabinets, and files over 42 inches.  Do not stack furniture</p>
+        <p>♦ Move tall furniture away from exits.  Do not use tall furniture as room dividers</p>
+        <p>♦ Secure computers, equipment, and display cases.  Store heavy items at floor level</p>
+        <p>♦ Back-up data and sensitive information, store duplicates off-site</p>
+      </div>
+    case 'Tornado':
+      return
+    case 'Shooting':
+      return
+    case 'Power Outage':
+      return <div>
+        <p>POWER EMERGENCY</p>
+        <p>♦ Identify and prioritize vital power-dependent functions, operations, and equipment</p>
+        <p>♦ Determine whether you have emergency power outlets in your area.  Plan to use them for priority functions only</p>
+        <p>♦ Determine if there is emergency lighting in your area.  Keep flashlights available in all work areas</p>
+        <p>♦ Do not overload power strips.  Extension cords are for emergency use only</p>
+        <p>♦ Keep offsite duplicates of critical data and cultures</p>
+      </div>
+    case 'Hazmat Spill':
+      return
+    case 'Hurricane':
+      return
+
+    default:
+      break
+  }
+}
