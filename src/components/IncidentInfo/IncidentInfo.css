@@ -72,3 +72,13 @@
 .hurricane {
   width: 1em;
 }
+
+.info-button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.end-button {
+  background-color: #6A8D73;
+  color: red;
+}
