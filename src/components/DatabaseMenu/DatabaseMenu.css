@@ -1,4 +1,13 @@
-.database-menu {
+.database-container {
   display: flex;
+  flex-direction: row-wrap;
   justify-content: space-around;
+  max-height: 76vh;
+  overflow-y: scroll;
+  width: 90vw;
+}
+
+.database-menu {
+  flex-direction: column;
+  width: 100em;
 }

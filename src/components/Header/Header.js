@@ -9,6 +9,7 @@ const Header = () => {
       <h1 className='app-name'>QuickCommand</h1>
       <nav className='header-links'>
         <NavLink to='/database' className='nav-link' data-cy='database-btn'>DATABASE</NavLink>
+        <div className='btn-dash'></div>
         <NavLink to='/' className='nav-link' data-cy='incidents-btn'>INCIDENTS</NavLink>
       </nav>
     </div>
