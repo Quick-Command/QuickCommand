@@ -60,3 +60,14 @@ export const fetchIncidentInfo = (id) => {
   return fetch(`${baseURL}/incidents/${id}`)
     .then(checkResponse)
 }
+
+export const updateIncident = (id, incidentObj) => {
+  return fetch(`${baseURL}/incidents/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(incidentObj)
+  })
+    .then(checkResponse)
+}
