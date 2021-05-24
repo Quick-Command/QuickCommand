@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {
-  runNameQuery,
-  fetchContactDets
+  runNameQuery
 } from '../../API-calls'
 
 const initialState = {
@@ -18,14 +17,6 @@ export const searchByName = createAsyncThunk(
   }
 )
 
-export const displayContactDets = createAsyncThunk(
-  'DatabaseSearch/displayContactDets',
-  async (id) => {
-    const response = await fetchContactDets(id)
-    return response.data
-  }
-)
-
 const slice = createSlice({
   name: 'search-results',
   initialState,
@@ -37,13 +28,6 @@ const slice = createSlice({
       .addCase(searchByName.fulfilled, (state, action) => {
         state.status = 'idle';
         state.searchResults = action.payload;
-      })
-      .addCase(displayContactDets.pending, (state) => {
-        state.status = 'loading'
-      })
-      .addCase(displayContactDets.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.displayedContact = action.payload
       })
   }
 })

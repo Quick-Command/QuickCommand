@@ -1,8 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
-  searchByName,
-  displayContactDets
+  searchByName
 } from './DatabaseSearchSlice'
 
 const DatabaseSearch = () => {
@@ -11,9 +10,11 @@ const DatabaseSearch = () => {
 
   const searchResults = useSelector(state => state.searchResults.searchResults).map(result => {
     return (
-      <div onClick={() => dispatch(displayContactDets(result.id))}>
+      <div>
         <h3>{result.attributes.name}</h3>
-        <p>{result.attribute.job_title}</p>
+        <p>{result.attributes.job_title}</p>
+        <p>{result.attributes.email}</p>
+        <p>{result.attributes.phone}</p>
       </div>
     )
   })
