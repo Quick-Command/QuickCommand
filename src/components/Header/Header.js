@@ -6,8 +6,7 @@ const Header = () => {
   return (
     <div className='header'>
       <section className="logo-container">
-        <img className='logo' src={'/qc-logo-8.png'} alt='Quick Command Logo'></img>
-        <h1 className='app-name'>uickCommand</h1>
+        <img className='logo' src={'/qc-logo-9.png'} alt='Quick Command Logo'></img>
       </section>
       <nav className='header-links'>
         <NavLink to='/database' className='nav-link' data-cy='database-btn'>DATABASE</NavLink>
