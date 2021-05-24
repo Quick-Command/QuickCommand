@@ -62,8 +62,9 @@ export const fetchIncidentInfo = (id) => {
 }
 
 export const updateIncident = (id, incidentObj) => {
+  console.log('A',incidentObj)
   return fetch(`${baseURL}/incidents/${id}`, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
     },
