@@ -6,13 +6,10 @@ import DatabaseSearch from '../DatabaseSearch/DatabaseSearch';
 const DatabaseMenu = () => {
 
   return (
-    <div className='database-container'>
       <div className='database-menu'>
         <DatabaseSearch />
         <NewContactForm />
       </div>
-    </div>
-
   )
 
 }

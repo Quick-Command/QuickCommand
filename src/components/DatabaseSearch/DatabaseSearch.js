@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import './DatabaseSearch.css'
 import {
   searchByName
 } from './DatabaseSearchSlice'
@@ -20,7 +21,7 @@ const DatabaseSearch = () => {
   })
 
   return (
-    <div>
+    <div className="database-search-container">
       <h2 data-cy="search-contacts">SEARCH CONTACTS:</h2>
       <input
         onChange={e => dispatch(searchByName(e.target.value))}
