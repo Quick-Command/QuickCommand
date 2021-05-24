@@ -1,0 +1,32 @@
+{
+  "data": {
+      "id": "11",
+      "type": "contact",
+      "attributes": {
+          "name": "Fran Moore",
+          "email": "FMoore@emailgov.com",
+          "phone_number": " (437)750-2732",
+          "job_title": "Public Policy Management",
+          "city": "Denver",
+          "state": "CO",
+          "roles": {
+              "data": [
+                  {
+                      "id": "4",
+                      "type": "role",
+                      "attributes": {
+                          "title": "Operations Chief"
+                      }
+                  },
+                  {
+                      "id": "1",
+                      "type": "role",
+                      "attributes": {
+                          "title": "Inicdent Commander"
+                      }
+                  }
+              ]
+          }
+      }
+  }
+}

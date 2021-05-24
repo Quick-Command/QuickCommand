@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {
-  fetchIncidentInfo
+  fetchIncidentInfo,
+  updateIncident
 } from '../../API-calls'
 
 const initialState = {
@@ -16,6 +17,16 @@ export const getIncidentInfo = createAsyncThunk(
   }
 )
 
+export const updateIncidentInfo = createAsyncThunk(
+  'incidentInfo/updateIncidentInfo',
+  async ({id, incidentObj}) => {
+    console.log(id)
+    console.log(incidentObj)
+    const response = await updateIncident(id, incidentObj)
+    return response.data
+  }
+)
+
 export const slice = createSlice({
   name: 'incident-info',
   initialState,
@@ -26,6 +37,14 @@ export const slice = createSlice({
       })
       .addCase(getIncidentInfo.fulfilled, (state, action) => {
         state.status = 'idle';
+        state.incidentInfo = action.payload
+      })
+      .addCase(updateIncidentInfo.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(updateIncidentInfo.fulfilled, (state, action) => {
+        state.status = 'idle';
+        console.log('api return',action.payload)
         state.incidentInfo = action.payload
       })
   }
