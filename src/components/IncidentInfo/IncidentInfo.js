@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getIncidentInfo } from './IncidentInfoSlice.js'
+import { getIncidentInfo, updateIncidentInfo } from './IncidentInfoSlice.js'
 import './IncidentInfo.css'
 import { formatDate, getIconByType, getInstructions } from '../../utilities'
 
@@ -11,6 +11,18 @@ const IncidentInfo = ({ id }) => {
     dispatch(getIncidentInfo(id))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const incidentObj = {
+      active: false,
+      close_date: new Date(Date.now())
+    }
+    console.log(incidentObj)
+    dispatch(updateIncidentInfo(id, incidentObj))
+  }
+
+
 
   const currentInfo = useSelector(state => state.incidentInfo)
   const incident = currentInfo.incidentInfo.attributes
@@ -24,7 +36,7 @@ const IncidentInfo = ({ id }) => {
         <p data-cy='info-type' className='info type'><span className='info-type'>{getIconByType(incident.incident_type)}</span>{incident.incident_type}</p>
         <div className="info-button-container">
           <a href={mapURL} target="_blank" rel="noopener noreferrer" className='map-btn'>Click to get Map to Headquarters</a>
-          <button className="end-button">Declare Incident Over</button>
+          <button className="end-button" onClick={e => handleSubmit(e)}>Declare Incident Over</button>
         </div>
         <p data-cy='info-location' className='info info-location'>Located at: {incident.location} in {incident.city}, {incident.state}</p>
         <p data-cy='info-desc' className='info info-desc'>Summary: {incident.description}</p>
