@@ -16,12 +16,11 @@ const IncidentInfo = ({ id }) => {
     e.preventDefault()
     const incidentObj = {
       active: false,
-      close_date: `${new Date(Date.now())}`
+      close_date: new Date(Date.now())
     }
     console.log(incidentObj)
-    dispatch(updateIncidentInfo(id, incidentObj))
+    dispatch(updateIncidentInfo({id, incidentObj}))
   }
-
 
 
   const currentInfo = useSelector(state => state.incidentInfo)
