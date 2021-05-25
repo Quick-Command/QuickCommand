@@ -21,12 +21,12 @@ const OngoingIncidents = () => {
     return (
       <Link className='incident-container' to={`/incident/${incident.id}`} key={incident.id}>
         <div className='incident' >
-          <h3>
+          <h3 data-cy='ongoing-container'>
             <span>{getIcon(incident)}</span>{incident.attributes.type}{incident.attributes.name}
           </h3>
-          <p>* DECLARED: {formatDate(incident.attributes.start_date)}</p>
+          <p data-cy='declared-date'>DECLARED: {formatDate(incident.attributes.start_date)}</p>
         </div>
-      </Link>
+      </Link >
     )
   })
 

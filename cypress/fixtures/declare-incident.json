@@ -1,0 +1,15 @@
+{
+  "data": {
+    "id": "34",
+    "type": "incident",
+    "attributes": {
+      "name": "Jim Creeks Fire",
+      "active": true,
+      "incident_type": "Fire",
+      "description": "5th alarm fire",
+      "location": "Jims Creek",
+      "start_date": "2020-05-01T00:00:00.000Z",
+      "close_date": null
+    }
+  }
+}

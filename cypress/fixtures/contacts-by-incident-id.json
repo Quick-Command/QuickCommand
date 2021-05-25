@@ -1,0 +1,16 @@
+{
+  "data": {
+    "id": "1",
+    "type": "incident_contact",
+    "attributes": {
+      "name": "Aaron Marks",
+      "title": "Safety Officer",
+      "email": "AMarks@emailgov.com",
+      "phone_number": " (221)830-7361",
+      "city": "Denver",
+      "state": "CO",
+      "distance_miles": "20",
+      "distance_minutes": "40"
+    }
+  }
+}
