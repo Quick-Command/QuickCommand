@@ -20,8 +20,6 @@ export const getIncidentInfo = createAsyncThunk(
 export const updateIncidentInfo = createAsyncThunk(
   'incidentInfo/updateIncidentInfo',
   async ({id, incidentObj}) => {
-    console.log(id)
-    console.log(incidentObj)
     const response = await updateIncident(id, incidentObj)
     return response.data
   }
@@ -44,7 +42,6 @@ export const slice = createSlice({
       })
       .addCase(updateIncidentInfo.fulfilled, (state, action) => {
         state.status = 'idle';
-        console.log('api return',action.payload)
         state.incidentInfo = action.payload
       })
   }

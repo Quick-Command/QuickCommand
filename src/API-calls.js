@@ -57,7 +57,6 @@ export const fetchIncidentInfo = (id) => {
 }
 
 export const updateIncident = (id, incidentObj) => {
-  console.log('A',incidentObj)
   return fetch(`${baseURL}/incidents/${id}`, {
     method: 'PATCH',
     headers: {
@@ -74,7 +73,6 @@ export const fetchContactsByRole = (incidentID, role) => {
 }
 
 export const assignRole = (incidentID, contactID, role) => {
-  console.log(incidentID, contactID, role)
   return fetch(`${baseURL}/incidents/${incidentID}/contacts/${contactID}`, {
     method: 'POST',
     headers: {

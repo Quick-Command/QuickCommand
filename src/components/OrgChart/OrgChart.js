@@ -3,8 +3,6 @@ import ReactFlow from 'react-flow-renderer';
 
 const OrgChart = (props) => {
   
-  console.log(props)
-
   const formatNode = (object) => {
 
     return (
