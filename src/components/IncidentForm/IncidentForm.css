@@ -14,7 +14,7 @@ select {
 
 .declare-submission {
   color: #FFE8C2;
-  border: 1px solid red;
+  border: 2px solid #6A8D73;
   background-color: #6A8D73;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -23,7 +23,7 @@ select {
   background-color: #FFE8C2;
   color: #6A8D73;
   /* background-color: #6A8D73; */
-  border: 3px solid red;
+  border: 2px solid red;
 }
 
 .success > span {

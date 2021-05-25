@@ -145,7 +145,7 @@ const NewContactForm = () => {
 
       </fieldset>
       <br></br>
-      <button type='submit'>ADD NEW CONTACT</button>
+      <button type='submit' className='declare-submission'>ADD NEW CONTACT</button>
       {success &&
         <div className='success'>
           <Checkmark className='checkmark'></Checkmark>
