@@ -13,11 +13,8 @@
   margin-top: 1.5em;
 }
 
-.logo {
-  height: 4rem;
-}
-
 .logo-container {
+  height: 100%;
   width: 40%;
   display: flex;
   justify-content: flex-start;
