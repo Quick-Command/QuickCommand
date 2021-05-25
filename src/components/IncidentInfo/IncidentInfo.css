@@ -25,6 +25,7 @@
 
 .text-left {
   text-align:left;
+  margin-left: .5em;
 }
 
 .map-btn {

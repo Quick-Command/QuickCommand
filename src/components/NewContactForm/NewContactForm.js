@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { addNewContact } from '../../API-calls';
 import './NewContactForm.css';
 import { statesCodes } from '../../utilities';
-import { ReactComponent as Error } from '../../Icons/error.svg';
+// import { ReactComponent as Error } from '../../Icons/error.svg';
 import { ReactComponent as Checkmark } from '../../Icons/checkmark.svg';
 
 const NewContactForm = () => {

@@ -43,8 +43,8 @@ export const getIcon = incident => {
   }
 }
 
-export const getIconByType = type => {
-  switch ((type).toLowerCase()) {
+export const getIconByType = incident => {
+  switch ((incident.incident_type).toLowerCase()) {
 
     case 'Accident':
       return <Accident className='element'></Accident>
@@ -167,17 +167,16 @@ export const getInstructions = (type) => {
       </div>
     case 'Earthquake':
       return <div className='text-left'>
-        On Site Procedure Order:
-        1. Rapid damage assessment.
-        2. Search and rescue.
-        3. Emergency medical care.
-        4. Fire-fighting.
-        5. Emergency restoration of essential services.
-        6. Emergency communications.
-        7. Crisis decision-making.
-        8. Evacuation, protection of lives and property.
-        9. The provision of emergency shelter for victims.
-        10. Debris removal (also associated with recovery).
+        <p>1. Rapid damage assessment.</p>
+        <p>2. Search and rescue.</p>
+        <p>3. Emergency medical care.</p>
+        <p>4. Fire-fighting.</p>
+        <p>5. Emergency restoration of essential services.</p>
+        <p>6. Emergency communications.</p>
+        <p>7. Crisis decision-making.</p>
+        <p>8. Evacuation, protection of lives and property.</p>
+        <p>9. The provision of emergency shelter for victims.</p>
+        <p>10. Debris removal (also associated with recovery).</p>
         <p>EARTHQUAKE PREPAREDNESS</p>
         <p>♦ Move tall furniture away from exits.</p>
         <p>♦ Back-up data and sensitive information, store duplicates off-site</p>
@@ -203,7 +202,6 @@ export const getInstructions = (type) => {
         development goals and reduces vulnerability to future damaging earthquakes or
         other hazards.</p>
       </div>
-      return
     case 'Shooting':
       return <div className='text-left'>
         <p>♦ Use security technology, such as closed circuit television, to assist law enforcement in locating the victims and shooter(s)</p>

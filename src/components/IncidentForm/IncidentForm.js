@@ -5,7 +5,7 @@ import {
 } from '../OngoingIncidents/OngoingIncidentsSlice'
 import './IncidentForm.css'
 import { statesCodes } from '../../utilities'
-import { ReactComponent as Error } from '../../Icons/error.svg'
+// import { ReactComponent as Error } from '../../Icons/error.svg'
 import { ReactComponent as Checkmark } from '../../Icons/checkmark.svg'
 
 const IncidentForm = () => {
