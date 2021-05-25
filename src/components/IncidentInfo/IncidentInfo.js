@@ -35,7 +35,7 @@ const IncidentInfo = ({ id }) => {
         <p data-cy='info-type' className='info type'><span className='info-type'>{getIconByType(incident)}</span>{incident.incident_type}</p>
         <div className="info-button-container">
           <a href={mapURL} target="_blank" rel="noopener noreferrer" className='map-btn'>Click to get Map to Headquarters</a>
-          {!incident.close_date && <button className="end-button" onClick={e => handleSubmit(e)}>Declare Incident Over</button>}
+          {!incident.close_date && <button className="end-button" onClick={e => handleSubmit(e)}>Declare Incident Resolved</button>}
         </div>
         <p data-cy='info-location' className='info info-location'>Located at: {incident.location} in {incident.city}, {incident.state}</p>
         <p data-cy='info-desc' className='info info-desc'>Summary: {incident.description}</p>

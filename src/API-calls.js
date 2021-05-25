@@ -2,15 +2,24 @@ const baseURL = `https://qc-engine.herokuapp.com/api/v1`
 
 const checkResponse = (response) => {
   if (!response.ok) {
-    throw new Error()
+    throw new Error('Something went wrong')
   } else {
     return response.json()
+  }
+}
+
+const catchResponse = (response) => {
+  if (response.status >= 500) {
+    throw new Error(`Sorry, this is a server error! Please try again later. Error: ${response.status}`);
+  } else if (response.status >= 400) {
+    throw new Error(`Sorry, this information is not available at the moment! Please try again later. Error: ${response.status}`);
   }
 }
 
 export const fetchResolvedIncidents = () => {
   return fetch(`${baseURL}/incidents?active=false`)
     .then(checkResponse)
+    .catch(catchResponse)
 }
 
 export const fetchOngoingIncidents = () => {
@@ -57,7 +66,6 @@ export const fetchIncidentInfo = (id) => {
 }
 
 export const updateIncident = (id, incidentObj) => {
-  console.log('A',incidentObj)
   return fetch(`${baseURL}/incidents/${id}`, {
     method: 'PATCH',
     headers: {
