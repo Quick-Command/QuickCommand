@@ -4,8 +4,8 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer data-cy='footer' className='footer-container'>
-      <NavLink data-cy='passport-link' to='/passport'>Onsite Protocols</NavLink>
-      <NavLink data-cy='profiles-link' to='/profiles'>Team Profiles</NavLink>
+      <NavLink data-cy='passport-link' to='/passport' className="footer-link">Onsite Protocols</NavLink>
+      <NavLink data-cy='profiles-link' to='/profiles' className="footer-link">Team Profiles</NavLink>
     </footer>
   )
 }
