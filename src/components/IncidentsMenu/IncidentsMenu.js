@@ -8,7 +8,7 @@ const IncidentsMenu = () => {
 
   return (
     <div className='incidents-menu'>
-      <div>
+      <div className='incidents-container'>
         <OngoingIncidents />
         <ResolvedIncidents />
       </div>  

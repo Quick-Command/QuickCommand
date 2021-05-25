@@ -45,11 +45,6 @@ export const runNameQuery = (queryString) => {
     .then(checkResponse)
 }
 
-export const fetchContactDets = (id) => {
-  return fetch(`${baseURL}/contacts/${id}`)
-    .then(checkResponse)
-}
-
 export const fetchIncidentContacts = (id) => {
   return fetch(`${baseURL}/incidents/${id}/contacts`)
     .then(checkResponse)

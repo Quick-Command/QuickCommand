@@ -61,7 +61,7 @@ const NewContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="new-contact-form" onSubmit={handleSubmit}>
 
       <h2 data-cy="add-new-contact">ADD NEW CONTACT:</h2>
 

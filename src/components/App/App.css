@@ -1,6 +1,5 @@
 .app {
     position: relative;
-    height: 100vh;
     background-color: #E4FFE1;
     color: #23395B;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
@@ -8,14 +7,5 @@
 
 .content-wrap {
   padding-bottom: 3.5rem;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
-
-nav {
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #E4FFE1;
-}
-
-
-

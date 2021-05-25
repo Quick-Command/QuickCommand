@@ -54,7 +54,7 @@ const IncidentForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="incident-form" onSubmit={handleSubmit}>
 
       <h2 data-cy='declare-incident' className='incident-text'>DECLARE NEW INCIDENT:</h2>
 

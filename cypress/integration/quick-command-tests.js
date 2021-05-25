@@ -18,11 +18,11 @@ describe('QuickCommand', () => {
       })
     })
 
-    // it('has a header with navlinks and title', () => {
-    //   cy.get('.app-name').contains('QuickCommand')
-    //     .get('a[data-cy=database-btn]').contains('DATABASE')
-    //     .get('a[data-cy=incidents-btn]').contains('INCIDENTS')
-    // })
+    it('has a header with navlinks a logo', () => {
+      cy.get('.logo').should('exist')
+        .get('a[data-cy=database-btn]').contains('DATABASE')
+        .get('a[data-cy=incidents-btn]').contains('INCIDENTS')
+    })
 
     it('has a footer with profile links and a documentation link', () => {
       cy.get('[data-cy=footer]').should('have.class', 'footer-container')
@@ -69,7 +69,6 @@ describe('QuickCommand', () => {
       cy.get('a[data-cy=database-btn]').click()
       cy.get('h2[data-cy=search-contacts]').contains('SEARCH CONTACTS')
       cy.get('h2[data-cy=add-new-contact]').contains('ADD NEW CONTACT')
-      cy.get('h2[data-cy=contact-details]').contains('CONTACT DETAILS')
     })
   })
 })

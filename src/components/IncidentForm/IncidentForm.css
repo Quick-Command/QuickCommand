@@ -19,6 +19,7 @@ select {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+
 .declare-submission:hover {
   background-color: #FFE8C2;
   color: #6A8D73;
@@ -35,3 +36,20 @@ select {
   width: 2.5vw;
   margin-right: .5em;
 }
+
+
+@media only screen and (max-width: 768px) {
+  .incident-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+}
+
+@media only screen and (max-width: 1050px) {
+  .incident-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
