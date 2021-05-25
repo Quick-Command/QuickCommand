@@ -19,16 +19,13 @@ select {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-
 .declare-submission:hover {
   background-color: #FFE8C2;
   color: #6A8D73;
-  /* background-color: #6A8D73; */
   border: 2px solid red;
 }
 
 .success > span {
-  /* background-color: #FFE8C2; */
   color: #6A8D73;
   font-size: 14px;
 }
@@ -36,7 +33,6 @@ select {
   width: 2.5vw;
   margin-right: .5em;
 }
-
 
 @media only screen and (max-width: 768px) {
   .incident-form {
