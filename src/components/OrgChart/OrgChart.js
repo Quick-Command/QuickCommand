@@ -4,37 +4,38 @@ import TreeChart from "d3-org-chart";
 const OrgChart = (props) => {
   const d3Container = useRef(null);
 
-  const createChartData = () => {
+  const createChartData = (data) => {
     //below data is for testing only (to be replaced with api call values)
-    const testObject = [
-      { id: 8, attributes: { name: 'chuck', title: 'PIO', email: 'chuck@chuck.com', phone: '123-123-123' } },
-      { id: 2, attributes: { name: 'chuck2', title: 'Safety Officer', email: 'chuck2@chuck.com', phone: '123-123-123' } },
-      { id: 5, attributes: { name: 'chuck5', title: 'Operations Chief', email: 'chuck5@chuck.com', phone: '123-123-123' } },
-      { id: 6, attributes: { name: 'chuck6', title: 'Finance Chief', email: 'chuck6@chuck.com', phone: '123-123-123' } }
-    ]
+    // const testObject = [
+    //   { id: 8, attributes: { name: 'chuck', title: 'PIO', email: 'chuck@chuck.com', phone_number: '123-123-123' } },
+    //   { id: 2, attributes: { name: 'chuck2', title: 'Safety Officer', email: 'chuck2@chuck.com', phone_number: '123-123-123' } },
+    //   { id: 5, attributes: { name: 'chuck5', title: 'Operations Chief', email: 'chuck5@chuck.com', phone_number: '123-123-123' } },
+    //   { id: 6, attributes: { name: 'chuck6', title: 'Finance Chief', email: 'chuck6@chuck.com', phone_number: '123-123-123' } }
+    // ]
 
     //define default chart values
     let chartValues = {
-      'Incident Commander': { id: 1, attributes: { name: 'Unassigned', title: 'Incident Commander', email: '', phone: '' } },
+      'Inicdent Commander': { id: 1, attributes: { name: 'Unassigned', title: 'Inicdent Commander', email: '', phone_number: '' } },
       'PIO': { attributes: { name: 'Unassigned', title: 'PIO', email: '', phone: '' } },
-      'Safety Officer': { attributes: { name: 'Unassigned', title: 'Safety Officer', email: '', phone: '' } },
-      'Liaison Officer': { attributes: { name: 'Unassigned', title: 'Liaison Officer', email: '', phone: '' } },
-      'Operations Chief': { attributes: { name: 'Unassigned', title: 'Operations Chief', email: '', phone: '' } },
-      'Logistics Chief': { attributes: { name: 'Unassigned', title: 'Logistics Chief', email: '', phone: '' } },
-      'Finance Chief': { attributes: { name: 'Unassigned', title: 'Finance Chief', email: '', phone: '' } },
-      'Planning Chief​': { attributes: { name: 'Unassigned', title: 'Planning Chief​', email: '', phone: '' } }
+      'Safety Officer': { attributes: { name: 'Unassigned', title: 'Safety Officer', email: '', phone_number: '' } },
+      'Liaison Officer': { attributes: { name: 'Unassigned', title: 'Liaison Officer', email: '', phone_number: '' } },
+      'Operations Cheif': { attributes: { name: 'Unassigned', title: 'Operations Chief', email: '', phone_number: '' } },
+      'Logistics Chief': { attributes: { name: 'Unassigned', title: 'Logistics Chief', email: '', phone_number: '' } },
+      'Finance Chief': { attributes: { name: 'Unassigned', title: 'Finance Chief', email: '', phone_number: '' } },
+      'Planning Chief​': { attributes: { name: 'Unassigned', title: 'Planning Chief​', email: '', phone_number: '' } }
     }
 
     //iterate through incident data and replace any default values with assignees
-    testObject.forEach(assignee => {
+    data.forEach(assignee => {
       chartValues[assignee.attributes.title] = assignee;
     })
 
 
     return Object.values(chartValues).map((item) => {
+
       return {
-        nodeId: item.id || Date.now(),
-        parentNodeId: item.attributes.title === 'Incident Commander' ? null : 1,
+        nodeId: item.attributes.title === 'Inicdent Commander' ? 1 : Date.now(),
+        parentNodeId: item.attributes.title === 'Inicdent Commander' ? null : 1,
         width: 330,
         height: 147,
         borderWidth: 1,
@@ -81,7 +82,7 @@ const OrgChart = (props) => {
                              bottom:5px;
                             ">
                       <div>${item.attributes.email}</div>
-                      <div style="margin-top:5px">${item.attributes.phone}</div>
+                      <div style="margin-top:5px">${item.attributes.phone_number}</div>
                  </div>
               </div>`
       };
@@ -90,6 +91,7 @@ const OrgChart = (props) => {
 
   useLayoutEffect(() => {
     let chart = null;
+    console.log('create chart data',createChartData(props.data))
 
     if (props.data && d3Container.current) {
       if (!chart) {
@@ -97,21 +99,18 @@ const OrgChart = (props) => {
       }
       chart
         .container(d3Container.current)
-        .data(props.data)
+        .data(createChartData(props.data))
         // .svgWidth(5000)
         // .svgHeight(500)
         .initialZoom(0.25)
-        .onNodeClick(d => {
-          // popout to view specific card in chart goes here
-          console.log('clicked node ' + d)
-        })
+        // .onNodeClick(d => {
+        //   // popout to view specific card in chart goes here
+        //   console.log('clicked node ' + d)
+        // })
         .render();
     }
   }, [props.data]);
 
-  useEffect(() => {
-    createChartData();
-  })
 
   return (
     <article>

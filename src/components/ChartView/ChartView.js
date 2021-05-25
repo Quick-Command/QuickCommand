@@ -18,10 +18,11 @@ const ChartView = ({ id }) => {
 
   const data = useSelector(state => state.incidentContacts.incidentContacts)
   const detailsLink = `./incident-details/${id}`;
+
   return (
     <div className='chart-view-container'>
       <div className="org-chart-container">
-        <OrgChart data={data} />
+        {!data.length && <OrgChart data={data} />}
       </div>
       <section className="sidebar-container">
         <section className="incident-link-container">
