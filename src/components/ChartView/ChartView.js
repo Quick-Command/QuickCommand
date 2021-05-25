@@ -5,6 +5,7 @@ import './ChartView.css'
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getIncidentContacts } from './ChartViewSlice';
+import propTypes from 'prop-types';
 
 const ChartView = ({ id }) => {
   const dispatch = useDispatch();
@@ -35,4 +36,9 @@ const ChartView = ({ id }) => {
 
 }
 
-export default ChartView
+
+export default ChartView;
+
+ChartView.propTypes = {
+  id: propTypes.number
+}

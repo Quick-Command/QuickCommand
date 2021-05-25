@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef, useEffect } from "react";
 import TreeChart from "d3-org-chart";
+import propTypes from 'prop-types';
 
 const OrgChart = (props) => {
   const d3Container = useRef(null);
@@ -120,4 +121,8 @@ const OrgChart = (props) => {
   );
 };
 
-export default OrgChart
+export default OrgChart;
+
+OrgChart.propTypes = {
+  props: propTypes.object
+}

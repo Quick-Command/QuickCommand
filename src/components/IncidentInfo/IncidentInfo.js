@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getIncidentInfo, updateIncidentInfo } from './IncidentInfoSlice.js'
 import './IncidentInfo.css'
 import { formatDate, getIconByType, getInstructions } from '../../utilities'
+import propTypes from 'prop-types';
 
 const IncidentInfo = ({ id }) => {
   const dispatch = useDispatch()
@@ -52,4 +53,8 @@ const IncidentInfo = ({ id }) => {
   );
 };
 
-export default IncidentInfo
+export default IncidentInfo;
+
+IncidentInfo.propTypes = {
+  id: propTypes.number
+}
