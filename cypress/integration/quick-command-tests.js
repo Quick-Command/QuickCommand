@@ -18,11 +18,11 @@ describe('QuickCommand', () => {
       })
     })
 
-    it('has a header with navlinks and title', () => {
-      cy.get('.app-name').contains('QuickCommand')
-        .get('a[data-cy=database-btn]').contains('DATABASE')
-        .get('a[data-cy=incidents-btn]').contains('INCIDENTS')
-    })
+    // it('has a header with navlinks and title', () => {
+    //   cy.get('.app-name').contains('QuickCommand')
+    //     .get('a[data-cy=database-btn]').contains('DATABASE')
+    //     .get('a[data-cy=incidents-btn]').contains('INCIDENTS')
+    // })
 
     it('has a footer with profile links and a documentation link', () => {
       cy.get('[data-cy=footer]').should('have.class', 'footer-container')
