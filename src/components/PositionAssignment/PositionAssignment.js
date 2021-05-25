@@ -17,6 +17,7 @@ const PositionAssignment = ({ id }) => {
 
   const handleAssign = (id, resultID, selectedRole) => {
     assignRole(id, resultID, selectedRole)
+    .then(data => window.location.reload())
   }
 
   const searchResults = useSelector(state => state.searchByRole.searchByRole).map(result => {
