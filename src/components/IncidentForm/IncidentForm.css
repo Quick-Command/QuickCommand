@@ -21,3 +21,19 @@ select {
 .incident-declare-button:hover {
   background-color: lightcoral;
 }
+
+@media only screen and (max-width: 768px) {
+  .incident-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+}
+
+@media only screen and (max-width: 1050px) {
+  .incident-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
