@@ -30,7 +30,6 @@ const IncidentForm = () => {
       start_date: incidentDate,
       close_date: ""
     }
-    console.log(incidentObj)
     dispatch(declareNewIncident(incidentObj))
     clearInputs()
   }

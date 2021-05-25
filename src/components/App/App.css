@@ -5,6 +5,13 @@
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
+html,
+body,
+.app,
+#root {
+  height: fit-content;
+}
+
 .content-wrap {
   padding-bottom: 3.5rem;
   /* overflow-y: scroll; */

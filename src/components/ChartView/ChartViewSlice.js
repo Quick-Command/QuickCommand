@@ -27,6 +27,10 @@ export const slice = createSlice({
         state.status = 'idle'
         state.incidentContacts = action.payload
       })
+      .addCase(getIncidentContacts.rejected, (state) => {
+        state.status = 'idle'
+        state.incidentContacts = []
+      })
   }
 })
 
