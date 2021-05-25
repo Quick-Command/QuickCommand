@@ -28,7 +28,7 @@
 }
 
 .map-btn {
-  color: #f0a868;
+  color: #FFE8C2;
   background-color: #6A8D73;
   padding-right: .25em;
   padding-left: .25em;
@@ -36,7 +36,7 @@
 
 .info-weather {
   color: #6A8D73;
-  background-color: #f0a868;
+  background-color: #6A8D73;
   padding-right: .25em;
   padding-left: .25em;
 }
@@ -79,6 +79,10 @@
 }
 
 .end-button {
+  border: 1px solid red;
   background-color: #6A8D73;
-  color: red;
+  color: #FFE8C2;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 }
+
+/* foa868 */

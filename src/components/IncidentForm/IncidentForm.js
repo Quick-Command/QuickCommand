@@ -5,6 +5,8 @@ import {
 } from '../OngoingIncidents/OngoingIncidentsSlice'
 import './IncidentForm.css'
 import { statesCodes } from '../../utilities'
+import { ReactComponent as Error } from '../../Icons/error.svg'
+import { ReactComponent as Checkmark } from '../../Icons/checkmark.svg'
 
 const IncidentForm = () => {
 
@@ -15,11 +17,14 @@ const IncidentForm = () => {
   const [incidentLocation, setIncidentLocation] = useState('');
   const [incidentCity, setIncidentCity] = useState('');
   const [incidentState, setIncidentState] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [tempName, setTempName] = useState('');
 
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
+    setTempName(incidentName);
     const incidentObj = {
       name: incidentName,
       incident_type: incidentType,
@@ -30,7 +35,6 @@ const IncidentForm = () => {
       start_date: incidentDate,
       close_date: ""
     }
-    console.log(incidentObj)
     dispatch(declareNewIncident(incidentObj))
     clearInputs()
   }
@@ -43,6 +47,10 @@ const IncidentForm = () => {
     setIncidentLocation('');
     setIncidentCity('');
     setIncidentState('');
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false)
+    }, 2500)
   }
 
   return (
@@ -112,7 +120,13 @@ const IncidentForm = () => {
         value={incidentSummary}
       />
 
-      <button type='submit' data-cy="declare-submission">DECLARE</button>
+      <button type='submit' data-cy="declare-submission" className="declare-submission" >DECLARE</button>
+      {success &&
+        <div className='success'>
+          <Checkmark className='checkmark'></Checkmark>
+          <span>{tempName} is Declared and Ongoing</span>
+        </div>
+      }
     </form>
   )
 

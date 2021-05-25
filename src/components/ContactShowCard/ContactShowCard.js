@@ -1,5 +1,6 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import './ContactShowCard.css';
 
 const ContactShowCard = () => {
 
@@ -16,7 +17,7 @@ const ContactShowCard = () => {
       </div>
     )
   } else {
-    return(
+    return (
       <div>
         <h2 data-cy="contact-details">CONTACT DETAILS:</h2>
         <p>no contact displayed</p>

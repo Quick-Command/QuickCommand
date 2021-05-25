@@ -12,12 +12,26 @@ select {
   margin-bottom: 10px;
 }
 
-.incident-declare-button {
-  color: red;
+.declare-submission {
+  color: #FFE8C2;
   border: 1px solid red;
-  background-color: transparent;
+  background-color: #6A8D73;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.incident-declare-button:hover {
-  background-color: lightcoral;
+.declare-submission:hover {
+  background-color: #FFE8C2;
+  color: #6A8D73;
+  /* background-color: #6A8D73; */
+  border: 3px solid red;
+}
+
+.success > span {
+  /* background-color: #FFE8C2; */
+  color: #6A8D73;
+  font-size: 14px;
+}
+.checkmark {
+  width: 2.5vw;
+  margin-right: .5em;
 }
