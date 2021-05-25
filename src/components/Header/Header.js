@@ -1,12 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   return (
     <div className='header'>
-      <section className="logo-container">
-        <img className='logo' src={'/qc-logo-9.png'} alt='Quick Command Logo'></img>
+      <section className="logo-container mobile-hidden">
+        <Link to='/' className="logo-link">
+          <img className='logo' src={'/qc-logo-9.png'} alt='Quick Command Logo'></img>
+        </Link>
       </section>
       <nav className='header-links'>
         <NavLink to='/database' className='nav-link' data-cy='database-btn'>PERSONNEL</NavLink>
