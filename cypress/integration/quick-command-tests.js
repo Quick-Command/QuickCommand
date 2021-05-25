@@ -20,7 +20,7 @@ describe('QuickCommand', () => {
 
     it('has a header with navlinks a logo', () => {
       cy.get('.logo').should('exist')
-        .get('a[data-cy=database-btn]').contains('DATABASE')
+        .get('a[data-cy=database-btn]').contains('PERSONNEL')
         .get('a[data-cy=incidents-btn]').contains('INCIDENTS')
     })
 
