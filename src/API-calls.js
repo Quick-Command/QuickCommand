@@ -67,3 +67,20 @@ export const updateIncident = (id, incidentObj) => {
   })
     .then(checkResponse)
 }
+
+export const fetchContactsByRole = (incidentID, role) => {
+  return fetch(`${baseURL}/incidents/${incidentID}/contact_search?role=${role}`)
+    .then(checkResponse)
+}
+
+export const assignRole = (incidentID, contactID, role) => {
+  console.log(incidentID, contactID, role)
+  return fetch(`${baseURL}/incidents/${incidentID}/contacts/${contactID}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({title: role})
+  })
+  .then(checkResponse)
+}
