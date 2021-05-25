@@ -1,12 +1,15 @@
-const url = "https://qc-engine.herokuapp.com/api";
+const baseURL = `https://qc-engine.herokuapp.com/api/v1`
 
 describe('QuickCommand', () => {
 
   beforeEach('visit the host url', () => {
+    cy.intercept(`${baseURL}/incidents?active=true`, { fixture: 'ongoing-incidents.json' })
+    cy.intercept(`${baseURL}/incidents?active=false`, { fixture: 'resolved-incidents.json' })
     cy.visit(`http://localhost:3000/`)
   })
 
-  describe('dashboard view (default view: INCIDENTS)', () => {
+  describe('Dashboard Default View: Incidents', () => {
+
     it('Has a location', () => {
       cy.location().should((loc) => {
         expect(loc.port).to.eq('3000')
@@ -56,19 +59,86 @@ describe('QuickCommand', () => {
         .get('select[data-cy=incident-type]').select('Earthquake')
         .get('input[data-cy=incident-date]').type('2021-05-21')
         .get('textarea[data-cy=incident-summary]').type('5.4 Richter Scale quake has disrupted the village of Palo Alto')
-        .get('button[data-cy=declare-submission]').click()
-      // needs to be reworked since incidents are now declared via network request but the endpoint isn't working yet
-      // cy.get('h3[data-cy=incident-name]').contains('San Andreas Faultline Disruption')
-      //   .get('p[data-cy=incident-type]').contains('Earthquake')
-      //   .contains('2021-05-21')
+      cy.intercept(`${baseURL}/incidents`, {
+        method: 'POST',
+        fixture: 'declare-incident.json'
+      })
+      cy.get('button[data-cy=declare-submission]').click()
+
+      cy.get('[data-cy=ongoing-container]').contains('Jim Creeks Fire')
+        .get('[data-cy=declared-date]').contains('DECLARED')
     })
   })
 
-  describe('DATABASE view', () => {
+
+  describe('The Incident Contacts Chart', () => {
+
+    beforeEach('intercept the incident contacts request', () => {
+      cy.intercept(`${baseURL}/incidents/3/contacts`, { fixture: 'contacts-by-incident-id.json' })
+    })
+
+    it('displays a set of contacts pertaining to a particular incident', () => {
+      cy.get('[data-cy=declared-date]').first()
+      //.click()   > CHART CURRENTLY HAS NO ROOT
+    })
+  })
+
+  describe('Personnel view', () => {
     it('Shows a database of personnel', () => {
       cy.get('a[data-cy=database-btn]').click()
       cy.get('h2[data-cy=search-contacts]').contains('SEARCH CONTACTS')
       cy.get('h2[data-cy=add-new-contact]').contains('ADD NEW CONTACT')
     })
+  })
+})
+
+describe('Incident Details Page', () => {
+  beforeEach('intercept the incident details request', () => {
+    cy.intercept(`${baseURL}/incidents/11`, { fixture: 'incident-info-by-id.json' })
+    cy.intercept(`${baseURL}/incidents?active=true`, { fixture: 'ongoing-incidents.json' })
+    cy.intercept(`${baseURL}/incidents?active=false`, { fixture: 'resolved-incidents.json' })
+    cy.visit(`http://localhost:3000/incident-details/11`)
+  })
+
+  it('Has a Title', () => {
+    cy.get('[data-cy=info-name]').contains('test 11')
+  });
+
+  it('Has a Type', () => {
+    cy.get('[data-cy=info-type]').contains('Flood')
+  });
+
+  it('Has a Location', () => {
+    cy.get('[data-cy=info-location]').contains('Located at: test 11 in test 11, AR')
+  });
+
+  it('Has a Summary', () => {
+    cy.get('[data-cy=info-desc]').contains('Summary: test 11 summary')
+  });
+
+  it('Has a Declaration date', () => {
+    cy.get('[data-cy=info-start-date]').contains('Declaration: May 22, 2021')
+  });
+
+  it('Has a Procedural Protocol that relates to the type of incident', () => {
+    cy.get('[data-cy=info-instructions]').first().contains('Flood Response Procedural Protocol:')
+    cy.get('[data-cy=info-instructions]').last().contains(' Begin communication to obtain portable temporary electrical devices, fans, dehumidifiers, etc., needed for salvage operations.')
+  });
+
+  it('Has a Map to the Site Headquarters', () => {
+    cy.get('a[class=map-btn]').contains('Click to get Map')
+  });
+
+
+  it('Can be Declared Resolved', () => {
+    cy.get('button[class=end-button]').contains('Declare Incident Over')
+    cy.intercept(`${baseURL}/incidents`, {
+      method: 'PATCH',
+      fixture: 'delete-incident.json'
+    })
+    cy.get('button[class=end-button]')
+      .click()
+    cy.get('[data-cy=info-start-date]').contains("May 22, 2021")
+    cy.get('button[class=end-button]')
   })
 })
