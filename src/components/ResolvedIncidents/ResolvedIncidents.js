@@ -20,7 +20,8 @@ const ResolvedIncidents = () => {
       <Link to={`/incident/${incident.id}`} key={incident.id}>
         <div className='incident resolved-incident' >
           <h3>
-            <span>{getIcon(incident)}</span>{incident.attributes.type}{incident.attributes.name}
+            <span className='icon'>{getIcon(incident)}</span>
+            <span className='incident-title'>{incident.attributes.type}{incident.attributes.name}</span>
           </h3>
           <p>* DECLARED: {formatDate(incident.attributes.start_date)}</p>
           <p>* RESOLVED: {formatDate(incident.attributes.close_date)}</p>
@@ -33,7 +34,7 @@ const ResolvedIncidents = () => {
     <div className='incidents-container'>
       <h2 className='incident-text'>RESOLVED INCIDENTS:</h2>
       <article className='resolved-container'>
-        {resolvedIncidents}
+        {resolvedIncidents.reverse()}
       </article>
     </div>
   )

@@ -1,21 +1,26 @@
-import React, { useState } from 'react'
-import { addNewContact } from '../../API-calls'
-import './NewContactForm.css'
+import React, { useState } from 'react';
+import { addNewContact } from '../../API-calls';
+import './NewContactForm.css';
 import { statesCodes } from '../../utilities';
+// import { ReactComponent as Error } from '../../Icons/error.svg';
+import { ReactComponent as Checkmark } from '../../Icons/checkmark.svg';
 
 const NewContactForm = () => {
 
   const [contactFirstName, setContactFirstName] = useState('');
   const [contactLastName, setContactLastName] = useState('');
-  const [contactEmail, setContactEmail] = useState('')
-  const [contactPhone, setContactPhone] = useState('')
-  const [contactJobTitle, setContactJobTitle] = useState('')
-  const [contactCity, setContactCity] = useState('')
-  const [contactState, setContactState] = useState('')
-  const [contactRoles, setContactRoles] = useState([])
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
+  const [contactJobTitle, setContactJobTitle] = useState('');
+  const [contactCity, setContactCity] = useState('');
+  const [contactState, setContactState] = useState('');
+  const [contactRoles, setContactRoles] = useState([]);
+  const [success, setSuccess] = useState(false);
+  const [tempName, setTempName] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault()
+    setTempName(`${contactFirstName} ${contactLastName}`)
     const newContact = {
       "name": `${contactFirstName} ${contactLastName}`,
       "email": contactEmail,
@@ -30,14 +35,18 @@ const NewContactForm = () => {
   }
 
   const clearInputs = () => {
-    setContactFirstName('')
-    setContactLastName('')
-    setContactEmail('')
-    setContactPhone('')
-    setContactJobTitle('')
-    setContactCity('')
-    setContactState('')
-    setContactRoles([])
+    setContactFirstName('');
+    setContactLastName('');
+    setContactEmail('');
+    setContactPhone('');
+    setContactJobTitle('');
+    setContactCity('');
+    setContactState('');
+    setContactRoles([]);
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false)
+    }, 2500);
   }
 
   const handleRoleSelection = e => {
@@ -136,8 +145,13 @@ const NewContactForm = () => {
 
       </fieldset>
       <br></br>
-      <button type='submit'>ADD NEW CONTACT</button>
-
+      <button type='submit' className='declare-submission'>ADD NEW CONTACT</button>
+      {success &&
+        <div className='success'>
+          <Checkmark className='checkmark'></Checkmark>
+          <span>{tempName} has been successfully added to Personnel</span>
+        </div>
+      }
     </form>
   )
 }

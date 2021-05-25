@@ -7,6 +7,7 @@
   width: 1.5em;
   margin-right: .4em;
   margin-top: .75vh;
+  /* position: relative; */
 }
 
 .fire {
@@ -15,16 +16,28 @@
   margin-top: .75vh;
 }
 .earthquake {
-  width: 1.5em;
+  margin-left: -.5em;
+ margin-right: .5em;
 }
 .tornado {
   width: 1.5em;
+  margin-left: -.5em;
+  margin-right: .5em;
 }
 
 .hazard {
   width: 1.5em;
-  margin-top: .5vh;
+  margin-top: 1vh;
+  margin-right: .25em;
 }
 .hurricane {
   width: 1em;
+  margin-top: .25em;
+  margin-right: .5em;
+}
+
+.flood {
+  width: 1.5em;
+  margin-top: 0;
+  margin-right: .4em;
 }
