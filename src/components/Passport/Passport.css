@@ -1,10 +1,7 @@
 .passport-container {
   display: flex;
   justify-content: center;
-  max-height: 75vh;
-  overflow-y: scroll;
   margin: .5em;
-
 }
 
 .passport-doc {
@@ -12,6 +9,14 @@
   font-size: 14px;
 }
 
+.categories-header {
+  margin-top: 2em;
+}
+
 .passport-doc > p {
   margin: .5em;
+}
+
+.passport-doc > .categories-header {
+  margin-top: 2.5em;
 }
