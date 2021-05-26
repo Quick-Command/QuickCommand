@@ -12,6 +12,10 @@ select {
   margin-bottom: 10px;
 }
 
+.error-message {
+  color: red;
+}
+
 .declare-submission {
   color: #FFE8C2;
   border: 2px solid #6A8D73;
