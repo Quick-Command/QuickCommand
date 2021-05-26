@@ -1,6 +1,7 @@
 .incidents-menu {
   display: flex;
   justify-content: space-around;
+  min-height: 85vh;
 }
 
 
