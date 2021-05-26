@@ -31,7 +31,7 @@ const WeatherReport = ({ location }) => {
   return (
     <article>
       {weather ? <div className='report-container'>
-        <h4>Conditions</h4> <h4>{location} - {formatDate(weather.sunrise)}</h4>
+        <h4>Conditions in {location} for {formatDate(weather.sunrise)}</h4>
         <h3>{weather.conditions.toUpperCase()}</h3>
         {/* <p>{(new Date(weather.sunrise)).getHour()}</p> */}
         <p>Low: {weather.min_temp.toFixed(0)}º F</p>

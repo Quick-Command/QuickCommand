@@ -1,13 +1,24 @@
 .report-container {
-  padding-top: 9vh;
+  padding-top: .5vh;
   text-align: center;
   min-height: 75vh;
   background-color: #FFE8C2;
   color: #6A8D73;
   width: 84vw;
   margin-left:  8vw;
+  font-size: 29px;
 }
 
 .report-container > p {
   margin-bottom: 2vh;
+  font-size: 24px;
+}
+
+.report-container > h3 {
+  font-size: 29px;
+}
+
+.report-container > h4 {
+  font-size: 31px;
+  margin: 9vh;
 }
