@@ -5,6 +5,7 @@
 -------
 
 A [Front-End Project](https://mod4.turing.edu/projects/capstone.html) by [Cameron Mackintosh](https://github.com/cbmackintosh), [Chuck Morris](https://github.com/percworld), and [Jeff Shepherd](https://github.com/JeffShepherd).
+Backend QuickCommand team is comprised of [Katy LaTour](https://github.com/klatour324), [Alexa Morales Smith](https://github.com/amsmyth1), and [Jeremiah Michlitsch](https://github.com/jmichlitsch) - [Backend Repo](https://github.com/Quick-Command/qc-engine)
 
 1. [Overview](#overview)
 2. [Planning Resources](#planning-resources)
