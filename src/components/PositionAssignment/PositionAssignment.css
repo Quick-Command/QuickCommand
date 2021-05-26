@@ -9,7 +9,8 @@
 }
 
 .assignee-search-form {
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .assignee-search-result {
@@ -25,8 +26,14 @@
   height: 50%;
 }
 
+.search-results-container {
+  width: 95%;
+  margin: 0 auto;
+}
+
 .search-result {
   border-bottom: 1px solid black;
+  margin: 2% 0;
 }
 
 .search-result:hover {
