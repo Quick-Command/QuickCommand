@@ -47,10 +47,10 @@ describe('QuickCommand', () => {
 
     it.skip('has a form to submit declaration of a new incidents', () => {
       cy.get('h2[data-cy=declare-incident]').contains('DECLARE NEW INCIDENT:')
-        .get('label[data-cy=incident-name]').contains('Incident Name:')
-        .get('label[data-cy=incident-type]').contains('Incident Type:')
-        .get('label[data-cy=incident-date]').contains('Incident Date:')
-        .get('label[data-cy=incident-summary]').contains('Incident Summary:')
+        .get('label[data-cy=incident-name]').contains('Name:')
+        .get('label[data-cy=incident-type]').contains('Type:')
+        .get('label[data-cy=incident-date]').contains('Date:')
+        .get('label[data-cy=incident-summary]').contains('Summary:')
         .get('button[data-cy=declare-submission]').contains('DECLARE')
     })
 

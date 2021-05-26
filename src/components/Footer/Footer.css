@@ -7,3 +7,11 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.footer-link {
+  padding: .2%;
+}
+
+.footer-link:hover {
+  transform: scale(1.1);
+}
