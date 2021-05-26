@@ -22,7 +22,7 @@ const DatabaseSearch = () => {
   return (
     <div className="database-search-container">
       <h2 data-cy="search-contacts">SEARCH CONTACTS:</h2>
-      <input
+      <input data-cy='input-field'
         onChange={e => dispatch(searchByName(e.target.value))}
       />
       {searchResults}
