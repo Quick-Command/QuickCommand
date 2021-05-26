@@ -115,7 +115,7 @@ describe('QuickCommand', () => {
     });
 
     it('Has a Procedural Protocol that relates to the type of incident', () => {
-      cy.get('[data-cy=info-instructions]').first().contains('Flood Response Procedural Protocol:')
+      cy.get('[data-cy=info-instructions]').first().contains('Flood Response Procedures:')
       cy.get('[data-cy=info-instructions]').last().contains(' Begin communication to obtain portable temporary electrical devices, fans, dehumidifiers, etc., needed for salvage operations.')
     });
 
@@ -139,7 +139,7 @@ describe('QuickCommand', () => {
 
 })
 
-describe.only('Personnel view', () => {
+describe('Personnel view', () => {
   beforeEach('intercept the incident details request', () => {
     cy.intercept(`${baseURL}/incidents/11`, { fixture: 'incident-info-by-id.json' })
     cy.intercept(`${baseURL}/incidents?active=true`, { fixture: 'ongoing-incidents.json' })
