@@ -1,123 +1,83 @@
-import React, { useLayoutEffect, useRef, useEffect } from "react";
-import TreeChart from "d3-org-chart";
+import React from 'react';
+import ReactFlow from 'react-flow-renderer';
 
 const OrgChart = (props) => {
-  const d3Container = useRef(null);
+  
+  const formatNode = (object) => {
 
-  const createChartData = () => {
-    //below data is for testing only (to be replaced with api call values)
-    const testObject = [
-      { id: 8, attributes: { name: 'chuck', title: 'PIO', email: 'chuck@chuck.com', phone: '123-123-123' } },
-      { id: 2, attributes: { name: 'chuck2', title: 'Safety Officer', email: 'chuck2@chuck.com', phone: '123-123-123' } },
-      { id: 5, attributes: { name: 'chuck5', title: 'Operations Chief', email: 'chuck5@chuck.com', phone: '123-123-123' } },
-      { id: 6, attributes: { name: 'chuck6', title: 'Finance Chief', email: 'chuck6@chuck.com', phone: '123-123-123' } }
-    ]
-
-    //define default chart values
-    let chartValues = {
-      'Incident Commander': { id: 1, attributes: { name: 'Unassigned', title: 'Incident Commander', email: '', phone: '' } },
-      'PIO': { attributes: { name: 'Unassigned', title: 'PIO', email: '', phone: '' } },
-      'Safety Officer': { attributes: { name: 'Unassigned', title: 'Safety Officer', email: '', phone: '' } },
-      'Liaison Officer': { attributes: { name: 'Unassigned', title: 'Liaison Officer', email: '', phone: '' } },
-      'Operations Chief': { attributes: { name: 'Unassigned', title: 'Operations Chief', email: '', phone: '' } },
-      'Logistics Chief': { attributes: { name: 'Unassigned', title: 'Logistics Chief', email: '', phone: '' } },
-      'Finance Chief': { attributes: { name: 'Unassigned', title: 'Finance Chief', email: '', phone: '' } },
-      'Planning Chief​': { attributes: { name: 'Unassigned', title: 'Planning Chief​', email: '', phone: '' } }
-    }
-
-    //iterate through incident data and replace any default values with assignees
-    testObject.forEach(assignee => {
-      chartValues[assignee.attributes.title] = assignee;
-    })
-
-
-    return Object.values(chartValues).map((item) => {
-      return {
-        nodeId: item.id || Date.now(),
-        parentNodeId: item.attributes.title === 'Incident Commander' ? null : 1,
-        width: 330,
-        height: 147,
-        borderWidth: 1,
-        borderRadius: 5,
-        backgroundColor: { "red": 51, "green": 182, "blue": 208, "alpha": 1 },
-        nodeImage: {
-          url:
-            "https://raw.githubusercontent.com/bumbeishvili/Assets/master/Projects/D3/Organization%20Chart/general.jpg",
-          width: 100,
-          height: 100,
-          centerTopDistance: 0,
-          centerLeftDistance: 0,
-          cornerShape: "ROUNDED",
-          shadow: true,
-          borderWidth: 0,
-        },
-        nodeIcon: {
-          icon: "https://to.ly/1yZnX",
-          size: 30
-        },
-        connectorLineColor: {
-          red: 220,
-          green: 189,
-          blue: 207,
-          alpha: 1
-        },
-        connectorLineWidth: 5,
-        dashArray: "",
-        expanded: false,
-        template: `<div>
-                  <div style="margin-left:80px;
-                              margin-top:10px;
-                              font-size:20px;
-                              font-weight:bold;
-                         ">${item.attributes.name || 'unassigned'} </div>
-                 <div style="margin-left:80px;
-                              margin-top:3px;
-                              font-size:16px;
-                         ">${item.attributes.title}</div>
-                 <div style="margin-left:200px;
-                             margin-top:15px;
-                             font-size:13px;
-                             position:absolute;
-                             bottom:5px;
-                            ">
-                      <div>${item.attributes.email}</div>
-                      <div style="margin-top:5px">${item.attributes.phone}</div>
-                 </div>
-              </div>`
-      };
-    })
+    return (
+      <div key={object.id}>
+        <h3>{object.attributes.title}</h3>
+        <h4>{object.attributes.name}</h4>
+        <p>{object.attributes.email}</p>
+        <p>{object.attributes.phone_number}</p>
+      </div>
+    )
   }
 
-  useLayoutEffect(() => {
-    let chart = null;
-
-    if (props.data && d3Container.current) {
-      if (!chart) {
-        chart = new TreeChart();
-      }
-      chart
-        .container(d3Container.current)
-        .data(props.data)
-        // .svgWidth(5000)
-        // .svgHeight(500)
-        .initialZoom(0.25)
-        .onNodeClick(d => {
-          // popout to view specific card in chart goes here
-          console.log('clicked node ' + d)
-        })
-        .render();
-    }
-  }, [props.data]);
-
-  useEffect(() => {
-    createChartData();
-  })
-
+  const chartValues = [
+    {
+      id: '1',
+      type: 'input',
+      data: { label: formatNode(props.data['Incident Commander']) },
+      position: { x: 400, y: 0 },
+    },
+    {
+      id: '2',
+      type: 'output',
+      data: { label: formatNode(props.data['PIO']) },
+      position: { x: 600, y: 125 },
+    },
+    {
+      id: '3',
+      type: 'output',
+      data: { label: formatNode(props.data['Liaison Officer']) },
+      position: { x: 100, y: 125 },
+    },
+    {
+      id: '4',
+      type: 'output',
+      data: { label: formatNode(props.data['Safety Officer']) },
+      position: { x: 300, y: 125 },
+    },
+    {
+      id: '5',
+      type: 'output',
+      data: { label: formatNode(props.data['Operations Chief']) },
+      position: { x: 100, y: 400 },
+    },
+    {
+      id: '6',
+      type: 'output',
+      data: { label: formatNode(props.data['Logistics Chief']) },
+      position: { x: 300, y: 400 },
+    },
+    {
+      id: '7',
+      type: 'output',
+      data: { label: formatNode(props.data['Planning Chief​']) },
+      position: { x: 500, y: 400 },
+    },
+    {
+      id: '8',
+      type: 'output',
+      data: { label: formatNode(props.data['Finance Chief']) },
+      position: { x: 700, y: 400 },
+    },
+    { id: 'e1-2', source: '1', target: '2', type: 'step'},
+    { id: 'e1-3', source: '1', target: '3', type: 'step'},
+    { id: 'e1-4', source: '1', target: '4', type: 'step'},
+    { id: 'e1-5', source: '1', target: '5', type: 'step'},
+    { id: 'e1-6', source: '1', target: '6', type: 'step'},
+    { id: 'e1-7', source: '1', target: '7', type: 'step'},
+    { id: 'e1-8', source: '1', target: '8', type: 'step'},
+  ];
+  
   return (
-    <article>
-      <div ref={d3Container} />
-    </article>
-  );
-};
+    <div style={{ height: 700 }}>
+      <ReactFlow elements={chartValues} />
+    </div>
+  )
+}
 
 export default OrgChart

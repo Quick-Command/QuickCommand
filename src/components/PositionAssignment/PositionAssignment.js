@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import './PositionAssignment.css'
+import { searchByRole } from './PositionAssignmentSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { assignRole } from '../../API-calls'
 
-const PositionAssignment = () => {
+
+const PositionAssignment = ({ id }) => {
+
+  const [selectedRole, setSelectedRole] = useState('')
+
+  const dispatch = useDispatch()
+
+  const handleSearch = (role) => {
+    dispatch(searchByRole({id, role}))
+  }
+
+  const handleAssign = (id, resultID, selectedRole) => {
+    assignRole(id, resultID, selectedRole)
+    .then(data => window.location.reload())
+  }
+
+  const searchResults = useSelector(state => state.searchByRole.searchByRole).map(result => {
+    return (
+      <div className='search-result' onClick={() => handleAssign(id, result.id, selectedRole)}>
+        <p>{result.attributes.name}</p>
+        <p>{result.attributes.distance_minutes} mi</p>
+      </div>
+    )
+  })
 
   return (
     <section className="assignment-container">
@@ -10,10 +36,13 @@ const PositionAssignment = () => {
       <form className="assignee-search-form">
 
       <label htmlFor="position">Position:</label>
-        <select name='position'>
+        <select name='position' onChange={e => {
+          setSelectedRole(e.target.value)
+          handleSearch(e.target.value)
+        }}>
           <option value=''>--select--</option>
           <option>Incident Commander</option>
-          <option>PIO</option>
+          <option>Public Information Officer</option>
           <option>Safety Officer</option>
           <option>Liaison Officer</option>
           <option>Operations Chief</option>
@@ -21,19 +50,11 @@ const PositionAssignment = () => {
           <option>Finance Chief</option>
           <option>Planning Chief​</option>
         </select>
-
-        <input />
-
       </form>
       
-      <div className="search-results-container"></div>
-
-      <div className="assignee-search-result">
-        <p>Assignee name here</p>
-        <button>assign</button>
+      <div className="search-results-container">
+        {searchResults.length ? searchResults : <p>No contacts found</p>}
       </div>
-
-
 
     </section>
   );

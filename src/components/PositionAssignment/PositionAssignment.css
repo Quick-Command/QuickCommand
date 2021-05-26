@@ -24,3 +24,12 @@
 .assignee-search-result > button {
   height: 50%;
 }
+
+.search-result {
+  border-bottom: 1px solid black;
+}
+
+.search-result:hover {
+  background-color: grey;
+  cursor: pointer;
+}
