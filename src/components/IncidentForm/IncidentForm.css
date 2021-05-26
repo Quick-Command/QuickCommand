@@ -12,6 +12,10 @@ select {
   margin-bottom: 10px;
 }
 
+.error {
+  color: red;
+}
+
 .error-message {
   color: red;
 }
@@ -19,7 +23,7 @@ select {
 .declare-submission {
   color: #FFE8C2;
   border: 2px solid #6A8D73;
-  background-color: #6A8D73;
+  background-color: #57745e;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 

@@ -28,17 +28,17 @@ const IncidentForm = () => {
     if (incidentName && incidentType && incidentCity && incidentState && incidentDate) {
       setTempName(incidentName);
       const incidentObj = {
-      name: incidentName,
-      incident_type: incidentType,
-      description: incidentSummary,
-      location: incidentLocation,
-      city: incidentCity,
-      state: incidentState,
-      start_date: incidentDate,
-      close_date: ""
-    }
-    dispatch(declareNewIncident(incidentObj))
-    clearInputs()
+        name: incidentName,
+        incident_type: incidentType,
+        description: incidentSummary,
+        location: incidentLocation,
+        city: incidentCity,
+        state: incidentState,
+        start_date: incidentDate,
+        close_date: ""
+      }
+      dispatch(declareNewIncident(incidentObj))
+      clearInputs()
     } else {
       setError(true)
     }
@@ -67,6 +67,7 @@ const IncidentForm = () => {
       <label htmlFor="incident-name" data-cy="incident-name">Name:</label>
       <input
         type="text"
+        id="incident-name"
         name="incident-name"
         data-cy="incident-name"
         onChange={e => setIncidentName(e.target.value)}
@@ -76,6 +77,7 @@ const IncidentForm = () => {
       <label htmlFor='incident-location'>Location:</label>
       <input
         name='incident-location'
+        id="incident-location"
         onChange={e => setIncidentLocation(e.target.value)}
         value={incidentLocation}
       />
@@ -83,6 +85,7 @@ const IncidentForm = () => {
       <label htmlFor='incident-city'>City:</label>
       <input
         name='incident-city'
+        id="incident-city"
         onChange={e => setIncidentCity(e.target.value)}
         value={incidentCity}
       />
@@ -92,6 +95,7 @@ const IncidentForm = () => {
 
       <label htmlFor="incident-type" data-cy="incident-type">Type:</label>
       <select
+        id="incident-type"
         name='incident-type'
         data-cy="incident-type"
         onChange={e => setIncidentType(e.target.value)}
@@ -111,6 +115,7 @@ const IncidentForm = () => {
 
       <label htmlFor="incident-date" data-cy="incident-date">Date:</label>
       <input
+        id="incident-date"
         data-cy="incident-date"
         name='incident-date'
         type="date"
@@ -120,6 +125,7 @@ const IncidentForm = () => {
 
       <label htmlFor="incident-summary" data-cy="incident-summary">Summary:</label>
       <textarea
+        id="incident-summary"
         name='incident-summary'
         data-cy="incident-summary"
         onChange={e => setIncidentSummary(e.target.value)}
@@ -135,7 +141,7 @@ const IncidentForm = () => {
       }
       {error &&
         <div className='success'>
-          <Error className='checkmark'></Error>
+          <Error className='checkmark error'></Error>
           <p className='error-message'>You are missing a required field</p>
         </div>
       }

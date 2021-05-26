@@ -78,6 +78,7 @@ export const statesCodes = (type, setValue, value) => {
       onChange={e => setValue(e.target.value)}
       value={value}
       data-cy="state"
+      id='incident-state'
     >
       <option value="">--select--</option>
       <option>AL</option>
