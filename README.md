@@ -21,7 +21,7 @@ A [Front-End Project](https://mod4.turing.edu/projects/capstone.html) by [Camero
 
 _QuickCommand_ is the [Turing School of Software and Design](https://turing.io/) Module 4 capstone group project.
 
-OVERVIEW GOES HERE
+QuickCommand is an organization application that provides personnel assignment for an emergency response supervisor.
 
 
 
@@ -70,9 +70,9 @@ This project has given us a new look at how to work together in continuous innov
 * We are building our remote heroku app with each merge into main
 * We are using TDD with Cypress and testing before public branch merging to stay informed about optimal functionality throughout the app.
 
-* ## Challenges
-
+### Challenges
 * We were able to alleviate some difficulty surrounding git's default method of ignoring case-sensitivity after renaming files.  Having several components and our store affected by redundant folders and files led us to learn how to resolve such an issue in the future.
+* We came to a tough decision that was navigated well by our team, as it became apparent that our d3 Chart we really thought looked great and were excited about it's success in rendering could potentially cause us trouble in phase 3 when implementing functionality to update the chart.  It was a hard decision but a wise one to take a step back from a better style and make some concessions prioritizing MVP functionality.  
 
 
 
