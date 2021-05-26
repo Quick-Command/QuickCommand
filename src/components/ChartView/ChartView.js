@@ -36,10 +36,7 @@ const ChartView = ({ id }) => {
         <OrgChart data={chartValues} />
       </div>
       <section className="sidebar-container">
-        <section className="incident-link-container">
-          <h2>Inferno @ Monticello</h2>
-          <Link to={detailsLink}>MORE INFO</Link>
-        </section>
+          <Link to={detailsLink} className="more-info-link">Click Here for Incident Details</Link>
         <PositionAssignment id={id} />
       </section>
     </div>

@@ -27,19 +27,19 @@ const OrgChart = (props) => {
       id: '2',
       type: 'output',
       data: { label: formatNode(props.data['PIO']) },
-      position: { x: 600, y: 125 },
+      position: { x: 600, y: 150 },
     },
     {
       id: '3',
       type: 'output',
       data: { label: formatNode(props.data['Liaison Officer']) },
-      position: { x: 100, y: 125 },
+      position: { x: 100, y: 150 },
     },
     {
       id: '4',
       type: 'output',
       data: { label: formatNode(props.data['Safety Officer']) },
-      position: { x: 300, y: 125 },
+      position: { x: 300, y: 150 },
     },
     {
       id: '5',
