@@ -9,22 +9,52 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 1%;
 }
 
 .org-chart-container {
   width: 70%;
 }
 
-.incident-link-container {
-  width: 95%;
-  height: 10%;
-  display: flex;
-  border: 1px solid black;
+.more-info-link {
+  width: 70%;
+  padding: 1% 0;
+  text-align: center;
+  margin: 4% 0;
   border-radius: 3px;
-  font-size: 11px;
 }
 
-.incident-info-container > h2, .incident-info-container > button {
-height: 2rem;
-margin: auto;
+.more-info-link:hover {
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 768px) {
+  .chart-view-container {
+    flex-direction: column;
+  }
+  .org-chart-container {
+    width: 100%;
+  }
+  .sidebar-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .more-info-link {
+    width: 85%;
+  }
+
+}
+
+@media only screen and (max-width: 1050px) {
+  .chart-view-container {
+    flex-direction: column;
+  }
+  .org-chart-container {
+    width: 100%;
+  }
+  .sidebar-container {
+    width: 95%;
+    margin: 1% auto;
+  }
+
 }
