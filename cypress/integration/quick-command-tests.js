@@ -67,7 +67,7 @@ describe('QuickCommand', () => {
 
       cy.get('[data-cy=ongoing-container]')
         // .contains('Jim Creeks Fire')
-        .get('[data-cy=declared-date]').contains('DECLARED')
+        .get('[data-cy=declared-date]').contains('Since')
     })
   })
 
