@@ -58,7 +58,7 @@ const IncidentForm = () => {
 
       <h2 data-cy='declare-incident' className='incident-text'>DECLARE NEW INCIDENT:</h2>
 
-      <label htmlFor="incident-name" data-cy="incident-name">Incident Name:</label>
+      <label htmlFor="incident-name" data-cy="incident-name">Name:</label>
       <input
         type="text"
         name="incident-name"
@@ -67,24 +67,24 @@ const IncidentForm = () => {
         value={incidentName}
       />
 
-      <label htmlFor='incident-location'>Incident Location:</label>
+      <label htmlFor='incident-location'>Location:</label>
       <input
         name='incident-location'
         onChange={e => setIncidentLocation(e.target.value)}
         value={incidentLocation}
       />
 
-      <label htmlFor='incident-city'>Incident City:</label>
+      <label htmlFor='incident-city'>City:</label>
       <input
         name='incident-city'
         onChange={e => setIncidentCity(e.target.value)}
         value={incidentCity}
       />
 
-      <label htmlFor='incident-state'>Incident State:</label>
+      <label htmlFor='incident-state'>State:</label>
       {statesCodes('incident', setIncidentState, incidentState)}
 
-      <label htmlFor="incident-type" data-cy="incident-type">Incident Type:</label>
+      <label htmlFor="incident-type" data-cy="incident-type">Type:</label>
       <select
         name='incident-type'
         data-cy="incident-type"
@@ -103,7 +103,7 @@ const IncidentForm = () => {
         <option>Hurricane</option>
       </select>
 
-      <label htmlFor="incident-date" data-cy="incident-date">Incident Date:</label>
+      <label htmlFor="incident-date" data-cy="incident-date">Date:</label>
       <input
         data-cy="incident-date"
         name='incident-date'
@@ -112,7 +112,7 @@ const IncidentForm = () => {
         value={incidentDate}
       />
 
-      <label htmlFor="incident-summary" data-cy="incident-summary">Incident Summary:</label>
+      <label htmlFor="incident-summary" data-cy="incident-summary">Summary:</label>
       <textarea
         name='incident-summary'
         data-cy="incident-summary"

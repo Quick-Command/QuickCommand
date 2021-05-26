@@ -57,7 +57,6 @@ const NewContactForm = () => {
       array.splice(array.indexOf(e.target.value), 1)
     }
     setContactRoles(array)
-    console.log(contactRoles)
   }
 
   return (

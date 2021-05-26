@@ -22,7 +22,7 @@ const App = () => {
           <Route path='/profiles' component={Profiles} />
           <Route path='/passport' component={Passport} />
           {/* below is test-only for specific incident view */}
-          <Route path='/incident-details/:id' render={({ match }) => {
+          <Route path='/incident/details/:id' render={({ match }) => {
             const { id } = match.params;
             return (<IncidentInfo id={id} />)
           }} />

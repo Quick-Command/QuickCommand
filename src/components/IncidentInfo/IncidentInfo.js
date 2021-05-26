@@ -19,7 +19,6 @@ const IncidentInfo = ({ id }) => {
       active: false,
       close_date: new Date(Date.now())
     }
-    console.log(incidentObj)
     dispatch(updateIncidentInfo({ id, incidentObj }))
   }
 
@@ -31,7 +30,6 @@ const IncidentInfo = ({ id }) => {
   return (
     <section className="incident-info-container">
       {incident ? <div>
-        {console.log(incident)}
         <p data-cy='info-name' className='info info-name'>{incident.name}</p>
         <p data-cy='info-type' className='info type'><span className='info-type'>{getIconByType(incident)}</span>{incident.incident_type}</p>
         <div className="info-button-container">
@@ -41,7 +39,6 @@ const IncidentInfo = ({ id }) => {
         <p data-cy='info-location' className='info info-location'>Located at: {incident.location} in {incident.city}, {incident.state}</p>
         <p data-cy='info-desc' className='info info-desc'>Summary: {incident.description}</p>
         <p data-cy='info-start-date' className='info info-start-date'>Declaration: {formatDate(incident.start_date)}</p>
-        {console.log(incident.close_date)}
         {incident.close_date && <p data-cy='info-end-date' className='info info-end-date'>Resolution: {formatDate(incident.close_date)}</p>}
         <div data-cy='info-instructions' className='info info-instructions'>{incident.incident_type} Response Procedural Protocol: {getInstructions(incident.incident_type)}</div>
       </div> : <p>Loading...</p>}

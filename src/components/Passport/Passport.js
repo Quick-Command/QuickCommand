@@ -55,7 +55,7 @@ const Passport = () => {
         in advance of the disaster.</p>
         <p>K. Rehabilitation and reconstruction – Rehabilitation and reconstruction complete
         the disaster response activities and merge with the recovery phase. </p>
-        <p>CATEGORIES IN RESPONSE PLAN / COMMUNITY UPDATES: </p>
+        <p className="categories-header">CATEGORIES IN RESPONSE PLAN / COMMUNITY UPDATES: </p>
         <p>A. Health Services.</p>
         <p>B. Emergency Social Services.</p>
         <p>C. Law and Order.</p>

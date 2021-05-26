@@ -42,7 +42,6 @@ export const slice = createSlice({
       })
       .addCase(updateIncidentInfo.fulfilled, (state, action) => {
         state.status = 'idle';
-        console.log('api return', action.payload)
         state.incidentInfo = action.payload
       })
   }

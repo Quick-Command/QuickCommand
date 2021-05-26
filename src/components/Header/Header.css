@@ -13,14 +13,15 @@
   margin-top: 1.5em;
 }
 
-.logo {
-  height: 4rem;
-}
-
 .logo-container {
+  height: 100%;
   width: 40%;
   display: flex;
   justify-content: flex-start;
+}
+
+.logo-link {
+  background-color: transparent;
 }
 
 .header-links {
@@ -35,21 +36,22 @@
   margin: 17px;
   margin-left: 0;
   margin-right: 0;
+  padding: 0 2%;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
 }
 
 @media only screen and (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
   .header {
-    display: flex;
-    justify-content: space-between;
-    height: 11vh;
+    justify-content: space-around;
   }
 }
 
 @media only screen and (max-width: 1050px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 11vh;
-  }
+
 }
