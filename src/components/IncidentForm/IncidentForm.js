@@ -24,8 +24,8 @@ const IncidentForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
+    e.preventDefault();
     if (incidentName && incidentType && incidentCity && incidentState && incidentDate) {
-      e.preventDefault();
       setTempName(incidentName);
       const incidentObj = {
       name: incidentName,
@@ -40,7 +40,6 @@ const IncidentForm = () => {
     dispatch(declareNewIncident(incidentObj))
     clearInputs()
     } else {
-      e.preventDefault()
       setError(true)
     }
   }
