@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
+import propTypes from 'prop-types';
 import ReactFlow from 'react-flow-renderer';
 
 const OrgChart = (props) => {
-  
+
   const formatNode = (object) => {
 
     return (
@@ -64,15 +65,15 @@ const OrgChart = (props) => {
       data: { label: formatNode(props.data['Finance Chief']) },
       position: { x: 700, y: 400 },
     },
-    { id: 'e1-2', source: '1', target: '2', type: 'step'},
-    { id: 'e1-3', source: '1', target: '3', type: 'step'},
-    { id: 'e1-4', source: '1', target: '4', type: 'step'},
-    { id: 'e1-5', source: '1', target: '5', type: 'step'},
-    { id: 'e1-6', source: '1', target: '6', type: 'step'},
-    { id: 'e1-7', source: '1', target: '7', type: 'step'},
-    { id: 'e1-8', source: '1', target: '8', type: 'step'},
+    { id: 'e1-2', source: '1', target: '2', type: 'step' },
+    { id: 'e1-3', source: '1', target: '3', type: 'step' },
+    { id: 'e1-4', source: '1', target: '4', type: 'step' },
+    { id: 'e1-5', source: '1', target: '5', type: 'step' },
+    { id: 'e1-6', source: '1', target: '6', type: 'step' },
+    { id: 'e1-7', source: '1', target: '7', type: 'step' },
+    { id: 'e1-8', source: '1', target: '8', type: 'step' },
   ];
-  
+
   return (
     <div style={{ height: 700 }}>
       <ReactFlow elements={chartValues} />
@@ -80,4 +81,8 @@ const OrgChart = (props) => {
   )
 }
 
-export default OrgChart
+export default OrgChart;
+
+OrgChart.propTypes = {
+  props: propTypes.object
+}

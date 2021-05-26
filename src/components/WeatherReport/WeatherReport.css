@@ -1,0 +1,13 @@
+.report-container {
+  padding-top: 9vh;
+  text-align: center;
+  min-height: 75vh;
+  background-color: #FFE8C2;
+  color: #6A8D73;
+  width: 84vw;
+  margin-left:  8vw;
+}
+
+.report-container > p {
+  margin-bottom: 2vh;
+}

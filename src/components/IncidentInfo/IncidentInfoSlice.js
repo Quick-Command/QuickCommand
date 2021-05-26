@@ -19,7 +19,7 @@ export const getIncidentInfo = createAsyncThunk(
 
 export const updateIncidentInfo = createAsyncThunk(
   'incidentInfo/updateIncidentInfo',
-  async ({id, incidentObj}) => {
+  async ({ id, incidentObj }) => {
     const response = await updateIncident(id, incidentObj)
     return response.data
   }

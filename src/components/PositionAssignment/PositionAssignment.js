@@ -3,7 +3,7 @@ import './PositionAssignment.css'
 import { searchByRole } from './PositionAssignmentSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { assignRole } from '../../API-calls'
-
+import propTypes from 'prop-types';
 
 const PositionAssignment = ({ id }) => {
 
@@ -12,12 +12,12 @@ const PositionAssignment = ({ id }) => {
   const dispatch = useDispatch()
 
   const handleSearch = (role) => {
-    dispatch(searchByRole({id, role}))
+    dispatch(searchByRole({ id, role }))
   }
 
   const handleAssign = (id, resultID, selectedRole) => {
     assignRole(id, resultID, selectedRole)
-    .then(data => window.location.reload())
+      .then(data => window.location.reload())
   }
 
   const searchResults = useSelector(state => state.searchByRole.searchByRole).map(result => {
@@ -32,10 +32,10 @@ const PositionAssignment = ({ id }) => {
   return (
     <section className="assignment-container">
       <h3>ASSIGN ROLE</h3>
-      
+
       <form className="assignee-search-form">
 
-      <label htmlFor="position">Position:</label>
+        <label htmlFor="position">Position:</label>
         <select name='position' onChange={e => {
           setSelectedRole(e.target.value)
           handleSearch(e.target.value)
@@ -51,7 +51,7 @@ const PositionAssignment = ({ id }) => {
           <option>Planning Chief​</option>
         </select>
       </form>
-      
+
       <div className="search-results-container">
         {searchResults.length ? searchResults : <p>No contacts found</p>}
       </div>
@@ -60,4 +60,8 @@ const PositionAssignment = ({ id }) => {
   );
 };
 
-export default PositionAssignment
+export default PositionAssignment;
+
+PositionAssignment.propTypes = {
+  id: propTypes.string
+}

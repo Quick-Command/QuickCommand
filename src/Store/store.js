@@ -4,7 +4,8 @@ import ResolvedIncidentsReducer from '../components/ResolvedIncidents/ResolvedIn
 import SearchResultsReducer from '../components/DatabaseSearch/DatabaseSearchSlice';
 import IncidentContactsReducer from '../components/ChartView/ChartViewSlice';
 import IncidentInfoReducer from '../components/IncidentInfo/IncidentInfoSlice';
-import SearchByRoleReducer from '../components/PositionAssignment/PositionAssignmentSlice'
+import SearchByRoleReducer from '../components/PositionAssignment/PositionAssignmentSlice';
+
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,6 @@ export const store = configureStore({
     searchResults: SearchResultsReducer,
     incidentContacts: IncidentContactsReducer,
     incidentInfo: IncidentInfoReducer,
-    searchByRole: SearchByRoleReducer
+    searchByRole: SearchByRoleReducer,
   },
 });

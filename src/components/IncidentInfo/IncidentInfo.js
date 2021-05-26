@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getIncidentInfo, updateIncidentInfo } from './IncidentInfoSlice.js'
 import './IncidentInfo.css'
 import { formatDate, getIconByType, getInstructions } from '../../utilities'
+import propTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 const IncidentInfo = ({ id }) => {
   const dispatch = useDispatch()
@@ -26,6 +28,8 @@ const IncidentInfo = ({ id }) => {
   const incident = currentInfo.incidentInfo.attributes
   let mapURL = ''
   incident ? mapURL = `http://google.com/maps/search/${incident.location}+${incident.city}+${incident.state}/` : mapURL = ''
+  let weatherURL = '';
+  incident ? weatherURL = `/weather/${incident.city},${incident.state}` : weatherURL = ''
   return (
     <section className="incident-info-container">
       {incident ? <div>
@@ -33,7 +37,8 @@ const IncidentInfo = ({ id }) => {
         <p data-cy='info-type' className='info type'><span className='info-type'>{getIconByType(incident)}</span>{incident.incident_type}</p>
         <div className="info-button-container">
           <a href={mapURL} target="_blank" rel="noopener noreferrer" className='map-btn'>Click to get Map to Headquarters</a>
-          {!incident.close_date && <button className="end-button" onClick={e => handleSubmit(e)}>Declare Incident Over</button>}
+          {!incident.close_date && <button className="end-button" onClick={e => handleSubmit(e)}>Declare Incident Resolved</button>}
+          <NavLink to={weatherURL} data-cy='info-weather' className='info-weather'>Onsite Weather Report</NavLink>
         </div>
         <p data-cy='info-location' className='info info-location'>Located at: {incident.location} in {incident.city}, {incident.state}</p>
         <p data-cy='info-desc' className='info info-desc'>Summary: {incident.description}</p>
@@ -41,7 +46,6 @@ const IncidentInfo = ({ id }) => {
         {incident.close_date && <p data-cy='info-end-date' className='info info-end-date'>Resolution: {formatDate(incident.close_date)}</p>}
         <div data-cy='info-instructions' className='info info-instructions'>{incident.incident_type} Response Procedural Protocol: {getInstructions(incident.incident_type)}</div>
       </div> : <p>Loading...</p>}
-      <article data-cy='info-weather' className='info-weather'>Weather Report Coming Soon!</article>
 
 
     </section>
@@ -49,4 +53,8 @@ const IncidentInfo = ({ id }) => {
   );
 };
 
-export default IncidentInfo
+export default IncidentInfo;
+
+IncidentInfo.propTypes = {
+  id: propTypes.string
+}
