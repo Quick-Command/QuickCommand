@@ -44,7 +44,7 @@ const IncidentInfo = ({ id }) => {
         <p data-cy='info-desc' className='info info-desc'>Summary: {incident.description}</p>
         <p data-cy='info-start-date' className='info info-start-date'>Declaration: {formatDate(incident.start_date)}</p>
         {incident.close_date && <p data-cy='info-end-date' className='info info-end-date'>Resolution: {formatDate(incident.close_date)}</p>}
-        <div data-cy='info-instructions' className='info info-instructions'>{incident.incident_type} Response Procedural Protocol: {getInstructions(incident.incident_type)}</div>
+        <div data-cy='info-instructions' className='info info-instructions'>{incident.incident_type} Response Procedures: {getInstructions(incident.incident_type)}</div>
       </div> : <p>Loading...</p>}
 
 

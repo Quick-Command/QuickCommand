@@ -16,7 +16,9 @@
 
 .info-instructions {
   text-align: center;
-  background-color: #F4FDD9
+  background-color: #F4FDD9;
+  overflow-y: scroll;
+  max-height: 40vh;
 }
 
 .text-left {
