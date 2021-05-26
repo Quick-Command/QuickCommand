@@ -9,6 +9,7 @@ import Profiles from '../Profiles/Profiles';
 import Passport from '../Passport/Passport';
 import ChartView from '../ChartView/ChartView';
 import IncidentInfo from '../IncidentInfo/IncidentInfo';
+import WeatherReport from '../WeatherReport/WeatherReport';
 
 const App = () => {
 
@@ -29,6 +30,10 @@ const App = () => {
           <Route path='/incident/:id' render={({ match }) => {
             const { id } = match.params;
             return (<ChartView id={id} />)
+          }} />
+          <Route path='/weather/:location' render={({ match }) => {
+            const { location } = match.params;
+            return (<WeatherReport location={location} />)
           }} />
         </Switch>
         <Footer />

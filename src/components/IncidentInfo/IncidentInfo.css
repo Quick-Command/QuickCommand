@@ -32,10 +32,11 @@
 }
 
 .info-weather {
-  color: #6A8D73;
+  color: #FFE8C2;
   background-color: #6A8D73;
   padding-right: .25em;
   padding-left: .25em;
+  width: 9.5em;
 }
 
 .info-type {

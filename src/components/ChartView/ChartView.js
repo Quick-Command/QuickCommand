@@ -36,7 +36,7 @@ const ChartView = ({ id }) => {
         <OrgChart data={chartValues} />
       </div>
       <section className="sidebar-container">
-          <Link to={detailsLink} className="more-info-link">Click Here for Incident Details</Link>
+        <Link to={detailsLink} className="more-info-link">Click Here for Incident Details</Link>
         <PositionAssignment id={id} />
       </section>
     </div>
@@ -48,5 +48,5 @@ const ChartView = ({ id }) => {
 export default ChartView;
 
 ChartView.propTypes = {
-  id: propTypes.number
+  id: propTypes.string
 }

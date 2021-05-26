@@ -18,6 +18,7 @@ export const formatDate = inputDate => {
   }
 }
 
+
 export const getIcon = incident => {
   switch ((incident.attributes.incident_type).toLowerCase()) {
     case 'accident':
@@ -135,7 +136,17 @@ export const statesCodes = (type, setValue, value) => {
 export const getInstructions = (type) => {
   switch (type) {
     case 'Accident':
-      return
+      return <div className='text-left'>
+        <p>1. Rapid damage assessment.</p>
+        <p>2. Search and rescue.</p>
+        <p>3. Emergency medical care.</p>
+        <p>4. Fire-fighting.</p>
+        <p>♦ Eliminate all unnecessary open flames or heat sources.</p>
+        <p>♦ Keep fire protection equipment operational for as long as possible. Use the FM Global Red Tag Permit System to document any fire protection equipment shutdown.</p>
+        <p>♦ Initiate a continual fire watch until normal operations are resumed.</p>
+        <p>♦ Assist law enforcement in establishing a secure perimeter</p>
+        <p>♦ Control or prevent the entrance of the media</p>
+      </div>
     case 'Fire':
       return <div className='text-left'>
         <p>♦ Eliminate all unnecessary open flames or heat sources.</p>
