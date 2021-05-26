@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { addNewContact } from '../../API-calls';
 import './NewContactForm.css';
 import { statesCodes } from '../../utilities';
-// import { ReactComponent as Error } from '../../Icons/error.svg';
+import { ReactComponent as Error } from '../../Icons/error.svg';
 import { ReactComponent as Checkmark } from '../../Icons/checkmark.svg';
 
 const NewContactForm = () => {
@@ -16,12 +16,14 @@ const NewContactForm = () => {
   const [contactState, setContactState] = useState('');
   const [contactRoles, setContactRoles] = useState([]);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const [tempName, setTempName] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault()
-    setTempName(`${contactFirstName} ${contactLastName}`)
-    const newContact = {
+    if (contactFirstName && contactLastName && contactEmail && contactPhone && contactJobTitle && contactCity && contactState && contactRoles.length) {
+      setTempName(`${contactFirstName} ${contactLastName}`)
+      const newContact = {
       "name": `${contactFirstName} ${contactLastName}`,
       "email": contactEmail,
       "phone_number": contactPhone,
@@ -29,9 +31,12 @@ const NewContactForm = () => {
       "city": contactCity,
       "state": contactState,
       "roles": contactRoles
+      }
+      addNewContact(newContact)
+      clearInputs()
+    } else {
+      setError(true)
     }
-    addNewContact(newContact)
-    clearInputs()
   }
 
   const clearInputs = () => {
@@ -43,6 +48,7 @@ const NewContactForm = () => {
     setContactCity('');
     setContactState('');
     setContactRoles([]);
+    setError(false)
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false)
@@ -155,6 +161,12 @@ const NewContactForm = () => {
         <div className='success'>
           <Checkmark className='checkmark'></Checkmark>
           <span>{tempName} has been successfully added to Personnel</span>
+        </div>
+      }
+      {error &&
+        <div className='success'>
+          <Error className='checkmark'></Error>
+          <p className='error-message'>You are missing a required field</p>
         </div>
       }
     </form>

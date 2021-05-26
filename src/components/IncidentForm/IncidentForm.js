@@ -5,7 +5,7 @@ import {
 } from '../OngoingIncidents/OngoingIncidentsSlice'
 import './IncidentForm.css'
 import { statesCodes } from '../../utilities'
-// import { ReactComponent as Error } from '../../Icons/error.svg'
+import { ReactComponent as Error } from '../../Icons/error.svg'
 import { ReactComponent as Checkmark } from '../../Icons/checkmark.svg'
 
 const IncidentForm = () => {
@@ -18,14 +18,16 @@ const IncidentForm = () => {
   const [incidentCity, setIncidentCity] = useState('');
   const [incidentState, setIncidentState] = useState('');
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const [tempName, setTempName] = useState('');
 
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    setTempName(incidentName);
-    const incidentObj = {
+    if (incidentName && incidentType && incidentCity && incidentState && incidentDate) {
+      setTempName(incidentName);
+      const incidentObj = {
       name: incidentName,
       incident_type: incidentType,
       description: incidentSummary,
@@ -37,6 +39,9 @@ const IncidentForm = () => {
     }
     dispatch(declareNewIncident(incidentObj))
     clearInputs()
+    } else {
+      setError(true)
+    }
   }
 
   const clearInputs = () => {
@@ -47,6 +52,7 @@ const IncidentForm = () => {
     setIncidentLocation('');
     setIncidentCity('');
     setIncidentState('');
+    setError(false);
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false)
@@ -125,6 +131,12 @@ const IncidentForm = () => {
         <div className='success'>
           <Checkmark className='checkmark'></Checkmark>
           <span>{tempName} is Declared and Ongoing</span>
+        </div>
+      }
+      {error &&
+        <div className='success'>
+          <Error className='checkmark'></Error>
+          <p className='error-message'>You are missing a required field</p>
         </div>
       }
     </form>
