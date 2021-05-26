@@ -5,6 +5,7 @@
 -------
 
 A [Front-End Project](https://mod4.turing.edu/projects/capstone.html) by [Cameron Mackintosh](https://github.com/cbmackintosh), [Chuck Morris](https://github.com/percworld), and [Jeff Shepherd](https://github.com/JeffShepherd).
+
 Backend QuickCommand team is comprised of [Katy LaTour](https://github.com/klatour324), [Alexa Morales Smith](https://github.com/amsmyth1), and [Jeremiah Michlitsch](https://github.com/jmichlitsch) - [Backend Repo](https://github.com/Quick-Command/qc-engine)
 
 1. [Overview](#overview)
@@ -22,7 +23,7 @@ Backend QuickCommand team is comprised of [Katy LaTour](https://github.com/klato
 
 _QuickCommand_ is the [Turing School of Software and Design](https://turing.io/) Module 4 capstone group project.
 
-QuickCommand is an organization application that provides personnel assignment for an emergency response supervisor.
+It is an organization application that provides personnel assignment for an emergency response supervisor and response to incident details for assignees.
 
 
 
@@ -30,11 +31,12 @@ QuickCommand is an organization application that provides personnel assignment f
 
 * [GitHub Project Board](https://github.com/orgs/Quick-Command/projects/1)
 * [Miro Board - Wireframes](https://miro.com/app/board/o9J_lExjyG8=/)
-
+* ![User Stories](./public/user-story1.png)
+* [Schema](https://app.dbdesigner.net/designer/schema/0-quick_command)
 
 ## Setup Instructions
 
-
+You can [Visit QuickCommand Here](https://quick-command.herokuapp.com/) or follow these steps to 
 Clone down this repository to your local machine:
 
 ```
@@ -131,7 +133,7 @@ In the limited timeframe we have to make determined sprints and complete our int
 ---
 ## Wins
 
-* WINS GO HERE
+* In learning a new stretch tech that required much research, we began to code together when it came time to implement.  This process taught us much about working together on a journey into deeply understanding the redux toolkit under the hood and pretty syntax. My big win on this project was overcoming that precipice into the operation of state management as a team in paired programming, where we shared concepts and asked questions freely and because of our patience, built a solid framework to build on where everyone was cued and ready for the next step by fully understanding the process and codebase. -Chuck
 
 
 
@@ -139,4 +141,5 @@ In the limited timeframe we have to make determined sprints and complete our int
 ## Future Iterations
 
 
-
+1.  A passport wallet card route that allows a responder during preparation to print out a 'passport' for checkpoints on their way to arriving to headquarters onsite.
+2.  An information card about which personnel details for 'pop-up' when hovering over Chart positions.
