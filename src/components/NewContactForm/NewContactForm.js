@@ -66,6 +66,7 @@ const NewContactForm = () => {
 
       <label htmlFor='contact-first-name'>First Name: </label>
       <input
+        data-cy="first"
         type="text"
         name='contact-first-name'
         onChange={e => setContactFirstName(e.target.value)}
@@ -74,6 +75,7 @@ const NewContactForm = () => {
 
       <label htmlFor='contact-last-name'>Last Name: </label>
       <input
+        data-cy="last"
         type="text"
         name='contact-last-name'
         onChange={e => setContactLastName(e.target.value)}
@@ -82,6 +84,7 @@ const NewContactForm = () => {
 
       <label htmlFor='contact-email'>Email:</label>
       <input
+        data-cy="email"
         type="text"
         name='contact-email'
         onChange={e => setContactEmail(e.target.value)}
@@ -90,6 +93,7 @@ const NewContactForm = () => {
 
       <label htmlFor='contact-phone'>Phone:</label>
       <input
+        data-cy="phone"
         type="text"
         name='contact-phone'
         maxLength="10"
@@ -99,6 +103,7 @@ const NewContactForm = () => {
 
       <label htmlFor='contact-job'>Job Title:</label>
       <input
+        data-cy="job"
         type="text"
         name='contact-job'
         onChange={e => setContactJobTitle(e.target.value)}
@@ -107,6 +112,7 @@ const NewContactForm = () => {
 
       <label htmlFor='contact-city'>City:</label>
       <input
+        data-cy="city"
         type='text'
         name='contact-city'
         onChange={e => setContactCity(e.target.value)}
@@ -119,7 +125,7 @@ const NewContactForm = () => {
       <label htmlFor='contact-roles'>Qualifications:</label>
       <fieldset onChange={e => handleRoleSelection(e)}>
         <label htmlFor='incident-commander'>Incident Commander</label>
-        <input id='incident-commander' value="Incident Commander" type='checkbox' />
+        <input data-cy="cmd-role" id='incident-commander' value="Incident Commander" type='checkbox' />
 
         <label htmlFor='pio'>Public Information Officer</label>
         <input id='pio' value="Public Information Officer" type='checkbox' />
@@ -144,7 +150,7 @@ const NewContactForm = () => {
 
       </fieldset>
       <br></br>
-      <button type='submit' className='declare-submission'>ADD NEW CONTACT</button>
+      <button type='submit' data-cy="submit" className='declare-submission'>ADD NEW CONTACT</button>
       {success &&
         <div className='success'>
           <Checkmark className='checkmark'></Checkmark>
