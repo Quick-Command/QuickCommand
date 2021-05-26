@@ -3,7 +3,9 @@
   max-width: 50%;
   margin: 0 auto;
 }
-
+.search-result-name {
+  margin: 0 0 2% 0;
+}
 
 @media only screen and (max-width: 768px) {
   .database-search-container {

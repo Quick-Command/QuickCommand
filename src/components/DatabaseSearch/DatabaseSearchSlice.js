@@ -27,7 +27,13 @@ const slice = createSlice({
       })
       .addCase(searchByName.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.searchResults = action.payload;
+        if(!state.searchResults.map(result => result.id).includes(action.payload.id)) {
+          state.searchResults.push(action.payload)
+        }
+      })
+      .addCase(searchByName.rejected, (state) => {
+        state.status = 'idle';
+        state.searchResults = []
       })
   }
 })

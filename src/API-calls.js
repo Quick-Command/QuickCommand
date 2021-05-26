@@ -53,7 +53,7 @@ export const addNewContact = (newContact) => {
 }
 
 export const runNameQuery = (queryString) => {
-  return fetch(`${baseURL}/contacts?name=${queryString}`)
+  return fetch(`${baseURL}/contacts/search?name=${queryString}`)
     .then(checkResponse)
     .catch(catchResponse)
 }

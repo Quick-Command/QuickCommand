@@ -11,11 +11,10 @@ const DatabaseSearch = () => {
 
   const searchResults = useSelector(state => state.searchResults.searchResults).map(result => {
     return (
-      <div>
-        <h3>{result.attributes.name}</h3>
-        <p>{result.attributes.job_title}</p>
-        <p>{result.attributes.email}</p>
-        <p>{result.attributes.phone}</p>
+      <div className="search-result" key={result.id}>
+        <h3 className="search-result-name">{result.attributes.name}-{result.attributes.job_title}</h3>
+        <p>{result.attributes.email}-{result.attributes.phone_number}</p>
+        <br/>
       </div>
     )
   })
