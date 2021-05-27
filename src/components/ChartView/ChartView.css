@@ -1,6 +1,7 @@
 .chart-view-container {
   width: 100%;
   display: flex;
+  min-height: 70vw;
 }
 
 .sidebar-container {
