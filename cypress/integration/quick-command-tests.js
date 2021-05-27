@@ -66,7 +66,6 @@ describe('QuickCommand', () => {
       cy.get('button[data-cy=declare-submission]').click()
 
       cy.get('[data-cy=ongoing-container]')
-        // .contains('Jim Creeks Fire')
         .get('[data-cy=declared-date]').contains('Since')
     })
   })
@@ -130,8 +129,6 @@ describe('QuickCommand', () => {
         method: 'PATCH',
         fixture: 'delete-incident.json'
       })
-      // cy.get('[data-cy=resolve]')
-      //   .click()
       cy.get('[data-cy=resolve]')
     })
 
@@ -152,7 +149,6 @@ describe('Personnel view', () => {
     cy.get('[data-cy=search-contacts]').contains('SEARCH CONTACTS')
       .get('[data-cy=add-new-contact]').contains('ADD NEW CONTACT')
     cy.get('[data-cy=input-field]').type('b')
-    //cy.get('[data-cy=input-field]').contains('b')
   })
 
   it('Has a form for Contact Submission that Submits a new personnel member to the database', () => {
