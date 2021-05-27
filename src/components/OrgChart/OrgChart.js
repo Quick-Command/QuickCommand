@@ -1,6 +1,7 @@
 import React from "react";
 import propTypes from 'prop-types';
 import ReactFlow from 'react-flow-renderer';
+import './OrgChart.css';
 
 const OrgChart = (props) => {
 
@@ -75,7 +76,7 @@ const OrgChart = (props) => {
   ];
 
   return (
-    <div style={{ height: 700 }}>
+    <div className='bump-chart' style={{ height: 700 }}>
       <ReactFlow elements={chartValues} />
     </div>
   )

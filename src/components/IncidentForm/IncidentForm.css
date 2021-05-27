@@ -12,6 +12,10 @@ select {
   margin-bottom: 10px;
 }
 
+.error {
+  color: red;
+}
+
 .error-message {
   color: red;
 }
@@ -19,8 +23,9 @@ select {
 .declare-submission {
   color: #FFE8C2;
   border: 2px solid #6A8D73;
-  background-color: #6A8D73;
+  background-color: #57745e;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
 }
 
 .declare-submission:hover {
@@ -36,6 +41,17 @@ select {
 .checkmark {
   width: 2.5vw;
   margin-right: .5em;
+}
+
+fieldset {
+  background-color: #FFE8C2;
+  width: [object Object]px; 
+	height: [object Object]px; 
+	
+	border: solid #C93E36 0; 
+	box-shadow: -13px 10px 18px rgba(219, 205, 178, 0.5)  ; 
+	-webkit-box-shadow: -13px 10px 18px rgba(219, 205, 178, 0.5)  ; 
+	-moz-box-shadow: -13px 10px 18px rgba(219, 205, 178, 0.5)  ; 
 }
 
 @media only screen and (max-width: 768px) {

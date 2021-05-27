@@ -23,8 +23,9 @@ const ResolvedIncidents = () => {
             <span className='icon'>{getIcon(incident)}</span>
             <span className='incident-title'>{incident.attributes.type}{incident.attributes.name}</span>
           </h3>
-          <p>* DECLARED: {formatDate(incident.attributes.start_date)}</p>
-          <p>* RESOLVED: {formatDate(incident.attributes.close_date)}</p>
+          <p>{incident.attributes.city}, {incident.attributes.state}</p>
+          {/* <p>DECLARED: {formatDate(incident.attributes.start_date)}</p> */}
+          <p>RESOLVED: {formatDate(incident.attributes.close_date)}</p>
         </div>
       </Link>
     )

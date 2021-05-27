@@ -4,34 +4,24 @@ import { getWeather } from '../../API-calls';
 import { formatDate } from '../../utilities';
 
 const WeatherReport = ({ location }) => {
-  const [weather, setWeather] = useState()
-  // const [sunrise, setSunrise] = useState('');
-  // const [sunset, setSunset] = useState('');
+  const [weather, setWeather] = useState();
 
   useEffect(() => {
     const createConditions = async () => {
       try {
         const response = await getWeather(location);
         setWeather(response.data.attributes);
-        // setSunrise(new Date(weather.sunrise));
-        // setSunset(new Date(weather.sunset));
-        // console.log(sunrise, sunset)
       } catch {
         throw new Error(`No Weather Available for ${location}`)
       }
     }
     createConditions()
   }, [location])
-  // const weather = async () => {
-  //   let response = await getWeather(location);
-  //   let conditions = await response.json()
-  //   setWeather(conditions)
-  // }
 
   return (
     <article>
       {weather ? <div className='report-container'>
-        <h4>Conditions</h4> <h4>{location} - {formatDate(weather.sunrise)}</h4>
+        <h4>Conditions in {location} for {formatDate(weather.sunrise)}</h4>
         <h3>{weather.conditions.toUpperCase()}</h3>
         {/* <p>{(new Date(weather.sunrise)).getHour()}</p> */}
         <p>Low: {weather.min_temp.toFixed(0)}º F</p>
