@@ -111,20 +111,6 @@ In the limited timeframe we have to make determined sprints and complete our int
 * A form for submitting a new candidate for response assignment that includes an individual's job title and roles they are certified to be assigned to.
 
 
-#### Landing Page Demo
-
-![landing-page](./public/assets/landingView.gif)
-
-#### Favoriting Demo
-
-![favoriting](./public/assets/favoriting.gif)
-
-
-#### Mobile View
-
-![mobile-landing page](./public/assets/mobileView.png)
-
-
 
 ---
 
